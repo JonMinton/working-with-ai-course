@@ -186,6 +186,17 @@ AI added pagination but:
 Write a revised specification that would prevent all three issues.
 ```
 
+## A Fundamental Distinction: Text vs. Binary
+
+One of the most crucial, yet often overlooked, concepts in computing is the difference between plain text files and binary files. For an AI, this distinction is not academic; it determines whether a file's contents are directly readable or require a specialised tool.
+
+| Type | Description | Examples | How AI Sees It |
+| :--- | :--- | :--- | :--- |
+| **Plain Text** | A sequence of characters. Human-readable in any standard text editor. The meaning is in the characters themselves. | `.txt`, `.md`, `.csv`, `.html`, `.py`, `.js` | "I can read this directly. The content is a stream of characters I can parse and understand." |
+| **Binary** | A sequence of bytes. Not human-readable without special software. The meaning is encoded by a specific file format. | `.pdf`, `.docx`, `.png`, `.jpg`, `.mp3`, `.zip` | "I can't read this directly. I see bytes. I need a tool (a PDF reader, an image library) to interpret this format." |
+
+Failing to appreciate this distinction is a common source of failed interactions with AI. If you give an AI a PDF and ask it to "read the text on page 5," it can only succeed if it has a `read_pdf` tool. If you give it a `.csv` file and ask the same, it can read the raw text directly. This is a core concept for developing an intuition for what is and isn't possible for an AI assistant.
+
 ## Key Takeaways
 
 - Formalism serves precision; notation is just a vehicle

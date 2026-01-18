@@ -201,6 +201,17 @@ What happens when something goes wrong?
 6. **Improve:** Update controls to prevent recurrence
 7. **Document:** Record for future reference
 
+## Change Management and Adoption
+
+Governance only works if people understand and adopt it.
+
+**Practical adoption levers:**
+- **Training cadence:** short, regular refreshers beat one‑off sessions
+- **Visible examples:** show real “approved use” examples in context
+- **Policy updates:** announce changes with clear “what changed” summaries
+- **Feedback loops:** capture where policy blocks legitimate work
+- **Measurement:** track usage of approved channels vs. shadow tools
+
 ## Governance Documentation
 
 ### Minimum Documentation Set

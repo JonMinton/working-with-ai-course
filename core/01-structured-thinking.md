@@ -165,6 +165,28 @@ A well-structured specification includes:
 4. **Acceptance criteria:** How you'll know it's done
 5. **Abstraction level:** Enough detail to act, not so much you're writing the solution
 
+## Prompt Hygiene and Reusable Playbooks
+
+Once you find a prompt pattern that works, **treat it as a reusable asset**.
+
+Good prompt hygiene means:
+- **Versioning** your prompts (date or revision tag)
+- **Naming** prompts by purpose (“spec-to-test”, “risk-review”, “edge-cases”)
+- **Keeping known‑good examples** alongside the prompt
+- **Logging outcomes** (what worked, what failed, and why)
+
+This turns prompt writing from improvisation into **repeatable practice**.
+
+**Example playbook snippet:**
+
+1. *Context summary* (current state + constraints)
+2. *Explicit goal* (what should change)
+3. *Acceptance criteria* (tests or checks)
+4. *Scope boundaries* (what must not change)
+5. *Edge cases* (inputs that must be handled)
+
+Over time, teams build a library of prompts that reduce variance and speed up collaboration.
+
 ## Practice Exercise
 
 ```

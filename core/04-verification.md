@@ -238,6 +238,18 @@ FEEDBACK:Cross-model review catches more issues than self-review, but human veri
 - [ ] Is text readable?
 - [ ] Do colours have sufficient contrast?
 
+## Ongoing Evaluation and Drift
+
+Verification is not only a **one‑off check**. Over time, models, tools, and prompts change.
+
+Use lightweight evaluation to catch drift:
+- **Regression prompts:** keep a small set of “known‑good” tasks and rerun them after changes
+- **Output snapshots:** store example outputs for comparison
+- **Error tracking:** record recurring mistakes and update prompts or guardrails
+- **Scheduled review:** re‑evaluate critical workflows monthly or quarterly
+
+**Rule of thumb:** If the workflow matters, it deserves a baseline and a periodic re‑test.
+
 ## When to Verify More Carefully
 
 **High verification needed:**

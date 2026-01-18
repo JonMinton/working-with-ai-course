@@ -132,6 +132,21 @@ List what the AI knows and doesn't know about the payment module at this point.
 - More tools = more capability = more risk
 - Enterprise deployments often restrict tools
 
+## Tool Risk and Permissions Model
+
+Treat tool access like **permissions**, not features. The goal is to reduce blast radius.
+
+**Principles:**
+- **Least privilege:** only the tools and scopes needed for the task
+- **Approval gates:** high‑impact actions require explicit human approval
+- **Separation of duties:** different tool sets for draft vs. execution
+- **Auditability:** log who requested what, when, and why
+
+**Practical examples:**
+- A drafting assistant can read documents but cannot send emails
+- A data analyst can query a database but cannot modify records
+- A deployment assistant can propose changes but cannot apply them
+
 ```
 QUIZ:
 An AI assistant doesn't have web search enabled. You ask it about a news event from last week. What happens?

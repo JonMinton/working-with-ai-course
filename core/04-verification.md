@@ -218,6 +218,14 @@ FEEDBACK:Cross-model review catches more issues than self-review, but human veri
 
 **For factual content:**
 - [ ] Are all citations real? (check at least a sample)
+
+**For data handling (before you paste or upload):**
+- [ ] What is the data classification? (Public / Internal / Confidential / Restricted)
+- [ ] Is this channel approved for that classification?
+- [ ] Have identifiers been removed or masked where possible?
+- [ ] Is the minimum necessary data included?
+- [ ] Do we have an audit trail for this use?
+- [ ] Would we be comfortable if this appeared in an incident review?
 - [ ] Are statistics plausible?
 - [ ] Is information current?
 - [ ] Are quotes accurate?

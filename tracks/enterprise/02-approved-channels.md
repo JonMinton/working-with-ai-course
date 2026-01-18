@@ -52,6 +52,28 @@ An approved channel typically includes:
 | **Retention controls** | Clear policies on how long data is kept |
 | **Incident response** | Process if something goes wrong |
 
+## Data Classification and Routing
+
+The channel choice is only half the decision. The other half is **what data you are sending**.
+
+Use a simple classification model and route data accordingly:
+
+| Data Class | Examples | Allowed Channels | Notes |
+|------------|----------|------------------|-------|
+| **Public** | Published press releases, public website copy | Any | Lowest risk but still verify accuracy |
+| **Internal** | Team docs, internal metrics, non-sensitive strategy | Approved enterprise tools | Avoid consumer tools to preserve audit trails |
+| **Confidential** | Client documents, contracts, financials, HR data | Approved enterprise tools with explicit approval | Requires logging, retention controls, and DPA |
+| **Restricted** | M&A, regulated data, legal privilege, security secrets | Specially isolated environments only | Treat as no-AI unless explicit exception exists |
+
+**Default rule:** If unsure, treat as **Confidential** and use approved channels only.
+
+### Redaction Patterns (Before You Paste)
+
+- Replace names with roles (e.g., “Client A”, “Supplier B”)
+- Remove account numbers, addresses, and identifiers
+- Summarise instead of quoting directly
+- Only include the minimum necessary for the task
+
 ## Why This Matters
 
 **Scenario:** An employee pastes confidential contract terms into a personal ChatGPT session to "help summarise."

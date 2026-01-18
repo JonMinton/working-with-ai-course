@@ -46,6 +46,24 @@ This project uses multiple AI models. See `tasks/README.md` for the handover pro
 
 **Diagrams:** ASCII diagrams in markdown are the source of truth. SVG versions in `/assets/diagrams/` are for progressive enhancement in the web view.
 
+## Content Expansion Protocol
+
+**Goal:** Add new material without deleting or rewriting existing content. Editing and consolidation happen later in a dedicated review phase.
+
+**Additive phase (models only):**
+- Only append to existing `.md` files (no deletions or rewrites)
+- Use ATX headings and British English spelling
+- Add new content under clear subheadings (e.g., `## Additional examples`, `## Common pitfalls`)
+- Prefer scannable formats (short paragraphs, bullets, tables)
+- Keep examples concrete and actionable
+- Keep cross-references relative and accurate
+
+**Edit/peer review phase (human + models):**
+- Consolidate overlaps and remove duplication
+- Tighten structure, tone, and terminology
+- Verify claims and accuracy
+- Ensure accessibility for non-technical readers
+
 ## Git Workflow
 
 **Repository:** `github.com/JonMinton/working-with-ai-course`

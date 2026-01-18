@@ -51,6 +51,21 @@ Different AI deployments for different sensitivity levels:
 └─────────────────────────────────────────────────────────────┘
 ```
 
+### Pattern 1b: Data Handling Boundaries
+
+Define data boundaries explicitly so employees and AI systems know what is allowed.
+
+**A useful template:**
+- **Allowed data classes:** Public, Internal
+- **Prohibited data classes:** Confidential, Restricted
+- **Required protections:** Redaction, masking, audit logging
+- **Decision rule:** “If uncertain, treat as Confidential and escalate”
+
+**Operational examples:**
+- Summaries can be created from redacted contracts, not raw contracts
+- Support transcripts may be analysed only after identifiers are removed
+- Strategy decks can be discussed only in approved tools with audit trails
+
 ### Pattern 2: Human-in-the-Loop Gates
 
 Define which actions require human approval:

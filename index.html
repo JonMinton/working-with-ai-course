@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working With AI: A Practical Course</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #fafaf9;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f5f5f4;
+            --text-primary: #1c1917;
+            --text-secondary: #57534e;
+            --text-muted: #a8a29e;
+            --border: #e7e5e4;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --success: #16a34a;
+            --warning: #ca8a04;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border);
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .sidebar h1 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .sidebar .subtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-section-title {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 0.4rem 0.6rem;
+            margin: 0.1rem 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .nav-item:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .nav-item.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .nav-item.completed::before {
+            content: "✓ ";
+            color: var(--success);
+        }
+
+        .nav-item.active.completed::before {
+            color: white;
+        }
+
+        .track-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            margin-left: 0.3rem;
+            font-weight: 500;
+        }
+
+        .track-badge.enterprise { background: #dbeafe; color: #1e40af; }
+        .track-badge.developer { background: #dcfce7; color: #166534; }
+        .track-badge.academic { background: #fef3c7; color: #92400e; }
+
+        /* Main content */
+        .main {
+            padding: 2rem 3rem;
+            max-width: 800px;
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .content h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .content h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .content ul, .content ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .content li {
+            margin-bottom: 0.4rem;
+        }
+
+        .content code {
+            background: var(--bg-tertiary);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+            font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+        }
+
+        .content pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+
+        .content pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        .content blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .content th, .content td {
+            border: 1px solid var(--border);
+            padding: 0.6rem 0.8rem;
+            text-align: left;
+        }
+
+        .content th {
+            background: var(--bg-tertiary);
+            font-weight: 600;
+        }
+
+        /* Interactive elements */
+        .exercise {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .exercise-title {
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .quiz {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .quiz-question {
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .quiz-option {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            margin: 0.3rem 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: border-color 0.15s;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--accent);
+        }
+
+        .quiz-option.selected {
+            border-color: var(--accent);
+            background: #eff6ff;
+        }
+
+        .quiz-option.correct {
+            border-color: var(--success);
+            background: #dcfce7;
+        }
+
+        .quiz-option.incorrect {
+            border-color: #dc2626;
+            background: #fef2f2;
+        }
+
+        .quiz-feedback {
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .quiz-feedback.show {
+            display: block;
+        }
+
+        .quiz-feedback.correct {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .quiz-feedback.incorrect {
+            background: #fef2f2;
+            color: #991b1b;
+        }
+
+        .check-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .check-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Navigation buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.15s, border-color 0.15s;
+        }
+
+        .nav-btn:hover {
+            background: var(--bg-secondary);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .nav-btn.primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .nav-btn.primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .progress-bar {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .progress-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .progress-track {
+            height: 6px;
+            background: var(--bg-tertiary);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--success);
+            border-radius: 3px;
+            transition: width 0.3s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: relative;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            .main {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <nav class="sidebar">
+            <h1>Working With AI</h1>
+            <p class="subtitle">A Practical Course</p>
+            <div id="nav-container"></div>
+            <div class="progress-bar">
+                <div class="progress-label">Progress: <span id="progress-text">0%</span></div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+        </nav>
+        <main class="main">
+            <div class="breadcrumb" id="breadcrumb"></div>
+            <div class="content" id="content">
+                <p>Loading...</p>
+            </div>
+            <div class="nav-buttons" id="nav-buttons"></div>
+        </main>
+    </div>
+
+    <script>
+        // Course structure
+        const courseStructure = {
+            sections: [
+                {
+                    id: "welcome",
+                    title: "Welcome",
+                    file: "welcome.md"
+                },
+                {
+                    id: "core",
+                    title: "Core Modules",
+                    items: [
+                        { id: "core-1", title: "1. Structured Thinking", file: "core/01-structured-thinking.md" },
+                        { id: "core-2", title: "2. Precision Without Formalism", file: "core/02-precision.md" },
+                        { id: "core-3", title: "3. Understanding AI Systems", file: "core/03-understanding-ai.md" },
+                        { id: "core-4", title: "4. Verification & Quality", file: "core/04-verification.md" }
+                    ]
+                },
+                {
+                    id: "tracks",
+                    title: "Specialised Tracks",
+                    items: [
+                        { id: "track-intro", title: "Choosing Your Track", file: "tracks/intro.md" }
+                    ]
+                },
+                {
+                    id: "enterprise",
+                    title: "Enterprise Track",
+                    track: "enterprise",
+                    items: [
+                        { id: "ent-1", title: "E1. Trust Architecture", file: "tracks/enterprise/01-trust-architecture.md", track: "enterprise" },
+                        { id: "ent-2", title: "E2. Approved Channels", file: "tracks/enterprise/02-approved-channels.md", track: "enterprise" },
+                        { id: "ent-3", title: "E3. Governance Patterns", file: "tracks/enterprise/03-governance.md", track: "enterprise" }
+                    ]
+                },
+                {
+                    id: "developer",
+                    title: "Developer Track",
+                    track: "developer",
+                    items: [
+                        { id: "dev-1", title: "D1. Affordances & Interfaces", file: "tracks/developer/01-affordances.md", track: "developer" },
+                        { id: "dev-2", title: "D2. Architecture Patterns", file: "tracks/developer/02-architecture.md", track: "developer" },
+                        { id: "dev-3", title: "D3. MCP & Tool Design", file: "tracks/developer/03-mcp-tools.md", track: "developer" }
+                    ]
+                },
+                {
+                    id: "academic",
+                    title: "Academic Track",
+                    track: "academic",
+                    items: [
+                        { id: "acad-1", title: "A1. Literature Workflows", file: "tracks/academic/01-literature.md", track: "academic" },
+                        { id: "acad-2", title: "A2. Modular Academic Writing", file: "tracks/academic/02-modular-writing.md", track: "academic" },
+                        { id: "acad-3", title: "A3. AI Peer Review", file: "tracks/academic/03-peer-review.md", track: "academic" }
+                    ]
+                }
+            ]
+        };
+
+        // State
+        let currentPage = "welcome";
+        let completedPages = new Set(JSON.parse(localStorage.getItem('wwai-completed') || '[]'));
+
+        // Get flat list of all pages
+        function getAllPages() {
+            const pages = [];
+            courseStructure.sections.forEach(section => {
+                if (section.file) {
+                    pages.push({ id: section.id, title: section.title, file: section.file });
+                }
+                if (section.items) {
+                    section.items.forEach(item => {
+                        pages.push({ ...item, sectionTitle: section.title });
+                    });
+                }
+            });
+            return pages;
+        }
+
+        // Render navigation
+        function renderNav() {
+            const container = document.getElementById('nav-container');
+            let html = '';
+
+            courseStructure.sections.forEach(section => {
+                html += `<div class="nav-section">`;
+                html += `<div class="nav-section-title">${section.title}</div>`;
+
+                if (section.file) {
+                    const isActive = currentPage === section.id;
+                    const isCompleted = completedPages.has(section.id);
+                    html += `<a class="nav-item ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}"
+                                data-page="${section.id}">${section.title}</a>`;
+                }
+
+                if (section.items) {
+                    section.items.forEach(item => {
+                        const isActive = currentPage === item.id;
+                        const isCompleted = completedPages.has(item.id);
+                        const trackBadge = item.track ? `<span class="track-badge ${item.track}">${item.track}</span>` : '';
+                        html += `<a class="nav-item ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}"
+                                    data-page="${item.id}">${item.title}${trackBadge}</a>`;
+                    });
+                }
+
+                html += `</div>`;
+            });
+
+            container.innerHTML = html;
+
+            // Add click handlers
+            container.querySelectorAll('.nav-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    navigateTo(item.dataset.page);
+                });
+            });
+
+            updateProgress();
+        }
+
+        // Update progress
+        function updateProgress() {
+            const allPages = getAllPages();
+            const total = allPages.length;
+            const completed = completedPages.size;
+            const percent = Math.round((completed / total) * 100);
+
+            document.getElementById('progress-text').textContent = `${percent}% (${completed}/${total})`;
+            document.getElementById('progress-fill').style.width = `${percent}%`;
+        }
+
+        // Load page content
+        async function loadPage(pageId) {
+            const allPages = getAllPages();
+            const page = allPages.find(p => p.id === pageId);
+
+            if (!page) {
+                document.getElementById('content').innerHTML = '<p>Page not found.</p>';
+                return;
+            }
+
+            // Update breadcrumb
+            const breadcrumb = document.getElementById('breadcrumb');
+            if (page.sectionTitle) {
+                breadcrumb.innerHTML = `<a href="#" data-page="welcome">Home</a> / ${page.sectionTitle} / ${page.title}`;
+            } else {
+                breadcrumb.innerHTML = `<a href="#" data-page="welcome">Home</a> / ${page.title}`;
+            }
+
+            // Load markdown
+            try {
+                const response = await fetch(page.file);
+                if (!response.ok) throw new Error('File not found');
+                const markdown = await response.text();
+                const html = marked.parse(markdown);
+                document.getElementById('content').innerHTML = html;
+
+                // Process interactive elements
+                processInteractiveElements();
+            } catch (e) {
+                document.getElementById('content').innerHTML = `
+                    <h1>${page.title}</h1>
+                    <p><em>Content coming soon...</em></p>
+                    <p>This module is under development. The file <code>${page.file}</code> will contain the full content.</p>
+                `;
+            }
+
+            // Render nav buttons
+            renderNavButtons(pageId);
+        }
+
+        // Process interactive elements (quizzes, exercises)
+        function processInteractiveElements() {
+            // Find quiz blocks (marked with special syntax in markdown)
+            document.querySelectorAll('pre code').forEach(block => {
+                const text = block.textContent;
+                if (text.startsWith('QUIZ:')) {
+                    const quizHtml = parseQuiz(text);
+                    block.parentElement.outerHTML = quizHtml;
+                } else if (text.startsWith('EXERCISE:')) {
+                    const exerciseHtml = parseExercise(text);
+                    block.parentElement.outerHTML = exerciseHtml;
+                }
+            });
+
+            // Attach quiz handlers
+            document.querySelectorAll('.quiz').forEach(attachQuizHandlers);
+        }
+
+        // Parse quiz from markdown
+        function parseQuiz(text) {
+            const lines = text.split('\n').slice(1); // Remove QUIZ: line
+            const question = lines[0];
+            const options = [];
+            let correctIndex = 0;
+            let feedback = '';
+
+            lines.slice(1).forEach((line, i) => {
+                if (line.startsWith('* ')) {
+                    options.push(line.slice(2));
+                } else if (line.startsWith('*! ')) {
+                    correctIndex = options.length;
+                    options.push(line.slice(3));
+                } else if (line.startsWith('FEEDBACK:')) {
+                    feedback = line.slice(9).trim();
+                }
+            });
+
+            const id = 'quiz-' + Math.random().toString(36).slice(2, 9);
+            let html = `<div class="quiz" data-correct="${correctIndex}" data-feedback="${feedback}" id="${id}">`;
+            html += `<div class="quiz-question">${question}</div>`;
+            options.forEach((opt, i) => {
+                html += `<label class="quiz-option" data-index="${i}">${opt}</label>`;
+            });
+            html += `<button class="check-btn">Check Answer</button>`;
+            html += `<div class="quiz-feedback"></div>`;
+            html += `</div>`;
+
+            return html;
+        }
+
+        // Parse exercise from markdown
+        function parseExercise(text) {
+            const lines = text.split('\n').slice(1);
+            const content = lines.join('\n');
+
+            return `<div class="exercise">
+                <div class="exercise-title">Exercise</div>
+                <div>${marked.parse(content)}</div>
+            </div>`;
+        }
+
+        // Attach quiz handlers
+        function attachQuizHandlers(quiz) {
+            const options = quiz.querySelectorAll('.quiz-option');
+            const checkBtn = quiz.querySelector('.check-btn');
+            const feedback = quiz.querySelector('.quiz-feedback');
+            const correctIndex = parseInt(quiz.dataset.correct);
+            let selected = null;
+
+            options.forEach(opt => {
+                opt.addEventListener('click', () => {
+                    options.forEach(o => o.classList.remove('selected'));
+                    opt.classList.add('selected');
+                    selected = parseInt(opt.dataset.index);
+                });
+            });
+
+            checkBtn.addEventListener('click', () => {
+                if (selected === null) return;
+
+                options.forEach(opt => {
+                    const idx = parseInt(opt.dataset.index);
+                    opt.classList.remove('selected');
+                    if (idx === correctIndex) {
+                        opt.classList.add('correct');
+                    } else if (idx === selected) {
+                        opt.classList.add('incorrect');
+                    }
+                });
+
+                feedback.classList.add('show');
+                if (selected === correctIndex) {
+                    feedback.classList.add('correct');
+                    feedback.classList.remove('incorrect');
+                    feedback.textContent = quiz.dataset.feedback || 'Correct!';
+                } else {
+                    feedback.classList.add('incorrect');
+                    feedback.classList.remove('correct');
+                    feedback.textContent = 'Not quite. Try reviewing the material above.';
+                }
+
+                checkBtn.disabled = true;
+            });
+        }
+
+        // Render navigation buttons
+        function renderNavButtons(pageId) {
+            const allPages = getAllPages();
+            const currentIndex = allPages.findIndex(p => p.id === pageId);
+            const container = document.getElementById('nav-buttons');
+
+            let html = '';
+
+            if (currentIndex > 0) {
+                const prev = allPages[currentIndex - 1];
+                html += `<a class="nav-btn" data-page="${prev.id}">← ${prev.title}</a>`;
+            } else {
+                html += `<span></span>`;
+            }
+
+            if (currentIndex < allPages.length - 1) {
+                const next = allPages[currentIndex + 1];
+                html += `<a class="nav-btn primary" data-page="${next.id}" data-complete="${pageId}">
+                    Mark Complete & Continue →
+                </a>`;
+            } else {
+                html += `<a class="nav-btn" data-complete="${pageId}">Mark Complete</a>`;
+            }
+
+            container.innerHTML = html;
+
+            container.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (btn.dataset.complete) {
+                        markComplete(btn.dataset.complete);
+                    }
+                    if (btn.dataset.page) {
+                        navigateTo(btn.dataset.page);
+                    }
+                });
+            });
+        }
+
+        // Mark page complete
+        function markComplete(pageId) {
+            completedPages.add(pageId);
+            localStorage.setItem('wwai-completed', JSON.stringify([...completedPages]));
+            renderNav();
+        }
+
+        // Navigate to page
+        function navigateTo(pageId) {
+            currentPage = pageId;
+            window.location.hash = pageId;
+            loadPage(pageId);
+            renderNav();
+            window.scrollTo(0, 0);
+        }
+
+        // Initialize
+        function init() {
+            // Check for hash
+            if (window.location.hash) {
+                currentPage = window.location.hash.slice(1);
+            }
+
+            renderNav();
+            loadPage(currentPage);
+
+            // Handle hash changes
+            window.addEventListener('hashchange', () => {
+                currentPage = window.location.hash.slice(1) || 'welcome';
+                loadPage(currentPage);
+                renderNav();
+            });
+        }
+
+        init();
+    </script>
+</body>
+</html>

@@ -237,6 +237,45 @@
             font-weight: 600;
         }
 
+        /* Enhanced diagrams */
+        .diagram-enhanced {
+            margin: 1.5rem 0;
+        }
+
+        .diagram-svg {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+
+        .diagram-svg svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .diagram-ascii {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .diagram-ascii summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            user-select: none;
+        }
+
+        .diagram-ascii summary:hover {
+            color: var(--accent);
+        }
+
+        .diagram-ascii pre {
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+        }
+
         /* Interactive elements */
         .exercise {
             background: #eff6ff;
@@ -608,7 +647,13 @@
             renderNavButtons(pageId);
         }
 
-        // Process interactive elements (quizzes, exercises)
+        // Diagram mappings: ASCII diagram identifier → SVG path
+        // Add entries here as diagrams are created
+        const diagramMap = {
+            'PROMPT': 'assets/diagrams/four-components.svg',  // Four components diagram
+        };
+
+        // Process interactive elements (quizzes, exercises, diagrams)
         function processInteractiveElements() {
             // Find quiz blocks (marked with special syntax in markdown)
             document.querySelectorAll('pre code').forEach(block => {
@@ -622,8 +667,57 @@
                 }
             });
 
+            // Enhance ASCII diagrams with SVG versions if available
+            enhanceDiagrams();
+
             // Attach quiz handlers
             document.querySelectorAll('.quiz').forEach(attachQuizHandlers);
+        }
+
+        // Progressive enhancement: replace ASCII diagrams with SVG if available
+        async function enhanceDiagrams() {
+            const codeBlocks = document.querySelectorAll('pre code');
+
+            for (const block of codeBlocks) {
+                const text = block.textContent;
+
+                // Check if this looks like an ASCII diagram (contains box-drawing chars)
+                const isAsciiDiagram = /[┌┐└┘│─┬┴├┤┼▶▼]/.test(text);
+                if (!isAsciiDiagram) continue;
+
+                // Try to match against known diagrams
+                for (const [identifier, svgPath] of Object.entries(diagramMap)) {
+                    if (text.includes(identifier)) {
+                        try {
+                            const response = await fetch(svgPath);
+                            if (response.ok) {
+                                const svgContent = await response.text();
+                                const wrapper = document.createElement('figure');
+                                wrapper.className = 'diagram-enhanced';
+                                wrapper.innerHTML = `
+                                    <div class="diagram-svg">${svgContent}</div>
+                                    <details class="diagram-ascii">
+                                        <summary>View text version</summary>
+                                        <pre><code>${escapeHtml(text)}</code></pre>
+                                    </details>
+                                `;
+                                block.parentElement.replaceWith(wrapper);
+                            }
+                        } catch (e) {
+                            // SVG not available, keep ASCII version
+                            console.log(`Diagram not found: ${svgPath}`);
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Helper to escape HTML in ASCII diagrams
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
         }
 
         // Parse quiz from markdown

@@ -214,6 +214,50 @@ What it doesn't capture:
 - The temp follows instructions literally
 - The temp can't "notice" context you didn't provide
 
+## Shaping AI Behaviour: Instruction Files
+
+Most AI coding assistants allow you to provide **project-level context** through instruction files. These are markdown files in your project that the AI reads automatically, giving it context about:
+
+- What your project does
+- Coding conventions and preferences
+- Important architecture decisions
+- Common pitfalls to avoid
+
+This is how you avoid re-explaining your project in every conversation.
+
+**The concept is universal, but the implementation varies:**
+
+| Tool | Instruction File Location |
+|------|--------------------------|
+| Claude Code | `CLAUDE.md` in project root |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Cursor | `.cursorrules` or `.cursor/rules/*.mdc` |
+
+The content is similar across tools — you're telling the AI what it needs to know about your project. Some teams maintain a single source file and copy/symlink it to multiple locations for cross-tool compatibility.
+
+**What to include:**
+- Brief project description and purpose
+- Key technologies and frameworks
+- Coding style preferences
+- Important file locations
+- Things the AI should avoid doing
+
+**What NOT to include:**
+- Secrets or credentials
+- Information that changes frequently
+- Lengthy documentation (link to it instead)
+
+> **Developer Track:** Module D1 covers instruction file design in detail, including cross-tool strategies and advanced patterns like file-type-specific rules.
+
+```
+EXERCISE:
+Think about a project you work on regularly.
+
+1. What would you want an AI to know before helping you with it?
+2. What mistakes would you want to prevent?
+3. Write 5-10 bullet points that would go in an instruction file.
+```
+
 ## Key Takeaways
 
 - Agent, prompt, tools, and memory are **distinct components**
@@ -222,6 +266,7 @@ What it doesn't capture:
 - Tools are how AI affects the real world — and a trust boundary
 - When things go wrong, diagnose by component
 - "The AI should know..." is usually a prompt or persistence issue
+- **Instruction files** let you provide persistent project context across sessions
 
 ---
 

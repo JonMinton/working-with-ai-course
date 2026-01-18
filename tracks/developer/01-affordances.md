@@ -205,6 +205,176 @@ Many systems need to serve both humans AND AI:
 - AI helps fill forms, suggest options
 - Human retains control of final actions
 
+## Configuring AI Assistants: Instruction Files
+
+One of the most important affordances you can provide to AI coding assistants is **project context**. This is done through instruction files — markdown documents that the AI reads automatically when working in your project.
+
+### Why This Matters
+
+Without instruction files, every conversation starts from zero. The AI doesn't know:
+- What your project does
+- Your coding conventions
+- Your tech stack preferences
+- What mistakes to avoid
+
+With instruction files, the AI has this context immediately. This is a form of **persistence** (see Core Module 3) that you control.
+
+### Cross-Tool Comparison
+
+Different AI tools use different file locations and formats:
+
+| Tool | Primary Location | Additional Options | Format |
+|------|-----------------|-------------------|--------|
+| **Claude Code** | `CLAUDE.md` (root) | `CLAUDE.md` in subdirectories | Markdown |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | `.github/instructions/*.instructions.md` | Markdown |
+| **Cursor** | `.cursorrules` (legacy) | `.cursor/rules/*.mdc` | Markdown/MDC |
+
+**Key differences:**
+
+- **Claude Code** supports nested files — a `CLAUDE.md` in a subdirectory adds context for that part of the codebase
+- **GitHub Copilot** supports `applyTo` frontmatter for file-type targeting (e.g., `applyTo: **/*.py`)
+- **Cursor** is transitioning from `.cursorrules` to `.mdc` files with metadata
+
+### Writing Effective Instruction Files
+
+**Structure for maximum clarity:**
+
+```markdown
+# Project Name
+
+Brief description (1-2 sentences).
+
+## Tech Stack
+- Framework: Next.js 14
+- Language: TypeScript (strict mode)
+- Database: PostgreSQL via Prisma
+
+## Conventions
+- Use functional components, not classes
+- Prefer named exports over default exports
+- Error handling: use Result types, not exceptions
+
+## File Structure
+- `/src/components/` — React components
+- `/src/lib/` — Shared utilities
+- `/src/app/` — Next.js app router pages
+
+## Important Notes
+- Never modify files in `/src/generated/` — these are auto-generated
+- All API routes require authentication middleware
+- Use the `logger` utility, not console.log
+```
+
+**Principles:**
+
+| Principle | Why It Matters |
+|-----------|---------------|
+| **Be specific** | "Use camelCase" is actionable; "write clean code" is not |
+| **Be concise** | AI context windows are limited; don't waste tokens |
+| **Prioritise** | Put the most important things first |
+| **Update regularly** | Stale instructions cause confusion |
+| **Version control** | Instruction files should be in git |
+
+### Cross-Tool Compatibility Strategy
+
+If you use multiple AI tools, you have several options:
+
+**Option 1: Single source, multiple copies**
+```
+project/
+├── AI_CONTEXT.md              # Source of truth
+├── CLAUDE.md                  # Copy or symlink
+├── .github/
+│   └── copilot-instructions.md  # Copy or symlink
+└── .cursorrules               # Copy or symlink
+```
+
+**Option 2: Build script**
+```bash
+# copy-ai-context.sh
+cp AI_CONTEXT.md CLAUDE.md
+cp AI_CONTEXT.md .github/copilot-instructions.md
+cp AI_CONTEXT.md .cursorrules
+```
+
+**Option 3: Symlinks** (Unix/Mac)
+```bash
+ln -s AI_CONTEXT.md CLAUDE.md
+ln -s AI_CONTEXT.md .cursorrules
+mkdir -p .github && ln -s ../AI_CONTEXT.md .github/copilot-instructions.md
+```
+
+### Advanced Patterns
+
+**File-type specific rules (GitHub Copilot):**
+
+Create `.github/instructions/python.instructions.md`:
+```markdown
+---
+applyTo: "**/*.py"
+---
+- Use type hints for all function parameters and returns
+- Prefer pathlib over os.path
+- Use pytest for testing
+```
+
+**Context-aware rules (Cursor .mdc):**
+
+Create `.cursor/rules/api-routes.mdc`:
+```markdown
+---
+description: "Rules for API route handlers"
+---
+- All routes must validate input with zod schemas
+- Return consistent error format: { error: string, code: number }
+- Log all requests with request ID
+```
+
+**Nested context (Claude Code):**
+
+```
+project/
+├── CLAUDE.md                 # Project-wide context
+├── frontend/
+│   └── CLAUDE.md             # Frontend-specific additions
+└── backend/
+    └── CLAUDE.md             # Backend-specific additions
+```
+
+### What NOT to Put in Instruction Files
+
+| Don't Include | Why |
+|--------------|-----|
+| Secrets/credentials | Security risk — these files are version-controlled |
+| Frequently changing info | Creates maintenance burden, causes confusion |
+| Entire documentation | Link to it instead; don't bloat the context |
+| Obvious things | "Write working code" wastes tokens |
+| Tool-specific syntax | Keep content portable across tools |
+
+```
+EXERCISE:
+Create an instruction file strategy for a project with:
+- A Python backend (FastAPI)
+- A TypeScript frontend (React)
+- Shared API types
+- Multiple developers using different AI tools (Claude, Copilot, Cursor)
+
+1. What goes in the root instruction file?
+2. What goes in subdirectory-specific files?
+3. How do you keep them in sync across tools?
+4. What file-type-specific rules would help?
+```
+
+### The Instruction File as Affordance
+
+Notice that instruction files are themselves an affordance:
+
+- They make it **easy** for AI to understand your project
+- They make it **hard** for AI to violate your conventions (if well-written)
+- They make it **possible** to have persistent project context without re-explaining
+
+This is exactly what affordances do — shape what's easy, hard, and possible.
+
 ## Key Takeaways
 
 - Affordances determine what interfaces make easy/hard/impossible
@@ -214,6 +384,9 @@ Many systems need to serve both humans AND AI:
 - AI cannot reliably verify visual output — humans must check
 - Translating visual intent to text is a key skill
 - Hybrid interfaces serve both humans and AI
+- **Instruction files are an affordance** — they shape AI behaviour by providing context
+- Different AI tools use different file locations, but the content is portable
+- Keep instruction files concise, specific, and version-controlled
 
 ---
 

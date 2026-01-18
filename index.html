@@ -629,14 +629,9 @@
             try {
                 const response = await fetch(page.file);
                 if (!response.ok) throw new Error('File not found');
-                const content = await response.text();
-
-                // If content is HTML (starts with <div), use it directly. Otherwise, parse as Markdown.
-                if (content.trim().startsWith('<div')) {
-                    document.getElementById('content').innerHTML = content;
-                } else {
-                    document.getElementById('content').innerHTML = marked.parse(content);
-                }
+                const markdown = await response.text();
+                const html = marked.parse(markdown);
+                document.getElementById('content').innerHTML = html;
 
                 // Process interactive elements
                 processInteractiveElements();

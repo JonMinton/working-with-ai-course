@@ -24,32 +24,31 @@ This framing helps stakeholders understand AI governance using concepts they alr
 Different AI deployments for different sensitivity levels:
 
 ```
-<div class="info-panel">
-    <div class="info-panel-header">
-        <h3>TIERED AI ACCESS</h3>
-    </div>
-    <div class="info-panel-body">
-        <h4>TIER 1: Public/General</h4>
-        <p><strong>Access:</strong> Public information only</p>
-        <p><strong>Actions:</strong> Read, summarise, draft</p>
-        <p><strong>Example:</strong> General research assistant</p>
-
-        <h4>TIER 2: Internal</h4>
-        <p><strong>Access:</strong> Internal documents, non-sensitive</p>
-        <p><strong>Actions:</strong> Read, draft, some automation</p>
-        <p><strong>Example:</strong> Team productivity assistant</p>
-
-        <h4>TIER 3: Confidential</h4>
-        <p><strong>Access:</strong> Confidential data with approval</p>
-        <p><strong>Actions:</strong> Read only, human executes all actions</p>
-        <p><strong>Example:</strong> Legal document review assistant</p>
-
-        <h4>TIER 4: Restricted</h4>
-        <p><strong>Access:</strong> Case-by-case, fully isolated environment</p>
-        <p><strong>Actions:</strong> Heavily constrained, full audit</p>
-        <p><strong>Example:</strong> M&amp;A due diligence (air-gapped)</p>
-    </div>
-</div>
+┌─────────────────────────────────────────────────────────────┐
+│                    TIERED AI ACCESS                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  TIER 1: Public/General                                     │
+│  ├── Access: Public information only                        │
+│  ├── Actions: Read, summarise, draft                        │
+│  └── Example: General research assistant                    │
+│                                                             │
+│  TIER 2: Internal                                           │
+│  ├── Access: Internal documents, non-sensitive              │
+│  ├── Actions: Read, draft, some automation                  │
+│  └── Example: Team productivity assistant                   │
+│                                                             │
+│  TIER 3: Confidential                                       │
+│  ├── Access: Confidential data with approval                │
+│  ├── Actions: Read only, human executes all actions         │
+│  └── Example: Legal document review assistant               │
+│                                                             │
+│  TIER 4: Restricted                                         │
+│  ├── Access: Case-by-case, fully isolated environment       │
+│  ├── Actions: Heavily constrained, full audit               │
+│  └── Example: M&A due diligence (air-gapped)               │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ### Pattern 2: Human-in-the-Loop Gates

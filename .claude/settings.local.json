@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(git add:*)",
-      "Bash(git commit -m \"$\\(cat <<''EOF''\n[claude] Add multi-model workflow infrastructure and instruction file documentation\n\n- Add instruction files section to Core Module 3 \\(understanding AI\\)\n- Add comprehensive instruction file guide to Developer Track D1 \\(affordances\\)\n- Add progressive enhancement for ASCII diagrams in index.html\n- Create CLAUDE.md with project context and multi-model workflow docs\n- Add .github/copilot-instructions.md and .cursorrules for cross-tool support\n- Create tasks/ folder structure for model handover protocol\n- Create first diagram task for Gemini \\(four-components.svg\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+      "Bash(git commit -m \"$\\(cat <<''EOF''\n[claude] Add multi-model workflow infrastructure and instruction file documentation\n\n- Add instruction files section to Core Module 3 \\(understanding AI\\)\n- Add comprehensive instruction file guide to Developer Track D1 \\(affordances\\)\n- Add progressive enhancement for ASCII diagrams in index.html\n- Create CLAUDE.md with project context and multi-model workflow docs\n- Add .github/copilot-instructions.md and .cursorrules for cross-tool support\n- Create tasks/ folder structure for model handover protocol\n- Create first diagram task for Gemini \\(four-components.svg\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)"
     ]
   }
 }

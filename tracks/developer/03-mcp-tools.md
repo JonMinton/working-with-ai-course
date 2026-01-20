@@ -278,8 +278,4 @@ Output: ...
 
 ---
 
-Congratulations! You've completed the Developer Track.
-
-Consider also:
-- **Enterprise Track** — For governance and compliance context
-- **Academic Track** — For research and writing workflows
+Next: **D4. Testing AI-Integrated Systems** →

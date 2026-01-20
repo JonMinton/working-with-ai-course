@@ -30,9 +30,7 @@ Each track builds on the core with context-specific skills and knowledge:
 - Affordances and interfaces — designing for humans AND AI consumers
 - Architecture patterns — maintaining judgment when AI generates code
 - MCP and tool design — building effective AI integrations
-- Code reading and debugging — working with AI-generated code
-
-**Time:** ~30-40 hours
+- Testing AI-integrated systems — handling non-determinism, evals, regression detection
 
 **Key question this track answers:** *"How do I build better software with AI as a collaborator?"*
 
@@ -46,9 +44,7 @@ Each track builds on the core with context-specific skills and knowledge:
 - Literature workflows — .bib as source of truth, citation integrity
 - Modular academic writing — .qmd architecture, maintaining coherence
 - Adversarial AI review — cross-model critique for research quality
-- Research asset management — organising and retrieving your corpus
-
-**Time:** ~16-23 hours
+- Reproducibility and documentation — archiving AI-assisted research processes
 
 **Key question this track answers:** *"How do I use AI to enhance research quality and productivity?"*
 
@@ -82,6 +78,7 @@ All tracks assume you've completed the core modules:
 2. Precision Without Formalism
 3. Understanding AI Systems
 4. Verification & Quality
+5. Iteration & Refinement
 
 If you skipped any, consider returning to them — the tracks build on these foundations.
 

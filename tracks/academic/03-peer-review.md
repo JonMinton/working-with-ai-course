@@ -229,8 +229,4 @@ Check your target venue's policy:
 
 ---
 
-Congratulations! You've completed the Academic Track.
-
-Consider also:
-- **Enterprise Track** — For AI governance context
-- **Developer Track** — For building research tools
+Next: **A4. Reproducibility & Documentation** →

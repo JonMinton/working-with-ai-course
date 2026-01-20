@@ -278,9 +278,4 @@ Use lightweight evaluation to catch drift:
 
 ---
 
-Congratulations! You've completed the core modules.
-
-Now choose your specialised track:
-- **Enterprise Track** → Trust architecture, approved channels, governance
-- **Developer Track** → Affordances, architecture, MCP tools
-- **Academic Track** → Literature workflows, modular writing, AI peer review
+Next: **Module 5: Iteration & Refinement** →

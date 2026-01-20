@@ -47,15 +47,6 @@ This course focuses on that 10%.
 
 **Portable:** This is a folder of files. Take it with you. Edit it. Build on it.
 
-## Time Investment
-
-| Track | Estimated Hours | Suggested Pace |
-|-------|-----------------|----------------|
-| Core Modules | 20-30 hours | 4-6 weeks @ 5 hrs/week |
-| Enterprise Track | 15-20 hours | 3-4 weeks |
-| Developer Track | 30-40 hours | 6-8 weeks |
-| Academic Track | 16-23 hours | 4-6 weeks |
-
 ---
 
 Ready? Start with **Module 1: Structured Thinking** →

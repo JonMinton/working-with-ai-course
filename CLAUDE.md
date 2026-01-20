@@ -46,6 +46,14 @@ This project uses multiple AI models. See `tasks/README.md` for the handover pro
 
 **Diagrams:** ASCII diagrams in markdown are the source of truth. SVG versions in `/assets/diagrams/` are for progressive enhancement in the web view.
 
+**Future consideration: Mermaid diagrams**
+The peer-review-cycle SVG was reverted to ASCII because the SVG didn't accurately capture the paper-centric flow of the original. Mermaid could be a better approach for diagrams:
+- Text-based, version-controllable, diffable
+- Any model can edit (no visual generation needed)
+- Add mermaid.js to index.html for client-side rendering
+- Would replace both ASCII source and separate SVG files
+Evaluate when ready for editorial phase in Claude Code.
+
 ## Git Workflow
 
 **Repository:** `github.com/JonMinton/working-with-ai-course`

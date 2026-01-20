@@ -246,11 +246,6 @@
             .content table {
                 display: block;
                 overflow-x: auto;
-                width: 100%;
-            }
-            
-            .content th, .content td {
-                white-space: nowrap;
             }
         }
 
@@ -955,22 +950,22 @@
         }
 
         // Navigate to page
-        async function navigateTo(pageId) {
-            if (currentPage === pageId) return;
-            
+        function navigateTo(pageId) {
             currentPage = pageId;
             window.location.hash = pageId;
-            
-            await loadPage(pageId);
+            loadPage(pageId);
             renderNav();
             
             // On mobile, scroll to main content after clicking sidebar item
             const isMobile = window.matchMedia('(max-width: 768px)').matches;
             if (isMobile) {
-                const mainElement = document.querySelector('.main');
-                if (mainElement) {
-                    mainElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                // Small delay to ensure content is loaded
+                setTimeout(() => {
+                    const mainElement = document.querySelector('.main');
+                    if (mainElement) {
+                        mainElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
             } else {
                 window.scrollTo(0, 0);
             }
@@ -983,9 +978,7 @@
                 currentPage = window.location.hash.slice(1);
             }
 
-            rendeonst newPage = window.location.hash.slice(1) || 'welcome';
-                if (newPage === currentPage) return;
-                currentPage = newPage
+            renderNav();
             loadPage(currentPage);
 
             // Handle hash changes

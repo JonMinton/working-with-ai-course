@@ -239,8 +239,14 @@
             border-collapse: collapse;
             margin-bottom: 1rem;
             font-size: 0.9rem;
-            display: block;
-            overflow-x: auto;
+        }
+        
+        /* Wrapper for horizontal scrolling on mobile */
+        @media (max-width: 768px) {
+            .content table {
+                display: block;
+                overflow-x: auto;
+            }
         }
 
         .content th, .content td {
@@ -951,18 +957,13 @@
             renderNav();
             
             // On mobile, scroll to main content after clicking sidebar item
-            if (window.innerWidth <= 768) {
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            if (isMobile) {
                 // Small delay to ensure content is loaded
                 setTimeout(() => {
                     const mainElement = document.querySelector('.main');
                     if (mainElement) {
                         mainElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        // Also focus for accessibility
-                        const contentElement = document.getElementById('content');
-                        if (contentElement) {
-                            contentElement.setAttribute('tabindex', '-1');
-                            contentElement.focus();
-                        }
                     }
                 }, 100);
             } else {

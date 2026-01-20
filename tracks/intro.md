@@ -2,7 +2,7 @@
 
 You've completed the core modules. Now it's time to specialise.
 
-## The Three Tracks
+## The Five Tracks
 
 Each track builds on the core with context-specific skills and knowledge:
 
@@ -50,6 +50,34 @@ Each track builds on the core with context-specific skills and knowledge:
 
 ---
 
+### Creative Track
+
+**For:** Writers, designers, marketers, content creators, artists exploring AI collaboration
+
+**You'll learn:**
+- Voice and style — maintaining your distinctive voice with AI assistance
+- Creative iteration — exploring options, the diverge-then-converge pattern
+- Visual collaboration — bridging the description-to-visual gap
+- Attribution and originality — copyright, disclosure, what makes work "yours"
+
+**Key question this track answers:** *"How do I create distinctive work while collaborating with AI?"*
+
+---
+
+### Operations Track
+
+**For:** Project managers, analysts, administrators, knowledge workers handling daily operational tasks
+
+**You'll learn:**
+- Document workflows — drafting, summarising, editing, formatting
+- Data wrangling — cleaning, extracting, transforming data without code
+- Process documentation — capturing tribal knowledge, writing procedures
+- Communication and meetings — emails, agendas, follow-ups, status updates
+
+**Key question this track answers:** *"How do I get through my daily work more efficiently with AI?"*
+
+---
+
 ## Can I Do Multiple Tracks?
 
 Yes. The tracks are independent and can be completed in any order.
@@ -66,6 +94,8 @@ Common combinations:
 | Work in a regulated industry | Enterprise Track |
 | Build software products | Developer Track |
 | Write papers or do research | Academic Track |
+| Create content, design, or marketing | Creative Track |
+| Handle documents, data, meetings daily | Operations Track |
 | Manage a team using AI | Enterprise Track |
 | Want to understand MCP/tools | Developer Track |
 | Need to manage citations carefully | Academic Track |
@@ -91,3 +121,7 @@ Ready? Choose your path:
 → **Developer Track: D1. Affordances & Interfaces**
 
 → **Academic Track: A1. Literature Workflows**
+
+→ **Creative Track: C1. Voice & Style**
+
+→ **Operations Track: O1. Document Workflows**

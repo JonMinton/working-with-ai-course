@@ -218,10 +218,6 @@ FEEDBACK:Cross-model review catches more issues than self-review, but human veri
 
 **For factual content:**
 - [ ] Are all citations real? (check at least a sample)
-- [ ] Are statistics plausible?
-- [ ] Is information current?
-- [ ] Are quotes accurate?
-- [ ] Are there claims that would be surprising if true?
 
 **For data handling (before you paste or upload):**
 - [ ] What is the data classification? (Public / Internal / Confidential / Restricted)
@@ -230,6 +226,10 @@ FEEDBACK:Cross-model review catches more issues than self-review, but human veri
 - [ ] Is the minimum necessary data included?
 - [ ] Do we have an audit trail for this use?
 - [ ] Would we be comfortable if this appeared in an incident review?
+- [ ] Are statistics plausible?
+- [ ] Is information current?
+- [ ] Are quotes accurate?
+- [ ] Are there claims that would be surprising if true?
 
 **For visual outputs:**
 - [ ] Have you actually looked at the rendered result?
@@ -278,4 +278,9 @@ Use lightweight evaluation to catch drift:
 
 ---
 
-Next: **Module 5: Iteration & Refinement** →
+Congratulations! You've completed the core modules.
+
+Now choose your specialised track:
+- **Enterprise Track** → Trust architecture, approved channels, governance
+- **Developer Track** → Affordances, architecture, MCP tools
+- **Academic Track** → Literature workflows, modular writing, AI peer review

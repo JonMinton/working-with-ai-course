@@ -1,0 +1,80 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #ffffff;
+            stroke: #e7e5e4;
+            stroke-width: 1.5;
+            rx: 8;
+        }
+        .circle {
+            fill: #ffffff;
+            stroke: #e7e5e4;
+            stroke-width: 1.5;
+        }
+        .text-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            fill: #1c1917;
+            text-anchor: middle;
+        }
+        .text-desc {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: 13px;
+            fill: #57534e;
+            text-anchor: middle;
+        }
+        .arrow-path {
+            fill: none;
+            stroke: #a8a29e;
+            stroke-width: 1.5;
+            marker-end: url(#arrowhead-cycle);
+        }
+        .center-text {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            fill: #1c1917;
+            text-anchor: middle;
+        }
+    </style>
+    <defs>
+        <marker id="arrowhead-cycle" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#a8a29e" />
+        </marker>
+    </defs>
+
+    <!-- Boxes -->
+    <rect x="50" y="50" width="180" height="80" class="box" />
+    <rect x="370" y="50" width="180" height="80" class="box" />
+    <rect x="50" y="270" width="180" height="80" class="box" />
+    <rect x="370" y="270" width="180" height="80" class="box" />
+
+    <!-- Center Circle -->
+    <circle cx="300" cy="200" r="60" class="circle" />
+    <text x="300" y="205" class="center-text">Paper</text>
+
+    <!-- Box Content -->
+    <!-- AI Reviewer -->
+    <text x="140" y="80" class="text-title">AI Reviewer</text>
+    <text x="140" y="105" class="text-desc">(Claude, Gemini)</text>
+
+    <!-- Human Reviewer -->
+    <text x="460" y="80" class="text-title">Human Reviewer</text>
+    <text x="460" y="105" class="text-desc">(You)</text>
+
+    <!-- AI Adversary -->
+    <text x="140" y="300" class="text-title">AI Adversary</text>
+    <text x="140" y="325" class="text-desc">(Finds flaws)</text>
+
+    <!-- AI Assistant -->
+    <text x="460" y="300" class="text-title">AI Assistant</text>
+    <text x="460" y="325" class="text-desc">(Helps you fix)</text>
+
+    <!-- Arrows -->
+    <path d="M 230 90 L 370 90" class="arrow-path" /> <!-- AI Reviewer to Human -->
+    <path d="M 460 130 L 460 270" class="arrow-path" /> <!-- Human to Assistant -->
+    <path d="M 370 310 L 230 310" class="arrow-path" /> <!-- Assistant to Adversary -->
+    <path d="M 140 270 L 140 130" class="arrow-path" /> <!-- Adversary to Reviewer -->
+
+</svg>

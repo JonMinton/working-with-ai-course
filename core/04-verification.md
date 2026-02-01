@@ -44,7 +44,7 @@ This isn't about distrust. It's about recognising that:
 | **Static analysis** | Style, some bugs | Low |
 | **Ask another AI** | Fresh perspective | Low |
 
-```
+~~~
 EXERCISE:
 AI generates this function:
 
@@ -57,7 +57,7 @@ def get_user_age(user_id):
 ```
 
 List at least 3 problems with this code that verification should catch.
-```
+~~~
 
 ### Factual Claims
 

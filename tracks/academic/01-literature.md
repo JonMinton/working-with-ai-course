@@ -145,7 +145,8 @@ AI drafts a paragraph with five citations. Three use @keys from your .bib, two u
 * Reject everything — AI can't be trusted
 *! Keep the three verified citations, investigate the two unknown ones before including them
 * Remove all citations to be safe
-FEEDBACK:Verified citations are valuable. Unknown citations need verification — they might be real papers (add to .bib after verifying) or hallucinations (remove).
+
+FEEDBACK: Verified citations are valuable. Unknown citations need verification — they might be real papers (add to .bib after verifying) or hallucinations (remove).
 ```
 
 ## Organising Literature with AI

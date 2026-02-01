@@ -53,7 +53,8 @@ You have a spreadsheet with 200 addresses in inconsistent formats. What's the mo
 * Have AI clean all 200 and trust the output
 *! Have AI clean a sample of 20, verify the results, then clean the rest with adjustments if needed
 * Export to a data cleaning tool
-FEEDBACK:Testing on a sample first catches systematic errors before they propagate to all 200 entries. Always verify AI's data transformation approach.
+
+FEEDBACK: Testing on a sample first catches systematic errors before they propagate to all 200 entries. Always verify AI's data transformation approach.
 ```
 
 ## Extraction Patterns
@@ -179,7 +180,8 @@ AI identifies that sales dropped 40% in March. What should you do next?
 * Ask AI why sales dropped
 *! Verify the 40% figure against the source data, then investigate causes
 * Assume it's a data error
-FEEDBACK:Always verify AI's analytical findings against source data before acting on them or reporting them. Then investigate causes (AI may not have the context to explain why).
+
+FEEDBACK: Always verify AI's analytical findings against source data before acting on them or reporting them. Then investigate causes (AI may not have the context to explain why).
 ```
 
 ## Working with Tables and Spreadsheets

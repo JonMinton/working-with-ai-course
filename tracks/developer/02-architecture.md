@@ -47,7 +47,8 @@ What's the architectural problem?
 * It should use React
 *! Multiple concerns are mixed: validation, data access, business logic, and presentation should be separated
 * Express routes can't do all this
-FEEDBACK:This handler mixes validation, data access, business logic (discount calculation), and presentation. Each should be in its own layer.
+
+FEEDBACK: This handler mixes validation, data access, business logic (discount calculation), and presentation. Each should be in its own layer.
 ```
 
 ### Repository Pattern

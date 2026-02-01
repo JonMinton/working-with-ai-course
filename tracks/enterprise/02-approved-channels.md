@@ -119,7 +119,8 @@ An employee needs to quickly summarise a client contract. They have access to an
 * Use ChatGPT — all AI is basically the same
 *! Use the enterprise tool — client contracts should only go through approved channels
 * Don't use AI at all
-FEEDBACK:Client contracts are confidential data. Even if using the enterprise tool is slightly slower, it's the only appropriate channel for work data.
+
+FEEDBACK: Client contracts are confidential data. Even if using the enterprise tool is slightly slower, it's the only appropriate channel for work data.
 ```
 
 ## Reading the Terms

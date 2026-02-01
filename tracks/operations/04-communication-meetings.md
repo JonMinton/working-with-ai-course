@@ -55,7 +55,8 @@ You receive an email with an unreasonable request from an important client. What
 * Ignore it and hope they forget
 *! Draft a response with AI, then review carefully and possibly sleep on it before sending
 * Forward to your manager without comment
-FEEDBACK:Difficult emails benefit from AI drafting, but should never be sent without careful review. Important or sensitive messages often benefit from a cooling-off period before sending.
+
+FEEDBACK: Difficult emails benefit from AI drafting, but should never be sent without careful review. Important or sensitive messages often benefit from a cooling-off period before sending.
 ```
 
 ## Slack and Teams Messages
@@ -190,7 +191,8 @@ Your project is behind schedule. How should AI help with the status update?
 *! Help you frame the situation honestly with clear context and proposed solutions
 * Skip the update until there's better news
 * Generate excuses for the delay
-FEEDBACK:AI helps you communicate clearly, not dishonestly. Bad news delivered well (with context, causes, and solutions) builds more trust than good news that later turns out to be wrong.
+
+FEEDBACK: AI helps you communicate clearly, not dishonestly. Bad news delivered well (with context, causes, and solutions) builds more trust than good news that later turns out to be wrong.
 ```
 
 ## Difficult Communications

@@ -79,7 +79,8 @@ Which of these prompts has the best context externalisation?
 * "The login function returns null when the user doesn't exist. Instead, it should throw a UserNotFoundError with the attempted username."
 *! "In src/auth/login.ts, the login() function on line 45 returns null when User.find() returns undefined. Change it to throw a UserNotFoundError with message 'User not found: {username}'."
 * "Make the auth work properly"
-FEEDBACK:The third option provides file location, current behaviour, desired behaviour, and specific details — everything needed to act without guessing.
+
+FEEDBACK: The third option provides file location, current behaviour, desired behaviour, and specific details — everything needed to act without guessing.
 ```
 
 ### 3. Appropriate Abstraction Level
@@ -152,7 +153,8 @@ What's wrong with this specification?
 *! It lacks scope boundaries — "match the rest of the site" could mean changing other pages
 * It's too technical
 * Nothing is wrong with it
-FEEDBACK:Without explicit boundaries, AI might modify other pages to "match" or interpret "recent activity" in unexpected ways (last hour? last year? all activity types?).
+
+FEEDBACK: Without explicit boundaries, AI might modify other pages to "match" or interpret "recent activity" in unexpected ways (last hour? last year? all activity types?).
 ```
 
 ## Putting It Together

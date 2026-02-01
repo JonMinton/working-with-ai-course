@@ -186,7 +186,8 @@ A journal asks you to describe AI use in your methods section. Which is most app
 * "No AI was used" (even though you used it for drafting)
 *! "AI tools assisted with drafting; all content was verified against sources and substantially revised by the authors"
 * "GPT-4 was used with temperature 0.7 and top_p 0.9"
-FEEDBACK:Be honest about AI use, but frame it accurately — AI assisted, humans verified and take responsibility. Excessive technical detail (temperature, top_p) is usually unnecessary unless methodologically relevant.
+
+FEEDBACK: Be honest about AI use, but frame it accurately — AI assisted, humans verified and take responsibility. Excessive technical detail (temperature, top_p) is usually unnecessary unless methodologically relevant.
 ```
 
 ## Verification Documentation

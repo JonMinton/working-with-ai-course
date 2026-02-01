@@ -63,7 +63,8 @@ AI has generated three versions of a function. Each is closer to what you want, 
 * Accept version 3 and fix the bug manually
 *! Consider restarting with a clearer specification that addresses the bug upfront
 * Give up on AI for this task
-FEEDBACK:After multiple iterations on the same issue, the conversation context may be working against you. A fresh start with better specification often works faster than continued refinement.
+
+FEEDBACK: After multiple iterations on the same issue, the conversation context may be working against you. A fresh start with better specification often works faster than continued refinement.
 ```
 
 ## Effective Feedback
@@ -176,7 +177,8 @@ You've been working with AI on a complex refactoring task for 45 minutes. The co
 * The AI is being stubborn
 *! Important context from early in the conversation may be getting truncated or lost
 * The task is too hard for AI
-FEEDBACK:AI doesn't get tired or stubborn. Long conversations suffer from context degradation — early messages may be summarised or truncated, losing important details.
+
+FEEDBACK: AI doesn't get tired or stubborn. Long conversations suffer from context degradation — early messages may be summarised or truncated, losing important details.
 ```
 
 ## Iteration Anti-Patterns

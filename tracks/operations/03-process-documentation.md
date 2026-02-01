@@ -146,7 +146,8 @@ You're documenting a process that has 12 steps when everything goes well, but 5 
 *! A decision tree or flowchart showing the main path and branches
 * A checklist
 * Just describe it in prose
-FEEDBACK:Complex processes with many exceptions are clearer as decision trees or flowcharts. Linear lists get confusing when there are many "if X, then do Y instead" branches.
+
+FEEDBACK: Complex processes with many exceptions are clearer as decision trees or flowcharts. Linear lists get confusing when there are many "if X, then do Y instead" branches.
 ```
 
 ## Improving Processes

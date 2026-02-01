@@ -46,7 +46,8 @@ Which notation would work best for specifying a sorting requirement to an AI?
 *! "Sort the array in ascending order, so each element is less than or equal to the next"
 * "Make it sorted"
 * for(i=0;i<n-1;i++){assert(a[i]<=a[i+1])}
-FEEDBACK:The prose version is unambiguous AND well-tokenised by AI. The mathematical notation is precise but poorly processed. The code is precise but overly specific about implementation.
+
+FEEDBACK: The prose version is unambiguous AND well-tokenised by AI. The mathematical notation is precise but poorly processed. The code is precise but overly specific about implementation.
 ```
 
 ## Precision in Different Domains

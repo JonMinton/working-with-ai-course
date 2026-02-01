@@ -151,7 +151,8 @@ AI generates a blog post in your voice. It's technically correct but feels gener
 * Reject it and write from scratch
 *! Identify specific phrases that feel "AI-ish" and give targeted feedback
 * Add more examples to your style guide
-FEEDBACK:Targeted feedback on specific issues is more effective than general complaints. Point to exact phrases and explain why they don't work.
+
+FEEDBACK: Targeted feedback on specific issues is more effective than general complaints. Point to exact phrases and explain why they don't work.
 ```
 
 ## Consistency Across Long Works

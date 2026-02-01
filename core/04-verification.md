@@ -48,13 +48,11 @@ This isn't about distrust. It's about recognising that:
 EXERCISE:
 AI generates this function:
 
-```python
-def get_user_age(user_id):
-    user = db.query(f"SELECT * FROM users WHERE id = {user_id}")
-    if user:
-        return user.age
-    return 0
-```
+    def get_user_age(user_id):
+        user = db.query(f"SELECT * FROM users WHERE id = {user_id}")
+        if user:
+            return user.age
+        return 0
 
 List at least 3 problems with this code that verification should catch.
 ```
@@ -203,7 +201,8 @@ You've generated a research summary using Claude. Which approach provides the be
 * Ask GPT-4 to critique it
 *! Ask GPT-4 to critique it, then verify any specific claims yourself
 * Assume it's correct if it looks well-written
-FEEDBACK:Cross-model review catches more issues than self-review, but human verification of specific claims is still essential for anything important.
+
+FEEDBACK: Cross-model review catches more issues than self-review, but human verification of specific claims is still essential for anything important.
 ```
 
 ## Verification Checklists

@@ -161,7 +161,8 @@ You've generated 5 options for a headline. Two feel promising but neither is qui
 * Keep generating more options
 *! Identify what works in each and ask AI to combine those elements
 * Write the headline yourself
-FEEDBACK:Combining strengths from multiple options is often more effective than continuing to generate or settling for "good enough."
+
+FEEDBACK: Combining strengths from multiple options is often more effective than continuing to generate or settling for "good enough."
 ```
 
 ## The Brainstorming Partner Pattern

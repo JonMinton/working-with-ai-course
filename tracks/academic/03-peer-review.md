@@ -142,7 +142,8 @@ Agent B (GPT-4) critiques your Methods section, saying your sample size is too s
 * Automatically add more participants to your description
 *! Verify the calculation yourself, and either defend your choice or acknowledge the limitation
 * Ask Claude to argue against the critique
-FEEDBACK:AI critique surfaces potential issues; you verify and make the judgment. If the critique is valid, address it honestly. If it's wrong, you should be able to articulate why.
+
+FEEDBACK: AI critique surfaces potential issues; you verify and make the judgment. If the critique is valid, address it honestly. If it's wrong, you should be able to articulate why.
 ```
 
 ## What to Ask the Critic

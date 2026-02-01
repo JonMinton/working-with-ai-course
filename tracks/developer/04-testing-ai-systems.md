@@ -124,7 +124,8 @@ You're testing an AI function that extracts dates from text. Which test is most 
 * `assert extract_date("Meeting on January 5th") contains "January"`
 *! `assert extract_date("Meeting on January 5th") matches date format YYYY-MM-DD`
 * `assert extract_date("Meeting on January 5th") is not None`
-FEEDBACK:Testing the format (structure) is more reliable than testing exact values. The AI might return "2024-01-05" or "2025-01-05" depending on context assumptions, but it should always return a valid date format.
+
+FEEDBACK: Testing the format (structure) is more reliable than testing exact values. The AI might return "2024-01-05" or "2025-01-05" depending on context assumptions, but it should always return a valid date format.
 ```
 
 ## Evaluation vs. Testing

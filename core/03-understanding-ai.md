@@ -70,7 +70,8 @@ You had a great conversation with an AI yesterday where you explained your proje
 * A summary of yesterday
 *! Nothing — unless you tell it again or there's explicit memory/persistence
 * It depends on the model
-FEEDBACK:By default, each conversation starts fresh. The model itself doesn't retain information. Any "memory" requires explicit persistence systems.
+
+FEEDBACK: By default, each conversation starts fresh. The model itself doesn't retain information. Any "memory" requires explicit persistence systems.
 ```
 
 ## Component 2: The Prompt (Input Context)
@@ -155,7 +156,8 @@ An AI assistant doesn't have web search enabled. You ask it about a news event f
 * It tells you it can't access the web and explains its knowledge cutoff
 *! It might answer based on training data (possibly outdated) or acknowledge uncertainty
 * It refuses to answer
-FEEDBACK:Without tools, the AI can only use its training data. It might answer (if the event is in training data) or acknowledge it doesn't know. Good AI systems are transparent about this.
+
+FEEDBACK: Without tools, the AI can only use its training data. It might answer (if the event is in training data) or acknowledge it doesn't know. Good AI systems are transparent about this.
 ```
 
 ## Component 4: Persistence / Memory

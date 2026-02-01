@@ -174,7 +174,8 @@ Your compliance team is concerned about AI accessing customer data. Which approa
 * Wait for them to approve AI without addressing concerns
 *! Propose a pilot with full audit logging, human review, and clear boundaries
 * Use AI anyway and ask forgiveness later
-FEEDBACK:A well-governed pilot with clear controls addresses concerns directly and builds trust through evidence.
+
+FEEDBACK: A well-governed pilot with clear controls addresses concerns directly and builds trust through evidence.
 ```
 
 ## Incident Response

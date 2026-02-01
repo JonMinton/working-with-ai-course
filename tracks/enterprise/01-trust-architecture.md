@@ -124,7 +124,8 @@ A colleague says: "The AI saw our salary data last week, so it probably still kn
 * "Don't worry, AI doesn't remember anything"
 *! "It depends on our deployment — let's check the retention settings and whether it was through an approved channel"
 * "We should stop using AI entirely"
-FEEDBACK:The answer depends on the specific deployment's persistence settings. This is why understanding trust architecture matters.
+
+FEEDBACK: The answer depends on the specific deployment's persistence settings. This is why understanding trust architecture matters.
 ```
 
 ## Designing Trust Boundaries

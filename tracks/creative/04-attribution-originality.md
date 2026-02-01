@@ -69,7 +69,8 @@ You write a weekly newsletter. You use AI to help draft sections, then heavily e
 * "It's none of your business"
 *! "Yes, AI helps with drafting, but I edit everything and take responsibility for the content"
 * "Yes, AI writes most of it"
-FEEDBACK:Honest disclosure that accurately represents your process builds trust. You don't need to hide AI use, but don't misrepresent the level of involvement.
+
+FEEDBACK: Honest disclosure that accurately represents your process builds trust. You don't need to hide AI use, but don't misrepresent the level of involvement.
 ```
 
 ## Copyright and Ownership

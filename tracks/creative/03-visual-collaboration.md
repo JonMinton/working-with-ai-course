@@ -161,7 +161,8 @@ AI generated CSS for a hero section. The text is hard to read against the backgr
 * "Fix the contrast issue"
 *! "Add a semi-transparent dark overlay (rgba(0,0,0,0.5)) behind the text, or add a text-shadow to the heading"
 * "Change the background image"
-FEEDBACK:Specific technical solutions are more actionable than describing the problem. You're the one who can see the issue — propose a fix.
+
+FEEDBACK: Specific technical solutions are more actionable than describing the problem. You're the one who can see the issue — propose a fix.
 ```
 
 ## Style References and Mood Boards

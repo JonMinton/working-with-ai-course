@@ -205,7 +205,8 @@ You're designing a tool that lets AI query a database. Which approach is safest?
 *! Provide specific query templates with parameter substitution
 * Only allow read operations with row limits
 * All of the above combined, with b+c as the base
-FEEDBACK:Combining parameterised queries (no SQL injection) with read-only access and row limits provides multiple safety layers.
+
+FEEDBACK: Combining parameterised queries (no SQL injection) with read-only access and row limits provides multiple safety layers.
 ```
 
 ## Testing MCP Tools

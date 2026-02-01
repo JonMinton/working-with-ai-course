@@ -52,7 +52,8 @@ You need to expose a data export function. Users will run it monthly with the sa
 * GUI with a "Run Export" button
 *! CLI or API — can be scripted and scheduled
 * Email-based — users email a request
-FEEDBACK:Repeated, predictable tasks are best served by scriptable interfaces (CLI/API) that can be automated.
+
+FEEDBACK: Repeated, predictable tasks are best served by scriptable interfaces (CLI/API) that can be automated.
 ```
 
 ## Human-Centred Affordances

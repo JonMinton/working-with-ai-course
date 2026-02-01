@@ -48,7 +48,8 @@ You need to write a project status update. You know the key points but don't hav
 *! Give AI your bullet points and ask it to expand into professional prose
 * Ask AI to write a generic status update and edit heavily
 * Skip the update this week
-FEEDBACK:When you have the content but need professional prose, giving AI your key points to expand is usually the fastest path to a good result.
+
+FEEDBACK: When you have the content but need professional prose, giving AI your key points to expand is usually the fastest path to a good result.
 ```
 
 ## Summarisation Patterns
@@ -165,7 +166,8 @@ You need to send a difficult email declining a request from a senior colleague. 
 * Write it yourself — too sensitive for AI
 *! Have AI draft it, then carefully review and edit before sending
 * Avoid email and have the conversation in person
-FEEDBACK:AI can help draft difficult communications, but sensitive emails need careful human review. The stakes are too high for unreviewed AI output.
+
+FEEDBACK: AI can help draft difficult communications, but sensitive emails need careful human review. The stakes are too high for unreviewed AI output.
 ```
 
 ## Meeting Documentation

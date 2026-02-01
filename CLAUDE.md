@@ -24,6 +24,19 @@ A self-contained learning platform for AI collaboration skills. Static HTML/JS f
 - Tables for comparisons; keep them scannable
 - Cross-references between modules use relative paths
 
+**Nested code fences:** When an EXERCISE or QUIZ block needs to contain code examples, use tildes (`~~~`) for the outer block to avoid parsing conflicts:
+~~~
+~~~
+EXERCISE:
+Here is some code:
+
+```python
+def example():
+    pass
+```
+~~~
+~~~
+
 ## Planned Development
 - Backend: Supabase (auth, progress tracking, feedback)
 - User feedback: per-page ratings and comments

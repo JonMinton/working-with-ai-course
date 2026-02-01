@@ -12,6 +12,7 @@ You now have a framework for effective AI collaboration:
 - **Precision without formalism** — Expressing unambiguous requirements in prose, examples, and tests
 - **Understanding AI systems** — Distinguishing agent, prompt, tools, and persistence; knowing where problems come from
 - **Verification** — Recognising that AI makes confident mistakes, and building habits to catch them
+- **Iteration & refinement** — Treating AI collaboration as a dialogue, not a single query; building on outputs systematically
 
 ### Your Specialised Track(s)
 
@@ -19,9 +20,13 @@ Depending on your path, you've also developed context-specific skills:
 
 **Enterprise:** Trust architecture, approved channels, governance patterns — the frameworks for using AI responsibly within organisations.
 
-**Developer:** Affordances, architectural judgment, MCP tool design — the skills for building with and for AI systems.
+**Developer:** Affordances, architectural judgment, MCP tool design, testing AI systems — the skills for building with and for AI systems.
 
-**Academic:** Literature workflows, modular writing, adversarial AI review — the practices for maintaining rigour while leveraging AI assistance.
+**Academic:** Literature workflows, modular writing, adversarial AI review, reproducibility — the practices for maintaining rigour while leveraging AI assistance.
+
+**Creative:** Voice preservation, creative iteration, visual collaboration, attribution — the techniques for artistic and design work that maintains your distinctive style.
+
+**Operations:** Document workflows, data wrangling, process documentation, communication — the practical skills for everyday business tasks and team coordination.
 
 ## What Comes Next
 

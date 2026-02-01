@@ -4,13 +4,15 @@ Welcome to a course designed for the age of agentic AI. This isn't about learnin
 
 ## Who This Course Is For
 
-This course serves three audiences, with a shared core and specialised tracks:
+This course serves five audiences, with a shared core and specialised tracks:
 
 | Audience | Your Context | What You'll Gain |
 |----------|--------------|------------------|
 | **Enterprise Professionals** | Using AI at work, navigating compliance | Governance patterns, approved channels, trust architecture |
 | **Developers** | Building with and for AI | Interface design, MCP tools, architectural judgment |
 | **Academic Researchers** | Literature, writing, research management | Citation workflows, reproducible methods, AI peer review |
+| **Creative Professionals** | Writing, design, content creation | Voice preservation, creative iteration, attribution |
+| **Operations & Knowledge Workers** | Documents, data, meetings, admin | Workflows, data wrangling, process documentation |
 
 ## The Core Insight
 
@@ -30,12 +32,15 @@ This course focuses on that 10%.
 2. **Precision Without Formalism** — Unambiguous thinking in multiple notations
 3. **Understanding AI Systems** — Agent vs prompt vs tools vs memory
 4. **Verification & Quality** — Testing, debugging, the visual reasoning gap
+5. **Iteration & Refinement** — Treating AI collaboration as dialogue, building on outputs
 
 ### Specialised Tracks (Choose Your Path)
 
 - **Enterprise Track** — Trust architecture, approved channels, governance
 - **Developer Track** — Affordances, architecture, MCP tool design
 - **Academic Track** — Literature management, modular writing, adversarial AI review
+- **Creative Track** — Voice preservation, creative iteration, visual collaboration
+- **Operations Track** — Document workflows, data wrangling, process documentation
 
 ## How to Use This Course
 

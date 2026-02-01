@@ -12,7 +12,7 @@ A self-contained learning platform for AI collaboration skills. Static HTML/JS f
 - `/index.html` — Main app, all JS/CSS inline
 - `/welcome.md` — Landing page content
 - `/core/` — Core modules (01-04), required for all learners
-- `/tracks/` — Specialised tracks (enterprise, developer, academic)
+- `/tracks/` — Specialised tracks (enterprise, developer, academic, creative, operations)
 - `/assets/` — Images and media (currently empty)
 
 ## Content Conventions

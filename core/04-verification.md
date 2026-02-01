@@ -284,3 +284,5 @@ Now choose your specialised track:
 - **Enterprise Track** → Trust architecture, approved channels, governance
 - **Developer Track** → Affordances, architecture, MCP tools
 - **Academic Track** → Literature workflows, modular writing, AI peer review
+- **Creative Track** → Voice & style, creative iteration, visual collaboration
+- **Operations Track** → Document workflows, data wrangling, process documentation

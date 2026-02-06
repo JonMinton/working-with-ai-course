@@ -11,9 +11,9 @@ A self-contained learning platform for AI collaboration skills. Static HTML/JS f
 ## File Structure
 - `/index.html` — Main app, all JS/CSS inline
 - `/welcome.md` — Landing page content
-- `/core/` — Core modules (01-04), required for all learners
-- `/tracks/` — Specialised tracks (enterprise, developer, academic, creative, operations)
-- `/assets/` — Images and media (currently empty)
+- `/core/` — Core modules (01-06), required for all learners
+- `/tracks/` — Specialised tracks (enterprise, developer, academic, creative, operations, education, leadership)
+- `/assets/` — Images and media (SVG diagrams and visual assets)
 
 ## Content Conventions
 - British English spelling (behaviour, organisation, colour)

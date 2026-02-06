@@ -47,7 +47,7 @@ A structured record of AI interactions:
 
 ### Session: Literature Theme Analysis
 - **Date:** 2024-01-15
-- **Model:** Claude 3 Sonnet (claude-3-sonnet-20240229)
+- **Model:** Claude Sonnet 4 (claude-sonnet-4-20250514)
 - **Temperature:** Default (not specified)
 
 #### Prompt 1
@@ -98,7 +98,7 @@ For editing and revision tasks:
 ## AI-Assisted Revision Log
 
 ### Document: Discussion Section v2 → v3
-### AI Used: Claude 3 Opus
+### AI Used: Claude 4 Opus
 
 **Change 1:**
 - Original: "The results suggest..."
@@ -163,7 +163,7 @@ Reporting standards vary by venue. Check your target journal's policy. In absenc
 > AI tools (specifically, [model name]) were used to assist with [specific tasks]. All AI-generated content was reviewed and substantially revised by the authors.
 
 **Detailed disclosure:**
-> Claude 3 (Anthropic, claude-3-sonnet-20240229) was used to assist with literature synthesis and manuscript revision. Prompts and interaction logs are available in the supplementary materials. AI suggestions were evaluated against primary sources and modified as needed. The authors take full responsibility for the final content.
+> Claude Sonnet 4 (Anthropic, claude-sonnet-4-20250514) was used to assist with literature synthesis and manuscript revision. Prompts and interaction logs are available in the supplementary materials. AI suggestions were evaluated against primary sources and modified as needed. The authors take full responsibility for the final content.
 
 ### What to Include
 
@@ -292,7 +292,7 @@ The model you used will eventually:
 
 ### Archival Recommendations
 
-1. **Use DOI-style versioning** where available (claude-3-sonnet-20240229)
+1. **Use DOI-style versioning** where available (claude-sonnet-4-20250514)
 2. **Timestamp everything** — dates matter for reproducibility
 3. **Archive outputs, not just prompts** — the output is your data
 4. **Use open formats** — Markdown, plain text, not proprietary formats

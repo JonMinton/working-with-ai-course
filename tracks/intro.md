@@ -2,7 +2,7 @@
 
 You've completed the core modules. Now it's time to specialise.
 
-## The Five Tracks
+## The Seven Tracks
 
 Each track builds on the core with context-specific skills and knowledge:
 
@@ -15,8 +15,6 @@ Each track builds on the core with context-specific skills and knowledge:
 - Approved channels — why "kosher tubes" matter, shadow AI risks
 - Governance patterns — the AI-as-employee framing
 - Compliance conversations — advocating for AI use responsibly
-
-**Time:** ~15-20 hours
 
 **Key question this track answers:** *"How do I use AI effectively while keeping my organisation safe?"*
 
@@ -78,6 +76,34 @@ Each track builds on the core with context-specific skills and knowledge:
 
 ---
 
+### Education Track
+
+**For:** Teachers, trainers, instructional designers, tutors, curriculum developers
+
+**You'll learn:**
+- AI-resistant assessment — designing tasks that develop skills AI can't shortcut
+- AI as learning partner — Socratic patterns, scaffolded independence, productive struggle
+- Personalisation and differentiation — adapting materials while preserving teacher judgment
+- Teaching AI literacy — helping others develop these skills, age-appropriate frameworks
+
+**Key question this track answers:** *"How do I teach effectively in a world where students have AI?"*
+
+---
+
+### Leadership Track
+
+**For:** Executives, directors, team leads, decision-makers responsible for AI adoption
+
+**You'll learn:**
+- Strategic assessment — where AI creates value, the capability-reliability gap, avoiding hype
+- Building AI-ready teams — skills, culture, training investment decisions
+- Risk and reputation — what can go wrong, proportional response, incident preparedness
+- Vendor and build decisions — buy vs. build frameworks, evaluating products, avoiding lock-in
+
+**Key question this track answers:** *"How do I make good decisions about AI for my organisation?"*
+
+---
+
 ## Can I Do Multiple Tracks?
 
 Yes. The tracks are independent and can be completed in any order.
@@ -85,7 +111,9 @@ Yes. The tracks are independent and can be completed in any order.
 Common combinations:
 - **Enterprise + Developer:** Technical roles in corporate environments
 - **Academic + Developer:** Computational research, research software engineering
-- **All three:** Comprehensive understanding
+- **Leadership + Enterprise:** Senior roles shaping AI adoption policy
+- **Education + Creative:** Content-focused educators
+- **Operations + Leadership:** Managers who both use and oversee AI
 
 ## Choosing Based on Your Context
 
@@ -96,7 +124,9 @@ Common combinations:
 | Write papers or do research | Academic Track |
 | Create content, design, or marketing | Creative Track |
 | Handle documents, data, meetings daily | Operations Track |
-| Manage a team using AI | Enterprise Track |
+| Teach, train, or design curriculum | Education Track |
+| Make decisions about AI adoption | Leadership Track |
+| Manage a team using AI | Enterprise or Leadership Track |
 | Want to understand MCP/tools | Developer Track |
 | Need to manage citations carefully | Academic Track |
 | Are unsure | Start with the one closest to your daily work |
@@ -109,6 +139,7 @@ All tracks assume you've completed the core modules:
 3. Understanding AI Systems
 4. Verification & Quality
 5. Iteration & Refinement
+6. The Agentification Shockwave
 
 If you skipped any, consider returning to them — the tracks build on these foundations.
 
@@ -125,3 +156,7 @@ Ready? Choose your path:
 → **Creative Track: C1. Voice & Style**
 
 → **Operations Track: O1. Document Workflows**
+
+→ **Education Track: Ed1. AI-Resistant Assessment**
+
+→ **Leadership Track: L1. Strategic Assessment**

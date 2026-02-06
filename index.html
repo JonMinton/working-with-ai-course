@@ -128,6 +128,8 @@
         .track-badge.academic { background: #fef3c7; color: #92400e; }
         .track-badge.creative { background: #fce7f3; color: #9d174d; }
         .track-badge.operations { background: #e0e7ff; color: #3730a3; }
+        .track-badge.education { background: #fef9c3; color: #854d0e; }
+        .track-badge.leadership { background: #f0fdf4; color: #14532d; }
 
         /* Main content */
         .main {
@@ -556,7 +558,8 @@
                         { id: "core-2", title: "2. Precision Without Formalism", file: "core/02-precision.md" },
                         { id: "core-3", title: "3. Understanding AI Systems", file: "core/03-understanding-ai.md" },
                         { id: "core-4", title: "4. Verification & Quality", file: "core/04-verification.md" },
-                        { id: "core-5", title: "5. Iteration & Refinement", file: "core/05-iteration.md" }
+                        { id: "core-5", title: "5. Iteration & Refinement", file: "core/05-iteration.md" },
+                        { id: "core-6", title: "6. The Agentification Shockwave", file: "core/06-agentification.md" }
                     ]
                 },
                 {
@@ -573,7 +576,8 @@
                     items: [
                         { id: "ent-1", title: "E1. Trust Architecture", file: "tracks/enterprise/01-trust-architecture.md", track: "enterprise" },
                         { id: "ent-2", title: "E2. Approved Channels", file: "tracks/enterprise/02-approved-channels.md", track: "enterprise" },
-                        { id: "ent-3", title: "E3. Governance Patterns", file: "tracks/enterprise/03-governance.md", track: "enterprise" }
+                        { id: "ent-3", title: "E3. Governance Patterns", file: "tracks/enterprise/03-governance.md", track: "enterprise" },
+                        { id: "ent-4", title: "E4. Monitoring & Compliance", file: "tracks/enterprise/04-monitoring-compliance.md", track: "enterprise" }
                     ]
                 },
                 {
@@ -618,6 +622,28 @@
                         { id: "ops-2", title: "O2. Data Wrangling", file: "tracks/operations/02-data-wrangling.md", track: "operations" },
                         { id: "ops-3", title: "O3. Process Documentation", file: "tracks/operations/03-process-documentation.md", track: "operations" },
                         { id: "ops-4", title: "O4. Communication & Meetings", file: "tracks/operations/04-communication-meetings.md", track: "operations" }
+                    ]
+                },
+                {
+                    id: "education",
+                    title: "Education Track",
+                    track: "education",
+                    items: [
+                        { id: "edu-1", title: "Ed1. AI-Resistant Assessment", file: "tracks/education/01-assessment.md", track: "education" },
+                        { id: "edu-2", title: "Ed2. AI as Learning Partner", file: "tracks/education/02-learning-partner.md", track: "education" },
+                        { id: "edu-3", title: "Ed3. Personalisation & Differentiation", file: "tracks/education/03-personalisation.md", track: "education" },
+                        { id: "edu-4", title: "Ed4. Teaching AI Literacy", file: "tracks/education/04-teaching-ai-literacy.md", track: "education" }
+                    ]
+                },
+                {
+                    id: "leadership",
+                    title: "Leadership Track",
+                    track: "leadership",
+                    items: [
+                        { id: "lead-1", title: "L1. Strategic Assessment", file: "tracks/leadership/01-strategic-assessment.md", track: "leadership" },
+                        { id: "lead-2", title: "L2. Building AI-Ready Teams", file: "tracks/leadership/02-ai-ready-teams.md", track: "leadership" },
+                        { id: "lead-3", title: "L3. Risk & Reputation", file: "tracks/leadership/03-risk-reputation.md", track: "leadership" },
+                        { id: "lead-4", title: "L4. Vendor & Build Decisions", file: "tracks/leadership/04-vendor-build.md", track: "leadership" }
                     ]
                 },
                 {
@@ -718,6 +744,14 @@
                 breadcrumb.innerHTML = `<a href="#" data-page="welcome">Home</a> / ${page.title}`;
             }
 
+            // Attach breadcrumb click handlers
+            breadcrumb.querySelectorAll('a[data-page]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    navigateTo(link.dataset.page);
+                });
+            });
+
             // Load markdown
             try {
                 const response = await fetch(page.file);
@@ -747,6 +781,7 @@
             'APPROVED CHANNEL': 'assets/diagrams/approved-channels.svg',
             'LITERATURE WORKFLOW': 'assets/diagrams/literature-workflow.svg',
             'MCP': 'assets/diagrams/mcp-diagram.svg',
+            'AGENTIFICATION SHOCKWAVE': 'assets/diagrams/agentification-shockwave.svg',
             // 'ADVERSARIAL AI PEER REVIEW': Reverted to ASCII — SVG didn't capture paper-centric flow
         };
 
@@ -897,7 +932,9 @@
                 } else {
                     feedback.classList.add('incorrect');
                     feedback.classList.remove('correct');
-                    feedback.textContent = 'Not quite. Try reviewing the material above.';
+                    feedback.textContent = quiz.dataset.feedback
+                        ? 'Not quite — ' + quiz.dataset.feedback
+                        : 'Not quite. Try reviewing the material above.';
                 }
 
                 checkBtn.disabled = true;

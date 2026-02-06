@@ -23,7 +23,7 @@
 3. **Understanding AI Systems**
    - Four components model: prompt, agent, tools, persistence.
    - Capabilities and limits by component; practical diagnostic framework.
-   - Context window management and the "amnesiac temp" mental model.
+   - Context window management and the "capable temp" mental model.
    - Instruction files as a way to provide project-level context.
 
 4. **Verification & Quality**
@@ -40,14 +40,25 @@
   - Affordances and interface design, architectural reasoning, and MCP tool design.
 - **Academic**
   - Literature workflows, modular academic writing, and AI peer review.
+- **Creative**
+  - Attribution and originality, intellectual property, and ethical use of AI in creative work.
+- **Operations**
+  - Operational workflows and integration of AI into organisational processes.
 
-## One–two important potential gaps to address later
+## Previously identified gaps — now addressed
 
-1. **Evaluation and monitoring as a lifecycle discipline**
-   - There is strong guidance on *verification* at the point of output, but less on longer‑term evaluation (regression testing, benchmarking prompts, drift detection, and ongoing monitoring for tool‑using agents). A short section on *evaluation as a routine* could bridge the gap between one‑off verification and sustained reliability.
+1. **Evaluation and monitoring as a lifecycle discipline** — ✅ Addressed in E4 (Monitoring, Compliance & Continuous Evaluation). Covers evaluation cadences, drift detection, benchmarking, regression testing, audit logging.
 
-2. **Data handling and privacy risk models beyond the basics**
-   - The enterprise content discusses trust and channels, but a dedicated, practical guide to *data classification* and *risk tiers* (what can go into prompts, what must stay out, redaction patterns, audit logging expectations) would help operationalise governance. This could be a short checklist or decision tree rather than a full policy.
+2. **Data handling and privacy risk models beyond the basics** — ✅ Addressed in E4. Includes data classification framework (Public/Internal/Confidential/Restricted), redaction decision tree, risk tiers, and compliance audit process.
+
+3. **Enterprise Track structural gap** — ✅ Fixed. Enterprise now has 4 modules like all other tracks.
+
+4. **"Shredding" metaphor** — ✅ Replaced across all files. The "amnesiac temp who shreds everything" metaphor has been replaced with a "capable temp who walks out with nothing carried over" framing, with an explicit clarification that work product stays in the user's systems — only the AI's working memory resets.
+
+## Tracks added in this phase
+
+- **Education Track** (4 modules: AI-Resistant Assessment, AI as Learning Partner, Personalisation & Differentiation, Teaching AI Literacy)
+- **Leadership Track** (4 modules: Strategic Assessment, Building AI-Ready Teams, Risk & Reputation, Vendor & Build Decisions)
 
 ## Suggested usage
 - Treat this file as a review handover for the later edit phase.

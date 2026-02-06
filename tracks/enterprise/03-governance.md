@@ -268,8 +268,4 @@ AI USE POLICY
 
 ---
 
-Congratulations! You've completed the Enterprise Track.
-
-Consider also:
-- **Developer Track** — If you're building AI integrations
-- **Academic Track** — If you do research or literature-heavy work
+Next: **E4. Monitoring, Compliance & Continuous Evaluation** →

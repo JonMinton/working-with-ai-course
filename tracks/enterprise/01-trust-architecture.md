@@ -102,13 +102,15 @@ Write out a trust architecture for this use case.
 
 A useful framing for stakeholders:
 
-> **"A very capable temp who starts fresh every day, works only with what you hand them, and shreds everything when they leave."**
+> **"A very capable temp who arrives each morning with no memory of yesterday, works only from the briefing you give them, and walks out at the end of the day with nothing carried over."**
 
 This captures:
 - **Capability:** More than a simple tool
-- **No persistence:** Fresh each day
-- **Scoped access:** Only what you provide
-- **No retention:** Shreds when done
+- **No persistence:** No memory between sessions
+- **Scoped access:** Only what you provide in the briefing
+- **No carryover:** Each engagement is independent
+
+Important for stakeholders: the temp's *work product* (documents, code, analyses) stays in your systems — it's yours. What doesn't persist is the temp's own *working memory* of context and prior interactions.
 
 **What the temp DOESN'T have:**
 - Discretion to recognise sensitive situations

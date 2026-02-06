@@ -212,17 +212,19 @@ When AI does something unexpected, diagnose by component:
 3. Is this a **tool** issue? (Unavailable, failed, wrong permissions)
 4. Is this a **persistence** issue? (Context lost, not retrieved)
 
-## The "Amnesiac Temp" Mental Model
+## The "Capable Temp" Mental Model
 
 A helpful metaphor for AI agents:
 
-> **"A very capable temp who starts fresh every day, works only with what you hand them, and shreds everything when they leave."**
+> **"A very capable temp who arrives each morning with no memory of yesterday, works only from the briefing you give them, and walks out at the end of the day with nothing carried over."**
 
 This captures:
 - Capability (not just a tool — can reason and adapt)
-- Lack of persistence (fresh every day)
-- Scoped access (only what you provide)
-- No retention (shreds when done)
+- No memory between sessions (each conversation starts independently)
+- Scoped access (only what you provide in the briefing)
+- No carryover (the working relationship resets each time)
+
+The key nuance: any files, documents, or outputs the temp *produces during the day* are yours — they're saved in your project, your repository, your file system. What doesn't persist is the temp's own *working memory* — their understanding of context, preferences, and prior conversations. The work product stays; the relationship resets.
 
 What it doesn't capture:
 - The temp has no judgment about sensitive situations

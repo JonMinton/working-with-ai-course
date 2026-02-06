@@ -4,7 +4,7 @@ Welcome to a course designed for the age of agentic AI. This isn't about learnin
 
 ## Who This Course Is For
 
-This course serves five audiences, with a shared core and specialised tracks:
+This course serves seven audiences, with a shared core and specialised tracks:
 
 | Audience | Your Context | What You'll Gain |
 |----------|--------------|------------------|
@@ -13,6 +13,8 @@ This course serves five audiences, with a shared core and specialised tracks:
 | **Academic Researchers** | Literature, writing, research management | Citation workflows, reproducible methods, AI peer review |
 | **Creative Professionals** | Writing, design, content creation | Voice preservation, creative iteration, attribution |
 | **Operations & Knowledge Workers** | Documents, data, meetings, admin | Workflows, data wrangling, process documentation |
+| **Educators & Trainers** | Teaching, curriculum design, assessment | AI-resistant assessment, personalisation, teaching AI literacy |
+| **Leaders & Decision-Makers** | AI strategy, team building, vendor decisions | Strategic assessment, risk management, build-vs-buy |
 
 ## The Core Insight
 
@@ -33,14 +35,17 @@ This course focuses on that 10%.
 3. **Understanding AI Systems** — Agent vs prompt vs tools vs memory
 4. **Verification & Quality** — Testing, debugging, the visual reasoning gap
 5. **Iteration & Refinement** — Treating AI collaboration as dialogue, building on outputs
+6. **The Agentification Shockwave** — How AI spreads across fields, and what that means for yours
 
 ### Specialised Tracks (Choose Your Path)
 
-- **Enterprise Track** — Trust architecture, approved channels, governance
-- **Developer Track** — Affordances, architecture, MCP tool design
-- **Academic Track** — Literature management, modular writing, adversarial AI review
-- **Creative Track** — Voice preservation, creative iteration, visual collaboration
-- **Operations Track** — Document workflows, data wrangling, process documentation
+- **Enterprise Track** — Trust architecture, approved channels, governance, monitoring & compliance
+- **Developer Track** — Affordances, architecture, MCP tool design, testing AI systems
+- **Academic Track** — Literature management, modular writing, adversarial AI review, reproducibility
+- **Creative Track** — Voice preservation, creative iteration, visual collaboration, attribution
+- **Operations Track** — Document workflows, data wrangling, process documentation, communication
+- **Education Track** — AI-resistant assessment, AI as learning partner, personalisation, teaching AI literacy
+- **Leadership Track** — Strategic assessment, building AI-ready teams, risk & reputation, vendor decisions
 
 ## How to Use This Course
 

@@ -75,7 +75,7 @@ FEEDBACK: Honest disclosure that accurately represents your process builds trust
 
 ## Copyright and Ownership
 
-### The Current Legal Landscape (2024)
+### The Current Legal Landscape (2025)
 
 **Key developments:**
 - US Copyright Office: Pure AI output (no human authorship) is not copyrightable

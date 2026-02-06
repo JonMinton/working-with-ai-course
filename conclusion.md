@@ -13,6 +13,7 @@ You now have a framework for effective AI collaboration:
 - **Understanding AI systems** — Distinguishing agent, prompt, tools, and persistence; knowing where problems come from
 - **Verification** — Recognising that AI makes confident mistakes, and building habits to catch them
 - **Iteration & refinement** — Treating AI collaboration as a dialogue, not a single query; building on outputs systematically
+- **The agentification shockwave** — Understanding how AI disruption spreads across fields, and positioning yourself for the shift
 
 ### Your Specialised Track(s)
 
@@ -27,6 +28,10 @@ Depending on your path, you've also developed context-specific skills:
 **Creative:** Voice preservation, creative iteration, visual collaboration, attribution — the techniques for artistic and design work that maintains your distinctive style.
 
 **Operations:** Document workflows, data wrangling, process documentation, communication — the practical skills for everyday business tasks and team coordination.
+
+**Education:** AI-resistant assessment, AI as learning partner, personalisation, teaching AI literacy — the frameworks for teaching effectively when students have AI.
+
+**Leadership:** Strategic assessment, building AI-ready teams, risk and reputation, vendor decisions — the judgment to make sound organisational decisions about AI.
 
 ## What Comes Next
 

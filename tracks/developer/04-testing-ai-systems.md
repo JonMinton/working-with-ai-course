@@ -294,7 +294,7 @@ def test_regressions():
 
 ```python
 # Document which model version tests were validated against
-AI_MODEL_VERSION = "claude-3-sonnet-20240229"
+AI_MODEL_VERSION = "claude-sonnet-4-20250514"
 
 def test_with_version_check():
     if current_model() != AI_MODEL_VERSION:

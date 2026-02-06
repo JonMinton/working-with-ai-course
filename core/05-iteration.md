@@ -259,4 +259,4 @@ Plan your iteration:
 
 ---
 
-Next: Choose your specialised track →
+Next: **Module 6: The Agentification Shockwave** →

@@ -257,6 +257,9 @@ Then use: "Write a [document type] using this template: [paste template]"
 - Format conversion: AI excels at reorganising content for different contexts
 - Build templates for repeated document types
 
+> **📚 Further Reading**
+> For guidance on deploying AI in enterprise document workflows, see **Microsoft 365 Copilot training** in **Resources & Further Reading**. For real-world examples of organisations transforming operations with agentic AI, see the **Goldman Sachs case study** in **Case Studies: Agentification in Practice**.
+
 ---
 
 Next: **O2. Data Wrangling** →

@@ -334,6 +334,32 @@ Many organisations create an internal centre of excellence: a team that manages 
 
 ---
 
+## Case Study: Commonwealth Bank of Australia
+
+Commonwealth Bank deployed Microsoft 365 Copilot and GitHub Copilot across 10,000 users, underpinned by a structured training programme with clear objectives.
+
+**The Outcome:**
+
+84% of users report they "wouldn't work without it" — an extraordinarily high satisfaction rate for enterprise software adoption.
+
+**Why It Worked:**
+
+Commonwealth Bank applied three principles from this module:
+
+1. **Training investment was essential.** They didn't just deploy and expect adoption. Structured training with clear learning outcomes changed how people worked.
+
+2. **They measured what mattered, not just deployment numbers.** Rather than counting "seats installed," they tracked user sentiment and task completion time. This revealed what was actually working.
+
+3. **The buy decision (Microsoft ecosystem) worked because they invested in integration.** The Copilot tools aren't generic — they integrate deeply with 365 workflows. This integration required effort and planning but drove adoption.
+
+The contrast is instructive: many organisations buy AI tools and expect adoption. Commonwealth Bank bought AI tools and invested in making them work within their ecosystem. The result: near-universal adoption and genuine productivity gains.
+
+**Key Takeaway:** Buy vs. build decisions succeed when they're paired with integration and training investment. Vendor tools only create value if you invest in making them yours.
+
+Learn more: https://www.microsoft.com/en-us/microsoft-cloud/blog/
+
+---
+
 Congratulations! You've completed the Leadership Track.
 
 Your organisation is now positioned to adopt AI strategically: assessing real value, building capable teams, managing risks, and making sound buy/build decisions. The remaining challenge is execution — turning these frameworks into actual decisions and actions.

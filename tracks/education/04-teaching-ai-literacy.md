@@ -357,6 +357,55 @@ FEEDBACK: Good critical thinking about AI isn't black and white. It considers mu
 
 ---
 
+## Case Study: Ethan Mollick's Seven-Role Framework
+
+Ethan Mollick, Associate Professor at Wharton and leading researcher on AI in education, has defined seven distinct AI roles in learning, each with different pedagogical benefits and risks.
+
+**The Seven Roles:**
+
+1. **AI-tutor** — Explains concepts, answers questions
+2. **AI-coach** — Provides feedback and guidance
+3. **AI-mentor** — Offers career or skill advice
+4. **AI-teammate** — Collaborates on projects
+5. **AI-tool** — Completes specific tasks (like writing)
+6. **AI-simulator** — Simulates realistic scenarios for practice
+7. **AI-student** — Acts as a learner; students teach it
+
+**Why This Matters:**
+
+The framework helps teachers choose the right AI role for the right learning moment. They're not all the same. Using AI as a tutor is different from using it as a simulator or as a student.
+
+In his book "Co-Intelligence," Mollick argues for collaborative intelligence rather than replacement. This mirrors the framework in this module: AI is a tool for learning, not a substitute for the teacher.
+
+**One Particularly Powerful Finding:**
+
+Having students use AI as a "student" (explaining concepts back to it, catching when it's confused) is one of the most effective learning strategies. This turns AI from a potential replacement into a learning amplifier.
+
+**Key Takeaway:** Not all AI use in education is the same. The role matters enormously. Teachers need a vocabulary for AI pedagogy, and this framework provides it.
+
+Learn more: https://www.oneusefulthing.org/
+
+---
+
+## Case Study: Manchester Metropolitan University
+
+Manchester Metropolitan University invested £180,000 in an AI literacy programme reaching 650 academic staff — 83% of teaching faculty.
+
+**The Approach:**
+
+Rather than optional workshops, the university implemented:
+- Foundation workshops for all staff
+- Faculty-specific communities of practice (engineering, business, humanities had different needs)
+- Assessment redesign grants to help educators rethink how students demonstrate learning
+
+**Why This Matters:**
+
+Institutional change doesn't happen through encouragement alone. It requires investment, structure, and incentives. Manchester Met invested because they understood that helping teachers develop AI pedagogy isn't a nice-to-have — it's essential.
+
+**Key Takeaway:** Teaching AI literacy at scale requires institutional commitment: funded time, structured support, and incentives for innovation. A few voluntary workshops won't shift practice systemwide.
+
+---
+
 Congratulations! You've completed the Education Track.
 
 You're now equipped to:

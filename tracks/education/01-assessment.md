@@ -190,6 +190,9 @@ FEEDBACK: The goal is learning, not punishment. A learner who relies entirely on
 - Layered assessment: Assess what matters most at the skill level where it matters most.
 - The locus of learning: Has it shifted from "produce output" to "judge and improve output"? Your assessment should reflect that.
 
+> **📚 Further Reading**
+> For frameworks on AI literacy in education, see the **OECD AI Literacy Framework** in **Resources & Further Reading**. For real-world examples of educators redesigning assessment, see the **Ethan Mollick** and **Manchester Met case studies** in **Case Studies: Agentification in Practice**.
+
 ---
 
 Next: **Ed2. AI as Learning Partner** →

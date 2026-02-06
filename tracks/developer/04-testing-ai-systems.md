@@ -328,6 +328,37 @@ Be explicit about thresholds. "We need 95% of summaries to be factually accurate
 
 ---
 
+## Case Study: The GitHub Copilot Ecosystem
+
+GitHub Copilot reached 20 million users by end-2025, with 90% of Fortune 100 companies using it. But more importantly, the product evolved from simple autocomplete to a full ecosystem of agentic workflows.
+
+**The Expansion:**
+
+- **Agent HQ** provides orchestration for multi-step coding tasks
+- **Spec Kit** enables spec-driven development: write the specification, let the agent implement
+- **Copilot CLI** brings local automation to terminal workflows
+- **Code review agents** emerged directly from developer feedback on what made AI coding tools more useful
+
+By end-2025, 85% of developers regularly use AI coding tools — a near-universal adoption rate.
+
+**What This Reveals About Testing:**
+
+Three principles from this module played out at scale in Copilot's evolution:
+
+1. **Testing evolved alongside the tool.** The testing strategies for autocomplete are different from those for agents. The ecosystem matured by learning what developers actually needed to verify.
+
+2. **Spec-driven development mirrors spec-driven testing.** Writing the spec first (this module's principle) reflects exactly how Copilot's Spec Kit works: clear specification, agent implementation.
+
+3. **Context engineering became the critical skill, not prompt engineering.** Developers learned that good testing is about setting up the right context for the AI to work within — echoing the evaluation and property-based testing approaches in this module.
+
+**Key Takeaway:** The testing philosophy in this module isn't academic. It's exactly what production AI coding systems require at scale.
+
+Learn more:
+- https://github.blog/news-insights/company-news/welcome-home-agents/
+- https://docs.github.com/en/copilot
+
+---
+
 Congratulations! You've completed the Developer Track.
 
 Consider also:

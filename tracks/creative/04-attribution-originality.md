@@ -238,6 +238,39 @@ The goal isn't to hide AI use — it's to create work that wouldn't exist withou
 
 ---
 
+## Case Study: The Writers Guild and the 2023 Strike Settlement
+
+From May to September 2023, the Writers Guild of America (WGA) strike resulted in the first major AI provisions in creative industry labour agreements. The outcome matters for how you think about attribution and originality.
+
+**Key Provisions:**
+
+- Companies cannot require writers to use AI
+- AI-generated material cannot be classified as "literary material" or used to reduce writer credits
+- Writers can use AI as a tool with company permission, but the writer remains the author
+- AI-generated content does not count towards minimums for employment classifications
+
+In parallel, the US Copyright Office confirmed: "Prompts alone do not provide sufficient human control" for copyright ownership. Human authorship is required.
+
+**Why This Matters:**
+
+The guild negotiation didn't reject AI. It protected the principle that **the human author retains agency and credit**. This is precisely what the contribution spectrum in this module identifies: where does human creativity and control sit on the continuum?
+
+The legal system answered: if there's meaningful human authorship and control, you have copyright. If it's prompt-and-accept, you don't.
+
+**Key Takeaways:**
+
+1. The attribution principles in this module are already being codified in law and contracts
+2. The "human as author" principle survived its first major legal test
+3. Professional bodies move faster than legislation — guild agreements set norms before courts catch up
+
+You're learning principles that are becoming enforceable obligations.
+
+Learn more:
+- https://www.wga.org/contracts/know-your-rights/artificial-intelligence
+- https://www.copyright.gov/ai/
+
+---
+
 Congratulations! You've completed the Creative Track.
 
 Consider also:

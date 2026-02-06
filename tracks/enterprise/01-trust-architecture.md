@@ -202,6 +202,9 @@ REVIEW SCHEDULE: [frequency]
 - Minimum necessary access, human-in-the-loop, and audit trails are foundational
 - Document trust architecture for every deployment
 
+> **📚 Further Reading**
+> For guidance on AI governance frameworks, see the **NIST AI Risk Management Framework** and **Resources & Further Reading**. For real-world examples of organisations implementing trust architecture, see the **A&O Shearman case study** in **Case Studies: Agentification in Practice**.
+
 ---
 
 Next: **E2. Approved Channels** →

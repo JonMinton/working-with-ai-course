@@ -217,6 +217,9 @@ FEEDBACK: All of these are reasonable, but the most important step is making you
 - Use risk-adjusted ROI framing (conservative, realistic, optimistic) to ground discussions
 - Measure pilots rigorously and be willing to say no to deployments that don't deliver
 
+> **📚 Further Reading**
+> For strategic guidance on AI adoption, see the **Stanford HAI programme** in **Resources & Further Reading**. For real-world case studies of leadership decision-making, see the **McKinsey and BCG research** in **Case Studies: Agentification in Practice**.
+
 ---
 
 Next: **L2. Building AI-Ready Teams** →

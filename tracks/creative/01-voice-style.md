@@ -248,6 +248,9 @@ Take something you've written recently. Ask AI to rewrite it "in a more professi
 - Create a voice document for consistency across long works
 - Be honest about authenticity — use AI where it helps, preserve what matters
 
+> **📚 Further Reading**
+> For guidance on AI and creative work, see the **WGA AI guidance** and **US Copyright Office report** in **Resources & Further Reading**. For real-world examples of creators maintaining authenticity with AI tools, see **Case Studies: Agentification in Practice**.
+
 ---
 
 Next: **C2. Creative Iteration** →

@@ -324,6 +324,34 @@ Before submission:
 
 ---
 
+## Case Study: Harvard APEX+ Initiative
+
+Harvard's APEX+ (Agentic and Physical AI for Excellence in Science and Technology) initiative, led by Professors Jia Liu and Na Li, demonstrates reproducibility at scale in AI-assisted research.
+
+**The Application:**
+
+AI agents are deployed for neural data analysis, gene expression mapping, and behavioural analysis. Crucially, AR/VR interfaces allow AI agents to guide, observe, and document research tasks in real time.
+
+**The Results:**
+
+Analysis cycles that previously took 12 weeks now complete in 3–4 weeks. Experiment costs dropped by 70% versus human-designed approaches.
+
+**Why Reproducibility Actually Works Here:**
+
+Three principles from this module enabled this scale-up:
+
+1. **Reproducibility designed in from day one.** The AI agents log every step automatically. There's no "we forgot to document the process" — the system demands it.
+
+2. **The human role shifts from execution to supervision and interpretation.** Researchers don't disappear; they supervise, verify, and interpret results. This is cleaner documentation and clearer authorship.
+
+3. **Orchestrating specialised AI tools outperforms monolithic models.** Different agents for different tasks create natural boundaries for documentation and verification.
+
+**Key Takeaway:** The reproducibility practices in this module aren't constraining — they enable faster, cheaper, more transparent research. APEX+ proves that at scale.
+
+Learn more: https://seas.harvard.edu/news/new-initiative-aims-develop-ai-science-and-research-0
+
+---
+
 Congratulations! You've completed the Academic Track.
 
 Consider also:

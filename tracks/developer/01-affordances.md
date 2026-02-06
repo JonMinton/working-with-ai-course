@@ -389,6 +389,9 @@ This is exactly what affordances do — shape what's easy, hard, and possible.
 - Different AI tools use different file locations, but the content is portable
 - Keep instruction files concise, specific, and version-controlled
 
+> **📚 Further Reading**
+> For detailed **MCP documentation** and API design patterns, see **Resources & Further Reading**. For real-world examples of developer ecosystems built around AI, see the **GitHub Copilot ecosystem case study** in **Case Studies: Agentification in Practice**.
+
 ---
 
 Next: **D2. Architecture Patterns** →

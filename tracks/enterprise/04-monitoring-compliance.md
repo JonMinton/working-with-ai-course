@@ -523,6 +523,44 @@ You don't need a complex system. Start simple: structured JSON logs, basic dashb
 
 ---
 
+## Case Study: A&O Shearman × Harvey AI
+
+Global law firm Allen & Overy Shearman Sterling serves 4,000+ lawyers across 43 jurisdictions. In December 2022, they began deploying Harvey AI — now the most advanced legal AI deployment globally.
+
+**The Results:**
+
+Each lawyer saves 2–3 hours per week. Contract review time dropped by 30%. But more tellingly, the firm has scaled beyond initial use cases to deploy agentic AI agents for antitrust filing, cybersecurity review, fund formation, and loan review.
+
+**Why It Worked:**
+
+The governance framework in this module wasn't theoretical for A&O Shearman. The firm applied three principles from the outset:
+
+1. **Clear trust boundaries, not open-ended access.** The AI didn't get blanket permission to handle all firm data. Instead, scoped access controlled what the system could see and do.
+
+2. **Governance first, wide deployment second.** Formal policies were established before rolling out to many lawyers, not bolted on after problems emerged.
+
+3. **Monitoring built in from day one.** The firm established metrics, audit trails, and continuous evaluation from deployment, not added later.
+
+This disciplined approach let them scale from pilot to firm-wide deployment successfully.
+
+**Key Takeaway:** Enterprise AI governance succeeds when you start with trust boundaries, establish formal policies before scaling, and make monitoring a first-class concern — exactly what this module covers.
+
+Learn more: https://www.harvey.ai/
+
+---
+
+## Case Study: Big 4 Accounting Firms and Agentic AI
+
+KPMG is investing $2 billion in AI and retraining junior staff to become "managers of agents." PwC is targeting end-to-end AI audit automation by 2026. EY has deployed autonomous tax tools across 100,000+ employees.
+
+These aren't theory. These firms are building the exact monitoring and compliance frameworks you've learned in this module. They're establishing governance policies, setting evaluation cadences, handling sensitive data responsibly, and integrating continuous monitoring into their operational rhythm.
+
+**Key Takeaway:** The enterprise monitoring and compliance frameworks in this module are what leading firms are deploying now. This isn't future-state practice — it's the current state of advanced AI governance in professional services.
+
+Learn more: https://www.icaew.com/technical/technology/artificial-intelligence
+
+---
+
 Congratulations! You've completed the Enterprise Track.
 
 You now have a comprehensive framework for governing AI in enterprise environments:

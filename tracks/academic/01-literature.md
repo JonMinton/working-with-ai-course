@@ -181,6 +181,9 @@ Then: Verify quotes, check context, ensure fair representation.
 - Use AI for synthesis and organisation, not discovery
 - When in doubt, check the original source
 
+> **📚 Further Reading**
+> For tools to aid literature discovery, see **Elicit**, **Semantic Scholar**, and **Resources & Further Reading**. For real-world examples of researchers using AI in academic workflows, see the **Harvard APEX+ case study** in **Case Studies: Agentification in Practice**.
+
 ---
 
 Next: **A2. Modular Academic Writing** →

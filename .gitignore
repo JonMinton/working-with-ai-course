@@ -1,0 +1,5 @@
+.DS_Store
+.Rhistory
+# Saved-webpage artifacts (browser "Save As" output)
+core/*.html
+core/*_files/

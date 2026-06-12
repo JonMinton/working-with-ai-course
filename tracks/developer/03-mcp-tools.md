@@ -101,7 +101,7 @@ Return data that's easy for AI to parse and reason about:
     {
       "id": "doc-123",
       "title": "Getting Started",
-      "updated": "2024-01-15",
+      "updated": "YYYY-MM-DD",
       "relevance_score": 0.95
     }
   ]
@@ -202,9 +202,9 @@ QUIZ:
 You're designing a tool that lets AI query a database. Which approach is safest?
 
 * Let AI write arbitrary SQL queries
-*! Provide specific query templates with parameter substitution
+* Provide specific query templates with parameter substitution
 * Only allow read operations with row limits
-* All of the above combined, with b+c as the base
+*! Combine query templates with read-only access and row limits
 
 FEEDBACK: Combining parameterised queries (no SQL injection) with read-only access and row limits provides multiple safety layers.
 ```
@@ -230,7 +230,7 @@ FEEDBACK: Combining parameterised queries (no SQL injection) with read-only acce
 
 ## MCP Tool Documentation Template
 
-```markdown
+~~~markdown
 # Tool: [name]
 
 ## Purpose
@@ -266,7 +266,7 @@ Output: ...
 - What this tool can/cannot access
 - Approval requirements
 - Rate limits
-```
+~~~
 
 ## Key Takeaways
 

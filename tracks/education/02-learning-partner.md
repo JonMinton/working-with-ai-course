@@ -192,7 +192,7 @@ The difference is subtle but crucial.
 
 ### Why Struggle Matters
 
-Neural science suggests learning involves:
+Learning-science research suggests learning involves:
 - Trying something that doesn't work
 - Recognising the failure
 - Revising your approach

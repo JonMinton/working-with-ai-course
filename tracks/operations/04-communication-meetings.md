@@ -282,11 +282,11 @@ Then: "Customise this template for [specific project]"
 
 ## Case Study: Goldman Sachs GS AI Assistant
 
-After a 10,000-employee pilot in late 2024, Goldman Sachs rolled out its firmwide GS AI Assistant in mid-2025. Adoption exceeded expectations with 90%+ uptake across the organisation.
+In publicly reported accounts from 2024–2025, Goldman Sachs piloted its GS AI Assistant with thousands of employees before a firmwide rollout. Rapid, near-universal adoption was reported across the organisation.
 
 **The Impact:**
 
-Administrative tasks that previously consumed 20–30 minutes now take under 2 minutes:
+Administrative tasks that previously consumed substantial chunks of time were reportedly reduced to a few minutes:
 - Meeting preparation and agenda creation
 - Document summarisation
 - Email drafting and response
@@ -298,9 +298,9 @@ The case demonstrates three principles from this module:
 
 1. **Adoption succeeded because it targeted pain points people already had.** The assistant didn't ask people to change their workflow fundamentally. It addressed the tedious parts: meeting prep, document search, administrative overhead.
 
-2. **The 10,000-person pilot revealed and fixed workflow issues before full rollout.** Firms that skip pilots often discover problems only after companywide deployment.
+2. **The large-scale pilot revealed and fixed workflow issues before full rollout.** Firms that skip pilots often discover problems only after companywide deployment.
 
-3. **The biggest gains were in exactly the communication and meeting tasks covered in this module.** Email drafting, meeting follow-up, status updates — these time-consuming knowledge work tasks became largely automatic.
+3. **The biggest gains were reported in exactly the communication and meeting tasks covered in this module.** Email drafting, meeting follow-up, status updates — these time-consuming knowledge work tasks became largely automatic.
 
 **Key Takeaway:** When AI is applied to communication and meetings thoughtfully, adoption isn't a struggle. People adopt tools that solve actual problems.
 
@@ -310,12 +310,12 @@ Learn more: https://aiexpert.network/goldman-sachs-ai/
 
 ## Case Study: Morgan Stanley AI Assistant
 
-Morgan Stanley deployed its AI Assistant across the organisation, with particular success in client-facing and back-office operations.
+Another publicly reported example from 2024–2025: Morgan Stanley deployed its AI Assistant across the organisation, with particular success in client-facing and back-office operations.
 
-**The Results:**
+**The Reported Results:**
 
-- Document retrieval efficiency jumped from 20% to 80%
-- 98% of advisor teams actively use the tool
+- The firm reported a dramatic jump in document retrieval efficiency
+- Adoption by advisor teams was reported as near-universal
 - AI Debrief automates meeting summaries and automatically updates client relationship management (CRM) systems
 
 **The Breakthrough:**

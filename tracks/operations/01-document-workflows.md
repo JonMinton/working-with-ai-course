@@ -152,6 +152,8 @@ Bullet points in, prose out.
 
 AI can help navigate tricky communication — but always review carefully.
 
+**Warning:** Never send an AI-drafted email without reading it through first — you are responsible for every word that goes out under your name.
+
 ### The Follow-Up Tracker
 
 > "Here are 5 emails I'm waiting on responses to. Draft brief, polite follow-ups for each. Reference the original topic and make it easy to reply."
@@ -258,7 +260,7 @@ Then use: "Write a [document type] using this template: [paste template]"
 - Build templates for repeated document types
 
 > **📚 Further Reading**
-> For guidance on deploying AI in enterprise document workflows, see **Microsoft 365 Copilot training** in **Resources & Further Reading**. For real-world examples of organisations transforming operations with agentic AI, see the **Goldman Sachs case study** in **Case Studies: Agentification in Practice**.
+> For guidance on deploying AI in enterprise document workflows, see **Microsoft 365 Copilot training** in **Resources & Further Reading**. For real-world examples of organisations transforming operations with agentic AI, see the Goldman Sachs example on the **Case Studies** page (a separate page in the course navigation).
 
 ---
 

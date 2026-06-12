@@ -266,9 +266,9 @@ SENSITIVITY:
 If you're considering building, understand what you're actually committing to.
 
 ### Visible Costs
-- Initial development: 6–12 months, 2–5 engineers
+- Initial development: typically 6–18 months depending on complexity, often with 2–5 engineers (agentic coding tools are compressing these timelines, but integration and evaluation work remains substantial)
 - Infrastructure: GPU compute, storage
-- Initial investment: often £500k–£2M+ for meaningful models
+- Initial investment: often substantial — six to seven figures for meaningful custom capability (illustrative; varies widely)
 
 ### Hidden Costs (Usually Underestimated)
 - **Ongoing training and fine-tuning:** Models degrade or need updating. Plan for quarterly work minimum.
@@ -336,11 +336,11 @@ Many organisations create an internal centre of excellence: a team that manages 
 
 ## Case Study: Commonwealth Bank of Australia
 
-Commonwealth Bank deployed Microsoft 365 Copilot and GitHub Copilot across 10,000 users, underpinned by a structured training programme with clear objectives.
+Commonwealth Bank deployed Microsoft 365 Copilot and GitHub Copilot to a large user base (publicly reported at around 10,000 users), underpinned by a structured training programme with clear objectives.
 
 **The Outcome:**
 
-84% of users report they "wouldn't work without it" — an extraordinarily high satisfaction rate for enterprise software adoption.
+The bank publicly reported that a large majority of users said they would not want to work without the tools — an extraordinarily high satisfaction rate for enterprise software adoption.
 
 **Why It Worked:**
 

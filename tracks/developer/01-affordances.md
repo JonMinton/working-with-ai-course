@@ -218,7 +218,7 @@ Without instruction files, every conversation starts from zero. The AI doesn't k
 - Your tech stack preferences
 - What mistakes to avoid
 
-With instruction files, the AI has this context immediately. This is a form of **persistence** (see Core Module 3) that you control.
+With instruction files, the AI has this context immediately. This is a form of **persistence** (see Core Module 4: Understanding AI Systems) that you control.
 
 ### Cross-Tool Comparison
 
@@ -228,13 +228,13 @@ Different AI tools use different file locations and formats:
 |------|-----------------|-------------------|--------|
 | **Claude Code** | `CLAUDE.md` (root) | `CLAUDE.md` in subdirectories | Markdown |
 | **GitHub Copilot** | `.github/copilot-instructions.md` | `.github/instructions/*.instructions.md` | Markdown |
-| **Cursor** | `.cursorrules` (legacy) | `.cursor/rules/*.mdc` | Markdown/MDC |
+| **Cursor** | `.cursorrules` | `.cursor/rules/*.mdc` | Markdown/MDC |
 
 **Key differences:**
 
 - **Claude Code** supports nested files — a `CLAUDE.md` in a subdirectory adds context for that part of the codebase
 - **GitHub Copilot** supports `applyTo` frontmatter for file-type targeting (e.g., `applyTo: **/*.py`)
-- **Cursor** is transitioning from `.cursorrules` to `.mdc` files with metadata
+- **Cursor** supports both `.cursorrules` and the newer `.cursor/rules/*.mdc` files with metadata
 
 ### Writing Effective Instruction Files
 
@@ -271,7 +271,7 @@ Brief description (1-2 sentences).
 | Principle | Why It Matters |
 |-----------|---------------|
 | **Be specific** | "Use camelCase" is actionable; "write clean code" is not |
-| **Be concise** | AI context windows are limited; don't waste tokens |
+| **Be concise** | Concise files keep the AI's attention on what matters and reduce cost |
 | **Prioritise** | Put the most important things first |
 | **Update regularly** | Stale instructions cause confusion |
 | **Version control** | Instruction files should be in git |
@@ -352,6 +352,8 @@ project/
 | Obvious things | "Write working code" wastes tokens |
 | Tool-specific syntax | Keep content portable across tools |
 
+A note on context windows: modern models have large context windows — hundreds of thousands of tokens, approaching a million on some models — so an instruction file will rarely hit a hard limit. Conciseness still pays, though: shorter files keep the model's attention on the instructions that matter, and every token in context adds cost.
+
 ```
 EXERCISE:
 Create an instruction file strategy for a project with:
@@ -390,7 +392,7 @@ This is exactly what affordances do — shape what's easy, hard, and possible.
 - Keep instruction files concise, specific, and version-controlled
 
 > **📚 Further Reading**
-> For detailed **MCP documentation** and API design patterns, see **Resources & Further Reading**. For real-world examples of developer ecosystems built around AI, see the **GitHub Copilot ecosystem case study** in **Case Studies: Agentification in Practice**.
+> For detailed MCP documentation and API design patterns, see the Resources & Further Reading page in this course. For a real-world example of a developer ecosystem built around AI, see the GitHub Copilot example on the Case Studies page.
 
 ---
 

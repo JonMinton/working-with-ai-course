@@ -88,6 +88,8 @@ Define which actions require human approval:
 - Personnel decisions
 - Production system changes
 
+**Why these categories?** Three tests place an action in the right tier: **consequence severity** (how much damage a wrong action causes), **reversibility** (a draft can be deleted; a sent email or executed payment cannot be unsent), and **legal liability** (whether the action creates binding commitments or regulated decisions). Actions that score high on any of these belong in the approval-required or human-executes tiers.
+
 ```
 EXERCISE:
 For an AI assistant helping with customer support:
@@ -174,12 +176,14 @@ Your compliance team is concerned about AI accessing customer data. Which approa
 * Wait for them to approve AI without addressing concerns
 *! Propose a pilot with full audit logging, human review, and clear boundaries
 * Use AI anyway and ask forgiveness later
-FEEDBACK:A well-governed pilot with clear controls addresses concerns directly and builds trust through evidence.
+FEEDBACK: A well-governed pilot with clear controls addresses concerns directly and builds trust through evidence.
 ```
 
 ## Incident Response
 
 What happens when something goes wrong?
+
+This section covers the governance view — categories and process. For the monitoring that detects incidents and the audit logs that let you reconstruct them, see **E4. Monitoring, Compliance & Continuous Evaluation**; for leadership-level incident preparedness and public communication, see **L3. Risk & Reputation** in the Leadership track.
 
 ### AI Incident Categories
 

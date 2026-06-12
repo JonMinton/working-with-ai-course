@@ -127,7 +127,7 @@ AI can apply judgment where rules would be complex.
 > - Company size (if well-known)
 > - Note if it's a government, nonprofit, or education institution"
 
-Be careful: AI may guess incorrectly. Verify important enrichments.
+Be careful: AI may guess incorrectly, and enrichment is where guesses look most like facts. Before relying on enriched data, spot-check a sample of rows against a reliable source — for example, verify a dozen companies' industries against their own websites or an official register before trusting the rest.
 
 ## Combining Data
 
@@ -236,6 +236,8 @@ Data work requires extra verification:
 2. Verify edge cases (unusual values, missing data)
 3. Cross-check totals and counts
 4. Question surprising results
+
+Systematic errors are the ones to fear: AI might categorise 80% of your expenses correctly but consistently mislabel one category — spot checks spread across all categories catch this, where checking only the first few rows would not.
 
 ## Key Takeaways
 

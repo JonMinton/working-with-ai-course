@@ -75,15 +75,20 @@ FEEDBACK: Honest disclosure that accurately represents your process builds trust
 
 ## Copyright and Ownership
 
-### The Current Legal Landscape (2025)
+### The Legal Landscape
 
-**Key developments:**
-- US Copyright Office: Pure AI output (no human authorship) is not copyrightable
-- Human selection, arrangement, and modification can establish copyright
-- The more human creative input, the stronger the copyright claim
-- Laws vary by jurisdiction and are evolving rapidly
+The law here continues to evolve, but a few points have become reasonably settled:
 
-**Practical implication:** The more you do beyond "generate and accept," the clearer your claim to the work.
+- The US Copyright Office holds that purely AI-generated material, without sufficient human authorship, is not copyrightable
+- Human selection, arrangement, and modification of AI output *can* establish copyright
+- Prompts alone have generally not been considered sufficient human authorship
+- Litigation about training data is ongoing, and the picture varies by jurisdiction and continues to evolve
+
+**Practical implications:**
+- The more you do beyond "generate and accept," the clearer your claim to the work
+- Disclose AI use where your context expects it
+- Keep records of your creative contribution — drafts, notes, revision history
+- Check the policy of your publisher, client, or platform; many now have explicit AI rules
 
 ### Strengthening Your Claim
 
@@ -240,7 +245,7 @@ The goal isn't to hide AI use — it's to create work that wouldn't exist withou
 
 ## Case Study: The Writers Guild and the 2023 Strike Settlement
 
-From May to September 2023, the Writers Guild of America (WGA) strike resulted in the first major AI provisions in creative industry labour agreements. The outcome matters for how you think about attribution and originality.
+A useful piece of historical context: from May to September 2023, the Writers Guild of America (WGA) strike resulted in the first major AI provisions in creative industry labour agreements. The outcome still matters for how you think about attribution and originality.
 
 **Key Provisions:**
 
@@ -249,18 +254,18 @@ From May to September 2023, the Writers Guild of America (WGA) strike resulted i
 - Writers can use AI as a tool with company permission, but the writer remains the author
 - AI-generated content does not count towards minimums for employment classifications
 
-In parallel, the US Copyright Office confirmed: "Prompts alone do not provide sufficient human control" for copyright ownership. Human authorship is required.
+Around the same period, the US Copyright Office set out its position that prompts alone generally do not amount to sufficient human authorship for copyright. Human authorship is required.
 
 **Why This Matters:**
 
 The guild negotiation didn't reject AI. It protected the principle that **the human author retains agency and credit**. This is precisely what the contribution spectrum in this module identifies: where does human creativity and control sit on the continuum?
 
-The legal system answered: if there's meaningful human authorship and control, you have copyright. If it's prompt-and-accept, you don't.
+The emerging position, broadly: where there is meaningful human authorship and control, copyright protection is available. Where it's prompt-and-accept, it generally isn't.
 
 **Key Takeaways:**
 
-1. The attribution principles in this module are already being codified in law and contracts
-2. The "human as author" principle survived its first major legal test
+1. The attribution principles in this module are being codified in contracts and professional norms
+2. The "human as author" principle has, so far, been preserved as these questions get tested
 3. Professional bodies move faster than legislation — guild agreements set norms before courts catch up
 
 You're learning principles that are becoming enforceable obligations.

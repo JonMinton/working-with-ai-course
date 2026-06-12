@@ -9,7 +9,7 @@ One of the most powerful uses of AI in academic work: **using one AI to critique
 │              ADVERSARIAL AI PEER REVIEW                     │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  AGENT A (e.g., Claude)          AGENT B (e.g., GPT-4)     │
+│  AGENT A (e.g., Claude)          AGENT B (e.g., GPT)       │
 │  ┌─────────────────┐             ┌─────────────────┐       │
 │  │                 │             │                 │       │
 │  │  Writes draft   │────────────▶│  Critiques:     │       │
@@ -39,6 +39,8 @@ One of the most powerful uses of AI in academic work: **using one AI to critique
 - Cross-family review catches more issues
 - Mimics actual peer review (different minds)
 
+One caveat: different models are trained on overlapping data and can share blind spots too. Cross-model review reduces the risk of missed problems, but it does not eliminate it — which is one more reason the human stays in charge.
+
 ### The Human Role
 
 AI critique is input, not judgment. You:
@@ -57,7 +59,7 @@ AI critique is input, not judgment. You:
 > 2. **Unsupported claims:** What statements lack evidence?
 > 3. **Alternative interpretations:** What other explanations exist for these findings?
 > 4. **Missing literature:** What important perspectives aren't addressed?
-> 5. **Methodological concerns:** What could a skeptical reviewer question?
+> 5. **Methodological concerns:** What could a sceptical reviewer question?
 >
 > Be specific. Quote the text when identifying issues."
 
@@ -72,6 +74,8 @@ Tailor to your field:
 > - Confounds not addressed
 > - Statistical approach appropriateness
 > - Replicability concerns"
+
+(If you're new to the term: Reviewer 2 is a long-running academic in-joke — the notoriously harsh anonymous reviewer that every author dreads.)
 
 **For theoretical work:**
 > "Review this argument as a philosopher would. Identify:
@@ -110,10 +114,10 @@ Switch to a different model family.
 Provide the draft + critique prompt.
 
 **Example switch:**
-- Draft with: Claude
-- Critique with: GPT-4
+- Draft with one model family (e.g. Claude)
+- Critique with another (e.g. GPT)
 
-Or vice versa.
+Ideally the two agents come from different model families. Either direction works.
 
 ### Step 3: Analyse Critiques
 
@@ -136,12 +140,12 @@ Consider another round of critique if substantial changes.
 
 ```
 QUIZ:
-Agent B (GPT-4) critiques your Methods section, saying your sample size is too small for the claimed statistical power. What do you do?
+Agent B critiques your Methods section, saying your sample size is too small for the claimed statistical power. What do you do?
 
-* Ignore it — GPT-4 isn't a statistician
+* Ignore it — the AI isn't a statistician
 * Automatically add more participants to your description
 *! Verify the calculation yourself, and either defend your choice or acknowledge the limitation
-* Ask Claude to argue against the critique
+* Ask Agent A to argue against the critique
 
 FEEDBACK: AI critique surfaces potential issues; you verify and make the judgment. If the critique is valid, address it honestly. If it's wrong, you should be able to articulate why.
 ```
@@ -162,7 +166,7 @@ FEEDBACK: AI critique surfaces potential issues; you verify and make the judgmen
 
 ### For Methods
 
-> "What methodological weaknesses would a skeptical reviewer identify?"
+> "What methodological weaknesses would a sceptical reviewer identify?"
 > "What alternative explanations for these results aren't addressed?"
 > "What threats to validity exist?"
 
@@ -209,7 +213,7 @@ Academic norms increasingly require transparency about AI use.
 
 ### Sample Disclosure
 
-> "AI tools (Claude, GPT-4) were used in the preparation of this manuscript for: generating initial draft text for specific sections, critiquing drafts to identify weaknesses, and improving clarity. All AI-generated content was reviewed and substantially revised by the authors. All citations were verified against original sources. [Author] takes full responsibility for the final content."
+> "AI tools (e.g. Claude and GPT) were used in the preparation of this manuscript for: generating initial draft text for specific sections, critiquing drafts to identify weaknesses, and improving clarity. All AI-generated content was reviewed and substantially revised by the authors. All citations were verified against original sources. [Author] takes full responsibility for the final content."
 
 ### Where to Disclose
 

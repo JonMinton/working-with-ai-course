@@ -6,7 +6,7 @@ AI can fail in many ways. Leaders need to know the category of failure before de
 
 ### Hallucination
 
-**What it is:** AI generates plausible-sounding but false information with confidence.
+**What it is:** AI generates plausible-sounding but false information with confidence. (Core Module 1: How AI Actually Works explains why this failure mode is inherent to how language models generate text.)
 
 **Characteristics:**
 - Facts sound right but aren't (wrong dates, invented sources, fabricated quotes)
@@ -185,6 +185,8 @@ FEEDBACK: Customer-facing communication is medium-to-high stakes. It's public-fa
 ## Incident Preparedness
 
 Most organisations focus on incident *response* (what to do *after* something goes wrong). Incident *preparedness* means being ready *before* it happens.
+
+(For the governance-level incident categories and the monitoring that detects incidents, see the Enterprise track: E3. Governance Patterns and E4. Monitoring, Compliance & Continuous Evaluation. This module covers the leadership view: preparedness and public communication.)
 
 ### Incident Preparedness Checklist
 

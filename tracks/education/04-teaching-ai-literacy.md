@@ -39,6 +39,8 @@ Learners don't need to understand neural networks. They do need to understand:
 - It can sound confident while being wrong
 - Different AI systems have different capabilities and limitations
 
+(Core Module 1: How AI Actually Works covers these ideas — including hallucination and sycophancy — in more depth, and is a useful refresher before teaching them.)
+
 **Teaching approach:** Analogies and experiments. Compare AI to other systems.
 
 **Example analogies:**
@@ -359,7 +361,7 @@ FEEDBACK: Good critical thinking about AI isn't black and white. It considers mu
 
 ## Case Study: Ethan Mollick's Seven-Role Framework
 
-Ethan Mollick, Associate Professor at Wharton and leading researcher on AI in education, has defined seven distinct AI roles in learning, each with different pedagogical benefits and risks.
+Ethan Mollick, Associate Professor at Wharton and a leading researcher on AI in education, and his colleagues have proposed a set of distinct AI roles in learning, each with different pedagogical benefits and risks.
 
 **The Seven Roles:**
 
@@ -377,9 +379,9 @@ The framework helps teachers choose the right AI role for the right learning mom
 
 In his book "Co-Intelligence," Mollick argues for collaborative intelligence rather than replacement. This mirrors the framework in this module: AI is a tool for learning, not a substitute for the teacher.
 
-**One Particularly Powerful Finding:**
+**One Particularly Powerful Idea:**
 
-Having students use AI as a "student" (explaining concepts back to it, catching when it's confused) is one of the most effective learning strategies. This turns AI from a potential replacement into a learning amplifier.
+Having students use AI as a "student" (explaining concepts back to it, catching when it's confused) is one of the most promising strategies Mollick and colleagues describe. This turns AI from a potential replacement into a learning amplifier.
 
 **Key Takeaway:** Not all AI use in education is the same. The role matters enormously. Teachers need a vocabulary for AI pedagogy, and this framework provides it.
 
@@ -387,20 +389,20 @@ Learn more: https://www.oneusefulthing.org/
 
 ---
 
-## Case Study: Manchester Metropolitan University
+## Case Study: An Institutional AI Literacy Programme
 
-Manchester Metropolitan University invested £180,000 in an AI literacy programme reaching 650 academic staff — 83% of teaching faculty.
+Consider how a large university — Manchester Metropolitan is one widely discussed example — can approach AI literacy at scale: a substantial, dedicated budget for a programme designed to reach the large majority of teaching staff (figures in accounts of such programmes vary; treat any you encounter as illustrative).
 
 **The Approach:**
 
-Rather than optional workshops, the university implemented:
+Rather than optional workshops, this kind of programme implements:
 - Foundation workshops for all staff
 - Faculty-specific communities of practice (engineering, business, humanities had different needs)
 - Assessment redesign grants to help educators rethink how students demonstrate learning
 
 **Why This Matters:**
 
-Institutional change doesn't happen through encouragement alone. It requires investment, structure, and incentives. Manchester Met invested because they understood that helping teachers develop AI pedagogy isn't a nice-to-have — it's essential.
+Institutional change doesn't happen through encouragement alone. It requires investment, structure, and incentives. Institutions that invest in this way do so because they understand that helping teachers develop AI pedagogy isn't a nice-to-have — it's essential.
 
 **Key Takeaway:** Teaching AI literacy at scale requires institutional commitment: funded time, structured support, and incentives for innovation. A few voluntary workshops won't shift practice systemwide.
 

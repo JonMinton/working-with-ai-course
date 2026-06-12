@@ -125,7 +125,7 @@ You're testing an AI function that extracts dates from text. Which test is most 
 *! `assert extract_date("Meeting on January 5th") matches date format YYYY-MM-DD`
 * `assert extract_date("Meeting on January 5th") is not None`
 
-FEEDBACK: Testing the format (structure) is more reliable than testing exact values. The AI might return "2024-01-05" or "2025-01-05" depending on context assumptions, but it should always return a valid date format.
+FEEDBACK: Testing the format (structure) is more reliable than testing exact values. The AI might resolve the year differently depending on context assumptions, but it should always return a valid date format.
 ```
 
 ## Evaluation vs. Testing
@@ -293,8 +293,9 @@ def test_regressions():
 ### Version Pinning
 
 ```python
-# Document which model version tests were validated against
-AI_MODEL_VERSION = "claude-sonnet-4-20250514"
+# Pin the exact model version your tests were validated against,
+# e.g. claude-sonnet-4-5
+AI_MODEL_VERSION = "claude-sonnet-4-5"
 
 def test_with_version_check():
     if current_model() != AI_MODEL_VERSION:
@@ -330,7 +331,7 @@ Be explicit about thresholds. "We need 95% of summaries to be factually accurate
 
 ## Case Study: The GitHub Copilot Ecosystem
 
-GitHub Copilot reached 20 million users by end-2025, with 90% of Fortune 100 companies using it. But more importantly, the product evolved from simple autocomplete to a full ecosystem of agentic workflows.
+GitHub reported that Copilot passed 20 million users in 2025, with adoption across most of the largest enterprises. But more importantly, the product evolved from simple autocomplete to a full ecosystem of agentic workflows.
 
 **The Expansion:**
 
@@ -339,7 +340,7 @@ GitHub Copilot reached 20 million users by end-2025, with 90% of Fortune 100 com
 - **Copilot CLI** brings local automation to terminal workflows
 - **Code review agents** emerged directly from developer feedback on what made AI coding tools more useful
 
-By end-2025, 85% of developers regularly use AI coding tools — a near-universal adoption rate.
+Industry surveys consistently find that large majorities of developers now use AI coding tools regularly.
 
 **What This Reveals About Testing:**
 
@@ -349,7 +350,7 @@ Three principles from this module played out at scale in Copilot's evolution:
 
 2. **Spec-driven development mirrors spec-driven testing.** Writing the spec first (this module's principle) reflects exactly how Copilot's Spec Kit works: clear specification, agent implementation.
 
-3. **Context engineering became the critical skill, not prompt engineering.** Developers learned that good testing is about setting up the right context for the AI to work within — echoing the evaluation and property-based testing approaches in this module.
+3. **Context engineering came to matter alongside prompt engineering.** Developers learned that good testing is as much about setting up the right context for the AI to work within as about wording the prompt — echoing the evaluation and property-based testing approaches in this module.
 
 **Key Takeaway:** The testing philosophy in this module isn't academic. It's exactly what production AI coding systems require at scale.
 

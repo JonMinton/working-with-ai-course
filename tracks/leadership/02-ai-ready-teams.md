@@ -4,7 +4,7 @@
 
 When organisations adopt AI, a critical assumption is often unspoken: *people already know how to work with it*.
 
-They don't. Not because they're incapable, but because "working effectively with AI" is a distinct set of skills that didn't exist five years ago. Teams need both new hires and deliberate development in existing staff.
+They don't. Not because they're incapable, but because "working effectively with AI" is a distinct set of skills that has only existed since modern chat assistants arrived in late 2022. Teams need both new hires and deliberate development in existing staff.
 
 > "We gave everyone access to Claude. Three months later, we found out half the team thought AI just makes stuff up, so they don't use it for anything important."
 
@@ -35,7 +35,7 @@ You likely won't hire a completely "AI-ready" workforce. More realistically: rec
 Most of your team will already be in place. They need development in specific areas:
 
 #### Tier 1: Foundation (Everyone)
-- What AI actually is (and isn't)
+- What AI actually is (and isn't) — core Module 1 (How AI Actually Works) covers this ground
 - Where it's genuinely useful vs. hyped
 - When to use it (and when not to)
 - Basic hands-on practice

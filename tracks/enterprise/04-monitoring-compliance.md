@@ -199,7 +199,7 @@ When prompts change, regression test the new version:
 
 **Document the change:**
 ```
-PROMPT VERSION: 3.2 (Feb 2025)
+PROMPT VERSION: 3.2
 
 CHANGE: Expanded instruction to handle billing disputes
 RATIONALE: Support team reported 15% of escalations were missed billing issues
@@ -219,14 +219,9 @@ MONITORING: Daily refusal rate, weekly full evaluation
 
 ### The Data Classification Framework
 
-Organisations typically use classifications like Public, Internal, Confidential, Restricted. The question for AI is: **what can go into the prompt, and under what conditions?**
+Organisations typically use four classifications — Public, Internal, Confidential, Restricted. The canonical table mapping each class to allowed channels is in **E2. Approved Channels** (see the Data Classification and Routing section); we won't repeat it here.
 
-| Classification | Can Give to AI? | Conditions | Redaction Examples |
-|----------------|-----------------|-----------|-------------------|
-| **Public** | Yes, unrestricted | None | None needed |
-| **Internal** | Yes, carefully | Human review, audit logging | Remove names when generic |
-| **Confidential** | Maybe | Approval, redaction, monitoring | Remove specific customer names, IDs, amounts unless essential |
-| **Restricted** | Rarely | Air-gapped system, case-by-case, special approval | Remove entirely or abstract (e.g., "customer #7" not name) |
+What this module adds is the operational layer: **what can go into the prompt, who approves it, what gets logged, and how long anything is retained.** Those rules are defined per tier in the Risk Tiers and Handling Rules table below. First, though, the practical question teams actually face: how to redact data so it becomes safe to use.
 
 ### Building a Redaction Decision Tree
 
@@ -525,11 +520,11 @@ You don't need a complex system. Start simple: structured JSON logs, basic dashb
 
 ## Case Study: A&O Shearman × Harvey AI
 
-Global law firm Allen & Overy Shearman Sterling serves 4,000+ lawyers across 43 jurisdictions. In December 2022, they began deploying Harvey AI — now the most advanced legal AI deployment globally.
+Global law firm A&O Shearman (Allen & Overy Shearman Sterling) has thousands of lawyers across dozens of jurisdictions. From late 2022, it became one of the earliest large law firms to deploy Harvey AI at scale — and the deployment has since become one of the most widely cited examples of legal AI adoption.
 
 **The Results:**
 
-Each lawyer saves 2–3 hours per week. Contract review time dropped by 30%. But more tellingly, the firm has scaled beyond initial use cases to deploy agentic AI agents for antitrust filing, cybersecurity review, fund formation, and loan review.
+The firm has publicly reported meaningful weekly time savings per lawyer and substantially faster contract review. More tellingly, it has scaled beyond initial use cases to deploy agentic AI for work such as antitrust filing, cybersecurity review, fund formation, and loan review.
 
 **Why It Worked:**
 
@@ -551,7 +546,7 @@ Learn more: https://www.harvey.ai/
 
 ## Case Study: Big 4 Accounting Firms and Agentic AI
 
-KPMG is investing $2 billion in AI and retraining junior staff to become "managers of agents." PwC is targeting end-to-end AI audit automation by 2026. EY has deployed autonomous tax tools across 100,000+ employees.
+The Big 4 accounting firms have all made major, publicly announced AI investments: retraining junior staff to work as "managers of agents", pushing audit workflows towards heavy AI automation, and rolling out AI tax and advisory tooling across workforces of tens of thousands.
 
 These aren't theory. These firms are building the exact monitoring and compliance frameworks you've learned in this module. They're establishing governance policies, setting evaluation cadences, handling sensitive data responsibly, and integrating continuous monitoring into their operational rhythm.
 

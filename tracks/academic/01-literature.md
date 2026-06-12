@@ -10,6 +10,8 @@ AI can hallucinate citations. It might generate:
 
 In academic work, this is catastrophic. A single fabricated citation can destroy credibility.
 
+This is not an occasional glitch — it is a structural feature of how language models work. Core Module 1: How AI Actually Works explains why: models predict plausible text, and a plausible-sounding reference is exactly what next-token prediction produces when the real one is not in context.
+
 **The solution:** Treat your .bib file as the **single source of truth**. AI can only reference what exists in your curated bibliography.
 
 ## The .bib-First Workflow
@@ -49,6 +51,7 @@ If AI suggests a reference, ask: "Is this in my .bib?" If not, verify it exists 
 | Source | How to Export |
 |--------|---------------|
 | Google Scholar | Click cite → BibTeX |
+| Semantic Scholar | Cite button → BibTeX (also offers an open API) |
 | Zotero | Right-click → Export as BibTeX |
 | Mendeley | File → Export → BibTeX |
 | Publisher sites | Usually "Cite" or "Export" button |
@@ -113,6 +116,8 @@ You're writing a literature review. AI suggests: "According to Chen et al. (2022
 | **Cite from memory** | Training data citations may be wrong |
 | **Assess paper quality** | Can't verify methodology |
 | **Determine novelty** | Doesn't know all literature |
+
+**A firm rule: do not use a general-purpose chat model as your primary tool for discovering new papers.** Asked to recommend literature, models routinely produce plausible-sounding references that do not exist, or attach real titles to the wrong authors, journals, or years. Use purpose-built discovery tools — library databases, Google Scholar, Semantic Scholar, Elicit — to find papers, verify each one at source, and only then bring it into your .bib for AI to work with.
 
 ## Prompting for Literature Work
 
@@ -182,7 +187,7 @@ Then: Verify quotes, check context, ensure fair representation.
 - When in doubt, check the original source
 
 > **📚 Further Reading**
-> For tools to aid literature discovery, see **Elicit**, **Semantic Scholar**, and **Resources & Further Reading**. For real-world examples of researchers using AI in academic workflows, see the **Harvard APEX+ case study** in **Case Studies: Agentification in Practice**.
+> For tools to aid literature discovery, such as Elicit and Semantic Scholar, see the Resources & Further Reading page in this course.
 
 ---
 

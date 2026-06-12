@@ -7,7 +7,7 @@ AI-assisted research introduces new reproducibility concerns:
 - **Non-determinism:** Same prompt, different outputs
 - **Model evolution:** The model you used today won't exist in two years
 - **Opacity:** "I used AI to help" doesn't let others replicate your process
-- **Versioning:** Which version of GPT-4? What temperature? What system prompt?
+- **Versioning:** Which model, and which exact version? What temperature? What system prompt?
 
 If a colleague or reviewer can't understand what you did with AI, they can't evaluate or replicate it.
 
@@ -46,7 +46,7 @@ A structured record of AI interactions:
 ## AI Interaction Log
 
 ### Session: Literature Theme Analysis
-- **Date:** 2024-01-15
+- **Date:** YYYY-MM-DD
 - **Model:** Claude Sonnet 4 (claude-sonnet-4-20250514)
 - **Temperature:** Default (not specified)
 
@@ -70,8 +70,8 @@ For complex multi-turn interactions:
 ## Transcript: Methods Section Drafting
 
 **Context:** Drafting participant description for Methods section.
-**Model:** GPT-4 (gpt-4-0613)
-**Date:** 2024-01-15
+**Model:** GPT (record the exact version string reported by the provider)
+**Date:** YYYY-MM-DD
 
 ---
 
@@ -130,9 +130,9 @@ project/
 │   ├── manuscript.qmd
 │   └── references.bib
 ├── ai-logs/
-│   ├── 2024-01-15-theme-analysis.md
-│   ├── 2024-01-18-methods-draft.md
-│   └── 2024-01-20-discussion-revision.md
+│   ├── YYYY-MM-DD-theme-analysis.md
+│   ├── YYYY-MM-DD-methods-draft.md
+│   └── YYYY-MM-DD-discussion-revision.md
 ├── prompts/
 │   ├── literature-synthesis.md
 │   └── critique-request.md
@@ -154,7 +154,7 @@ Consider: Could someone reproduce your AI-assisted process from these files?
 
 ### Current Norms (Evolving)
 
-Reporting standards vary by venue. Check your target journal's policy. In absence of specific guidance:
+Reporting standards vary by venue. Many journals — Nature and other major publishers among them — now explicitly require disclosure of AI use in submitted manuscripts. Check your target journal's policy. In absence of specific guidance:
 
 **Minimal disclosure:**
 > AI tools were used in the preparation of this manuscript.
@@ -185,7 +185,7 @@ A journal asks you to describe AI use in your methods section. Which is most app
 * "AI wrote the literature review"
 * "No AI was used" (even though you used it for drafting)
 *! "AI tools assisted with drafting; all content was verified against sources and substantially revised by the authors"
-* "GPT-4 was used with temperature 0.7 and top_p 0.9"
+* "The model was run with temperature 0.7 and top_p 0.9"
 
 FEEDBACK: Be honest about AI use, but frame it accurately — AI assisted, humans verified and take responsibility. Excessive technical detail (temperature, top_p) is usually unnecessary unless methodologically relevant.
 ```
@@ -201,7 +201,7 @@ Document how you verified AI outputs:
 
 ### Session: Literature Review Citations
 ### Verified by: [Your name]
-### Date: 2024-01-16
+### Date: YYYY-MM-DD
 
 | Citation | In .bib? | Exists? | Details correct? | Notes |
 |----------|----------|---------|------------------|-------|
@@ -222,7 +222,7 @@ Document how you verified AI outputs:
 |-------|--------|--------|-------|
 | "AI market $150B by 2025" | Needed verification | ✓ Verified | Gartner report, updated figure |
 | "Transformers introduced 2017" | General knowledge | ✓ Correct | Vaswani et al. |
-| "GPT-4 has 1T parameters" | AI generated | ✗ Unverified | Removed — OpenAI hasn't confirmed |
+| "Model X has 1T parameters" | AI generated | ✗ Unverified | Removed — vendor has not confirmed |
 ```
 
 ## Handling Non-Determinism
@@ -324,31 +324,9 @@ Before submission:
 
 ---
 
-## Case Study: Harvard APEX+ Initiative
+## Agent-Assisted Research in Practice
 
-Harvard's APEX+ (Agentic and Physical AI for Excellence in Science and Technology) initiative, led by Professors Jia Liu and Na Li, demonstrates reproducibility at scale in AI-assisted research.
-
-**The Application:**
-
-AI agents are deployed for neural data analysis, gene expression mapping, and behavioural analysis. Crucially, AR/VR interfaces allow AI agents to guide, observe, and document research tasks in real time.
-
-**The Results:**
-
-Analysis cycles that previously took 12 weeks now complete in 3–4 weeks. Experiment costs dropped by 70% versus human-designed approaches.
-
-**Why Reproducibility Actually Works Here:**
-
-Three principles from this module enabled this scale-up:
-
-1. **Reproducibility designed in from day one.** The AI agents log every step automatically. There's no "we forgot to document the process" — the system demands it.
-
-2. **The human role shifts from execution to supervision and interpretation.** Researchers don't disappear; they supervise, verify, and interpret results. This is cleaner documentation and clearer authorship.
-
-3. **Orchestrating specialised AI tools outperforms monolithic models.** Different agents for different tasks create natural boundaries for documentation and verification.
-
-**Key Takeaway:** The reproducibility practices in this module aren't constraining — they enable faster, cheaper, more transparent research. APEX+ proves that at scale.
-
-Learn more: https://seas.harvard.edu/news/new-initiative-aims-develop-ai-science-and-research-0
+Documented examples of agent-assisted research workflows — where AI agents help run analyses and log their own steps as they go — are beginning to emerge across disciplines. The early lessons echo this module's principles: reproducibility works best when documentation is designed in from the start, when the human role shifts to supervision and interpretation, and when specialised tools create natural boundaries for verification. For worked examples, see the Case Studies page in this course.
 
 ---
 

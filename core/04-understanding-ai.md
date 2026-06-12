@@ -1,24 +1,23 @@
-# Module 3: Understanding AI Systems
+# Module 4: Understanding AI Systems
 
 ## The Four Components
 
-To work effectively with AI, you need a mental model of what you're working with. Every AI system has four distinct components that are often conflated:
+To work effectively with AI, you need a mental model of what you're working with. Every AI system you use — a chat window, a coding assistant, a research tool — is built from four distinct components that are often conflated:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
 │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │   PROMPT    │───▶│    AGENT    │───▶│   TOOLS     │     │
-│  │             │    │   (model)   │    │             │     │
-│  │ Your input  │    │ Interprets, │    │ What agent  │     │
-│  │ + system    │    │ reasons,    │    │ can do in   │     │
-│  │ context     │    │ decides     │    │ the world   │     │
+│  │   CONTEXT   │───▶│    MODEL    │───▶│   TOOLS     │     │
+│  │             │    │             │    │             │     │
+│  │ Everything  │    │ Interprets, │    │ What it can │     │
+│  │ the model   │    │ reasons,    │    │ do in the   │     │
+│  │ sees now    │    │ decides     │    │ world       │     │
 │  └─────────────┘    └──────┬──────┘    └─────────────┘     │
 │                            │                               │
 │                            ▼                               │
 │                    ┌─────────────┐                         │
-│                    │ PERSISTENCE │                         │
-│                    │  / MEMORY   │                         │
+│                    │   MEMORY    │                         │
 │                    │             │                         │
 │                    │ What carries│                         │
 │                    │ across      │                         │
@@ -34,9 +33,11 @@ Understanding these separately helps you:
 - Design better workflows
 - Communicate clearly about AI capabilities
 
-## Component 1: The Agent (Model)
+(And when these four run in a loop towards a goal, you get an **agent** — we'll define that properly below.)
 
-**What it is:** The underlying AI model — its capabilities, training, reasoning patterns.
+## Component 1: The Model
+
+**What it is:** The underlying AI model — its capabilities, training, reasoning patterns. This is the next-token predictor from Module 1.
 
 **Key properties:**
 - Different models have different capabilities (Claude, GPT, Gemini, Llama, etc.)
@@ -54,13 +55,15 @@ Understanding these separately helps you:
 | "The AI is being stubborn" | It's following patterns in its training; there's no intent |
 
 **What varies by model:**
-- Reasoning capability
+- Reasoning capability (including whether it can "think" at length before answering)
 - Context window size
 - Speed / latency
 - Cost
 - Training data recency
 - Specific domain knowledge
 - Safety behaviours
+
+Most providers now offer a fast/cheap tier and a slow/capable tier. Matching the model to the task — quick drafts on the cheap tier, high-stakes reasoning on the capable one — is a small decision that compounds.
 
 ```
 QUIZ:
@@ -73,17 +76,17 @@ You had a great conversation with an AI yesterday where you explained your proje
 FEEDBACK:By default, each conversation starts fresh. The model itself doesn't retain information. Any "memory" requires explicit persistence systems.
 ```
 
-## Component 2: The Prompt (Input Context)
+## Component 2: The Context
 
-**What it is:** Everything the model receives as input — your message, system prompts, conversation history, any retrieved documents.
+**What it is:** Everything the model receives as input — your message, system prompts, conversation history, any retrieved documents. (Module 1 called this the "sharp" knowledge source — the one you control.)
 
 **Key properties:**
-- There's a maximum size (context window) — typically 8K to 200K tokens
-- Everything the model "knows" for this interaction is in the prompt
-- Order and structure of the prompt affects output
+- There's a maximum size (the context window) — now typically hundreds of thousands of tokens, around a million on some models (roughly a long novel's worth)
+- Everything the model "knows" for this interaction is in the context
+- Big windows don't make curation pointless: material competes for attention, and relevant-but-buried details get missed
 - System prompts set behaviour; user prompts are your requests
 
-**The prompt includes (typically):**
+**The context includes (typically):**
 1. System prompt (often hidden) — instructions for how to behave
 2. Conversation history — previous turns in this conversation
 3. Retrieved context — documents, search results, file contents
@@ -158,7 +161,7 @@ An AI assistant doesn't have web search enabled. You ask it about a news event f
 FEEDBACK:Without tools, the AI can only use its training data. It might answer (if the event is in training data) or acknowledge it doesn't know. Good AI systems are transparent about this.
 ```
 
-## Component 4: Persistence / Memory
+## Component 4: Memory / Persistence
 
 **What it is:** What carries across interactions — conversation history, stored preferences, external databases, files.
 
@@ -193,24 +196,34 @@ You're designing an AI assistant for a legal firm. Consider:
 3. How would you implement these boundaries?
 ```
 
+## So Where's the "Agent"?
+
+You'll hear "agent" constantly. Here is the clean definition:
+
+> An **agent** is a model running in a loop with tools, working towards a goal: it acts, observes the result, and decides what to do next — repeating until the goal is met or it needs your input.
+
+A chat assistant answers and stops. An agent might read your files, run code, notice the tests fail, fix the code, re-run the tests, and *then* report back. Same model — the difference is the loop and the tools.
+
+This matters because autonomy changes the stakes. With a chat answer, mistakes cost you only the time to notice them. With an agent, mistakes can be *acted on* — files changed, emails sent, records updated — before you've seen anything. That's why the rest of this module treats tool access as a permissions question, and why Module 5's verification habits apply with extra force to agents.
+
 ## Why Keeping These Separate Matters
 
 When AI does something unexpected, diagnose by component:
 
 | Symptom | Possible Cause | Component |
 |---------|---------------|-----------|
-| "It doesn't know about X" | Not in training data | Agent |
-| "It doesn't know about X" | Not in current context | Prompt |
+| "It doesn't know about X" | Not in training data | Model |
+| "It doesn't know about X" | Not in current context | Context |
 | "It can't do X" | Tool not available | Tools |
 | "It forgot X" | Not persisted | Memory |
-| "It's worse than yesterday" | Different model version | Agent |
-| "It's ignoring my instructions" | Truncated from context | Prompt |
+| "It's worse than yesterday" | Different model or version | Model |
+| "It's ignoring my instructions" | Truncated or buried in context | Context |
 
 **Debugging framework:**
-1. Is this an **agent** limitation? (Model capability, training)
-2. Is this a **prompt** issue? (Missing context, poor structure)
+1. Is this a **model** limitation? (Capability, training cutoff)
+2. Is this a **context** issue? (Missing information, poor structure, buried instructions)
 3. Is this a **tool** issue? (Unavailable, failed, wrong permissions)
-4. Is this a **persistence** issue? (Context lost, not retrieved)
+4. Is this a **memory** issue? (Context lost, not retrieved)
 
 ## The "Capable Temp" Mental Model
 
@@ -249,8 +262,9 @@ This is how you avoid re-explaining your project in every conversation.
 | Claude Code | `CLAUDE.md` in project root |
 | GitHub Copilot | `.github/copilot-instructions.md` |
 | Cursor | `.cursorrules` or `.cursor/rules/*.mdc` |
+| Cross-tool convention | `AGENTS.md` in project root |
 
-The content is similar across tools — you're telling the AI what it needs to know about your project. Some teams maintain a single source file and copy/symlink it to multiple locations for cross-tool compatibility.
+The content is similar across tools — you're telling the AI what it needs to know about your project. `AGENTS.md` has emerged as a vendor-neutral convention that many tools read; some teams maintain a single source file and copy/symlink it to the tool-specific locations.
 
 **What to include:**
 - Brief project description and purpose
@@ -277,14 +291,14 @@ Think about a project you work on regularly.
 
 ## Key Takeaways
 
-- Agent, prompt, tools, and memory are **distinct components**
+- Model, context, tools, and memory are **distinct components** — and an agent is those four running in a loop towards a goal
 - The model itself is stateless — memory requires additional systems
 - The context window is the model's entire world for that interaction
-- Tools are how AI affects the real world — and a trust boundary
+- Tools are how AI affects the real world — and a trust boundary; agents raise the stakes because they act before you've checked
 - When things go wrong, diagnose by component
-- "The AI should know..." is usually a prompt or persistence issue
+- "The AI should know..." is usually a context or memory issue
 - **Instruction files** let you provide persistent project context across sessions
 
 ---
 
-Next: **Module 4: Verification & Quality** →
+Next: **Module 5: Verification & Quality** →

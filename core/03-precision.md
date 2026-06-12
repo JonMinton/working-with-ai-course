@@ -1,4 +1,4 @@
-# Module 2: Precision Without Formalism
+# Module 3: Precision Without Formalism
 
 ## The Purpose of Formalism
 
@@ -10,7 +10,7 @@ Consider this formal statement:
 
 > Let Σ be a finite alphabet, and let Σ* denote the Kleene closure of Σ. A language L is regular if and only if there exists a deterministic finite automaton M = (Q, Σ, δ, q₀, F) such that L = L(M).
 
-This is precise. It's also opaque to most practitioners and poorly handled by AI (tokenisation breaks on mathematical symbols).
+This is precise. It's also opaque to most practitioners — including, often, the practitioner writing the prompt. If you can't tell whether the formal statement says what you mean, the precision is doing nothing for you.
 
 The same idea, expressed differently:
 
@@ -33,10 +33,10 @@ The same unambiguous statement can often be expressed in:
 The skill is **thinking precisely**, then choosing the notation appropriate to context.
 
 For AI collaboration specifically:
-- Algebraic notation often confuses AI (tokenisation issues)
-- Pseudocode works well (close to implementation)
+- Modern models handle formal notation competently — but *you* still have to verify the output, and you can only verify what you can read
+- Pseudocode works well (close to implementation, readable by you)
 - Structured prose with clear definitions works excellently
-- Examples are powerful (concrete beats abstract)
+- Examples are powerful (concrete beats abstract, and mismatches are easy to spot)
 
 ```
 QUIZ:
@@ -46,7 +46,7 @@ Which notation would work best for specifying a sorting requirement to an AI?
 *! "Sort the array in ascending order, so each element is less than or equal to the next"
 * "Make it sorted"
 * for(i=0;i<n-1;i++){assert(a[i]<=a[i+1])}
-FEEDBACK:The prose version is unambiguous AND well-tokenised by AI. The mathematical notation is precise but poorly processed. The code is precise but overly specific about implementation.
+FEEDBACK:The prose version is unambiguous, and both you and the AI can read it without translation. The mathematical notation is equally precise but harder for most people to verify. The code is precise but overly specific about implementation.
 ```
 
 ## Precision in Different Domains
@@ -186,16 +186,18 @@ AI added pagination but:
 Write a revised specification that would prevent all three issues.
 ```
 
-## A Fundamental Distinction: Text vs. Binary
+## A Useful Distinction: What Does the AI Actually Receive?
 
-One of the most crucial, yet often overlooked, concepts in computing is the difference between plain text files and binary files. For an AI, this distinction is not academic; it determines whether a file's contents are directly readable or require a specialised tool.
+A practical precision habit: know what form your material reaches the model in. Models work on text (and, increasingly, images); everything else has to be converted first.
 
-| Type | Description | Examples | How AI Sees It |
-| :--- | :--- | :--- | :--- |
-| **Plain Text** | A sequence of characters. Human-readable in any standard text editor. The meaning is in the characters themselves. | `.txt`, `.md`, `.csv`, `.html`, `.py`, `.js` | "I can read this directly. The content is a stream of characters I can parse and understand." |
-| **Binary** | A sequence of bytes. Not human-readable without special software. The meaning is encoded by a specific file format. | `.pdf`, `.docx`, `.png`, `.jpg`, `.mp3`, `.zip` | "I can't read this directly. I see bytes. I need a tool (a PDF reader, an image library) to interpret this format." |
+| Type | Examples | What happens when you share it |
+| :--- | :--- | :--- |
+| **Plain text** | `.txt`, `.md`, `.csv`, `.html`, `.py` | The model reads the characters directly — nothing is lost |
+| **Binary documents** | `.pdf`, `.docx`, `.xlsx` | A tool extracts text (and sometimes layout) first. Extraction can silently drop tables, footnotes, formulas, or scanned pages |
+| **Images** | `.png`, `.jpg`, screenshots | Modern models can view images directly, but fine detail (small text, dense charts) may be misread |
+| **Audio/video, archives** | `.mp3`, `.mp4`, `.zip` | Need transcription or unpacking by a tool before any content reaches the model |
 
-Failing to appreciate this distinction is a common source of failed interactions with AI. If you give an AI a PDF and ask it to "read the text on page 5," it can only succeed if it has a `read_pdf` tool. If you give it a `.csv` file and ask the same, it can read the raw text directly. This is a core concept for developing an intuition for what is and isn't possible for an AI assistant.
+Most chat tools now handle these conversions automatically, which makes it easy to forget they're happening. The failure mode has shifted accordingly: it's less "the AI can't open my PDF" and more "the AI read a *lossy extraction* of my PDF and neither of us noticed what was missing." If an answer depends on a table, a figure, or precise formatting, check that the AI actually received it — ask it to quote the relevant passage back. When something seems off, the question to ask is: *what did the model actually receive?*
 
 ## Key Takeaways
 
@@ -209,4 +211,4 @@ Failing to appreciate this distinction is a common source of failed interactions
 
 ---
 
-Next: **Module 3: Understanding AI Systems** →
+Next: **Module 4: Understanding AI Systems** →

@@ -1,65 +1,35 @@
-# Review Notes (Additive Phase Handover)
+# Review Notes (Editorial Rewrite Handover — June 2026)
 
-## Snapshot of what’s covered so far
+This file records the state of the course after the major editorial revision on branch `claude/editorial-rewrite`. Treat it as the handover for the next editing phase.
 
-### Welcome
-- Positions the course as collaboration skills for the agentic AI era.
-- Sets three audiences (enterprise, developer, academic) and the shared core.
-- Emphasises the "10% that matters": specification, verification, and architectural judgement.
+## What changed in this revision
 
-### Core modules
-1. **Structured Thinking for AI Collaboration**
-   - The specification gap and why it exists.
-   - Five components of clear specification: linearisation, context externalisation, abstraction level, acceptance criteria, scope boundaries.
-   - Exercises and quizzes to practise translating intent into actionable prompts.
+### New core Module 1: How AI Actually Works
+The biggest content gap was that the course taught *working with* AI without ever explaining *what an LLM is*. The new `core/01-how-ai-works.md` covers: next-token prediction, weights vs. context (the load-bearing distinction), hallucination as structural, tokenisation failures, probabilistic output, sycophancy, confabulated self-explanations, and the jagged frontier. All other core modules were renumbered (old 1–6 → new 2–7) and now cross-reference Module 1.
 
-2. **Precision Without Formalism**
-   - Why formal notation exists and how it can obscure clarity.
-   - Multiple notations for the same precision: prose, pseudocode, tests, examples.
-   - Precision levels matched to stakes.
-   - Explicit definitions and structured writing for unambiguous requirements.
-   - Added distinction between **text vs. binary** files as a core collaboration constraint.
+### Core module fixes
+- **Module 4 (was 3):** fixed the agent/model conflation — components are now Model / Context / Tools / Memory, with a new section defining an *agent* as model + tools + loop. Context window claims updated; `AGENTS.md` convention added.
+- **Module 5 (was 4):** un-spliced the factual-content/data-handling checklists (a botched earlier merge); modernised the visual reasoning gap (agentic tools can now screenshot their own output; final judgment stays human).
+- **Module 7 (was 6):** rebuilt the garbled five-rings ASCII diagram; replaced hard year-ranges with ordering language and an honest note about forecast shelf-life; removed invented per-ring population counts; replaced a fabricated Hinton quote with an accurate paraphrase; fixed the track list (it described tracks that don't exist).
 
-3. **Understanding AI Systems**
-   - Four components model: prompt, agent, tools, persistence.
-   - Capabilities and limits by component; practical diagnostic framework.
-   - Context window management and the "capable temp" mental model.
-   - Instruction files as a way to provide project-level context.
+### Factual integrity pass (all tracks + case studies)
+- Removed the unverifiable "Harvard APEX+" case study everywhere.
+- Softened unverifiable precision (adoption percentages, cost figures, dated roadmaps) to "publicly reported" or illustrative framing across E4, L4, O4, C4, Ed4, and case-studies.md.
+- `case-studies.md` rewritten with a verification-minded preamble; it now models the course's own standards.
+- C4 legal landscape rewritten evergreen (no case names, no year-stamped section titles).
 
-4. **Verification & Quality**
-   - Verification mindset and error modes.
-   - Verification strategies by output type: code, facts, structured data, prose.
-   - Visual reasoning gap and the need for human visual checks.
-   - Test‑driven specification and cross‑model review.
-   - Checklists for code and content verification.
+### App (`index.html`) rewrite
+Collapsible nav, per-track "my plan" progress, dark mode, lazy full-text search, robust quiz parser (feedback lives in JS — quotes and multi-line feedback are now safe), reading time, mobile drawer. localStorage key `wwai-completed` kept compatible with the old app.
 
-### Specialised tracks
-- **Enterprise**
-  - Trust architecture, approved channels, and governance patterns framed as organisational controls.
-- **Developer**
-  - Affordances and interface design, architectural reasoning, and MCP tool design.
-- **Academic**
-  - Literature workflows, modular academic writing, and AI peer review.
-- **Creative**
-  - Attribution and originality, intellectual property, and ethical use of AI in creative work.
-- **Operations**
-  - Operational workflows and integration of AI into organisational processes.
+## Known gaps / next-phase candidates
+- `resources.md` links were left as-is; a link-checking pass (do they still resolve in 2026?) would be worthwhile.
+- SVG diagrams: `four-components.svg` is stale (shows old PROMPT/AGENT labels) and is no longer swapped in; either regenerate to match Model/Context/Tools/Memory or delete. The Mermaid idea in CLAUDE.md remains open.
+- Tracks were *fixed*, not rewritten — a deeper editorial pass per track (especially redundancy between E2/E4 and E3/L3) is the next level of polish.
+- Supabase backend (auth, feedback) still planned, not started.
+- The `tasks/pending/` folder still holds proposals (interactive glossary, additional tracks) untouched by this revision.
 
-## Previously identified gaps — now addressed
-
-1. **Evaluation and monitoring as a lifecycle discipline** — ✅ Addressed in E4 (Monitoring, Compliance & Continuous Evaluation). Covers evaluation cadences, drift detection, benchmarking, regression testing, audit logging.
-
-2. **Data handling and privacy risk models beyond the basics** — ✅ Addressed in E4. Includes data classification framework (Public/Internal/Confidential/Restricted), redaction decision tree, risk tiers, and compliance audit process.
-
-3. **Enterprise Track structural gap** — ✅ Fixed. Enterprise now has 4 modules like all other tracks.
-
-4. **"Shredding" metaphor** — ✅ Replaced across all files. The "amnesiac temp who shreds everything" metaphor has been replaced with a "capable temp who walks out with nothing carried over" framing, with an explicit clarification that work product stays in the user's systems — only the AI's working memory resets.
-
-## Tracks added in this phase
-
-- **Education Track** (4 modules: AI-Resistant Assessment, AI as Learning Partner, Personalisation & Differentiation, Teaching AI Literacy)
-- **Leadership Track** (4 modules: Strategic Assessment, Building AI-Ready Teams, Risk & Reputation, Vendor & Build Decisions)
-
-## Suggested usage
-- Treat this file as a review handover for the later edit phase.
-- As new content is appended, update the “Snapshot” section with concise bullet points to keep the global picture clear.
+## Verification protocol used (worth repeating)
+1. Three parallel review agents (one per track cluster) reporting factual/format/quality issues with line numbers.
+2. Targeted fixes by parallel edit agents under a "never invent facts; soften instead" rule.
+3. Automated QUIZ/EXERCISE format validation across all md files.
+4. Rendered-site checks in Chrome: nav, quiz interaction (right and wrong paths), search, dark mode, plan toggles, mark-complete flow, diagram alignment.

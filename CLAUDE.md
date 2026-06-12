@@ -5,8 +5,16 @@ A self-contained learning platform for AI collaboration skills. Static HTML/JS f
 ## Tech Stack
 - Single-page app: `index.html` (vanilla JS, no build step)
 - Content: Markdown files rendered client-side via marked.js
-- Styling: CSS custom properties, no framework
-- Progress tracking: localStorage (currently client-only)
+- Styling: CSS custom properties, no framework; light/dark themes via `[data-theme]`
+- Progress tracking: localStorage (keys: `wwai-completed`, `wwai-mytracks`, `wwai-open`, `wwai-theme`)
+- App features: collapsible nav sections, per-track "my plan" progress, client-side full-text search (lazy-indexed), reading-time estimates, mobile drawer
+- Test locally with `python3 -m http.server` (fetch() needs http, not file://)
+
+## Core Module Structure (June 2026 revision)
+Seven core modules in `/core/`:
+1. `01-how-ai-works.md` — LLM mechanics for general audiences (weights vs context, hallucination, sycophancy, jagged frontier). Other modules cross-reference it.
+2. `02-structured-thinking.md` 3. `03-precision.md` 4. `04-understanding-ai.md` (model/context/tools/memory; agent = model+tools+loop) 5. `05-verification.md` 6. `06-iteration.md` 7. `07-agentification.md`
+When editing, keep cross-module references consistent with this numbering.
 
 ## File Structure
 - `/index.html` — Main app, all JS/CSS inline
@@ -19,8 +27,9 @@ A self-contained learning platform for AI collaboration skills. Static HTML/JS f
 - British English spelling (behaviour, organisation, colour)
 - Markdown files use ATX headings (`#`, `##`, etc.)
 - Interactive elements use special code block syntax:
-  - `QUIZ:` blocks for multiple choice
-  - `EXERCISE:` blocks for practical activities
+  - `QUIZ:` blocks for multiple choice — first line(s) after `QUIZ:` are the question, options start `* ` (wrong) or `*! ` (exactly one, correct), then `FEEDBACK:` which may span multiple lines to the end of the block. Inline markdown is allowed in questions/options.
+  - `EXERCISE:` blocks for practical activities (body rendered as markdown)
+- Factual integrity: never add statistics, case studies, or quotes that can't be traced to public reporting; frame company figures as "reported". Prefer evergreen phrasing over dates that will go stale.
 - Tables for comparisons; keep them scannable
 - Cross-references between modules use relative paths
 

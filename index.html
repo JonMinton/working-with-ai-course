@@ -11,1027 +11,1090 @@
             --bg-secondary: #ffffff;
             --bg-tertiary: #f5f5f4;
             --text-primary: #1c1917;
-            --text-secondary: #57534e;
+            --text-secondary: #44403c;
             --text-muted: #a8a29e;
             --border: #e7e5e4;
             --accent: #2563eb;
+            --accent-soft: #eff6ff;
+            --accent-border: #bfdbfe;
             --accent-hover: #1d4ed8;
             --success: #16a34a;
-            --warning: #ca8a04;
+            --success-soft: #dcfce7;
+            --danger: #dc2626;
+            --danger-soft: #fef2f2;
+            --code-bg: #1e1e1e;
+            --code-fg: #d4d4d4;
+            --shadow: 0 1px 3px rgba(0,0,0,0.06);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        [data-theme="dark"] {
+            --bg-primary: #131110;
+            --bg-secondary: #1c1917;
+            --bg-tertiary: #292524;
+            --text-primary: #f5f5f4;
+            --text-secondary: #d6d3d1;
+            --text-muted: #78716c;
+            --border: #38332f;
+            --accent: #60a5fa;
+            --accent-soft: #1e2a44;
+            --accent-border: #2d4373;
+            --accent-hover: #93c5fd;
+            --success: #4ade80;
+            --success-soft: #14301d;
+            --danger: #f87171;
+            --danger-soft: #3a1a1a;
+            --code-bg: #0d0d0d;
+            --code-fg: #d4d4d4;
+            --shadow: 0 1px 3px rgba(0,0,0,0.4);
         }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.65;
             font-size: 16px;
-        }
-        
-        html {
-            scroll-behavior: smooth;
         }
 
         .layout {
             display: grid;
-            grid-template-columns: 280px 1fr;
+            grid-template-columns: 300px 1fr;
             min-height: 100vh;
         }
 
-        /* Sidebar */
+        /* ---------- Sidebar ---------- */
         .sidebar {
             background: var(--bg-secondary);
             border-right: 1px solid var(--border);
-            padding: 1.5rem;
+            padding: 1.25rem;
             position: sticky;
             top: 0;
             height: 100vh;
             overflow-y: auto;
+            display: flex;
+            flex-direction: column;
         }
 
-        .sidebar h1 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
+        .sidebar-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.5rem;
         }
+
+        .sidebar h1 { font-size: 1.05rem; font-weight: 650; }
 
         .sidebar .subtitle {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border);
+            margin-bottom: 1rem;
         }
 
-        .nav-section {
-            margin-bottom: 1.5rem;
+        .theme-toggle {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            border-radius: 6px;
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+            font-size: 0.95rem;
+            flex-shrink: 0;
         }
+        .theme-toggle:hover { border-color: var(--accent); }
 
-        .nav-section-title {
-            font-size: 0.7rem;
-            font-weight: 600;
+        .search-box {
+            width: 100%;
+            padding: 0.45rem 0.7rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        .search-box:focus { outline: none; border-color: var(--accent); }
+
+        .search-results { font-size: 0.85rem; }
+        .search-result {
+            display: block;
+            padding: 0.5rem 0.6rem;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 0.25rem;
+        }
+        .search-result:hover { background: var(--bg-tertiary); }
+        .search-result .sr-title { font-weight: 600; color: var(--text-primary); }
+        .search-result .sr-snippet { color: var(--text-muted); font-size: 0.78rem; }
+        .search-result mark { background: var(--accent-soft); color: var(--accent); border-radius: 2px; padding: 0 1px; }
+        .search-status { color: var(--text-muted); font-size: 0.8rem; padding: 0.4rem 0.6rem; }
+
+        .nav-section { margin-bottom: 0.35rem; }
+
+        .nav-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.4rem;
+            width: 100%;
+            padding: 0.35rem 0.5rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 650;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--text-muted);
-            margin-bottom: 0.5rem;
+            text-align: left;
         }
+        .nav-section-header:hover { background: var(--bg-tertiary); color: var(--text-secondary); }
+        .nav-section-header .chevron { transition: transform 0.15s; font-size: 0.65rem; }
+        .nav-section.open .chevron { transform: rotate(90deg); }
+
+        .section-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 500;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .section-count { font-size: 0.68rem; color: var(--text-muted); }
+        .section-count.done { color: var(--success); }
+
+        .plan-toggle {
+            font-size: 0.66rem;
+            border: 1px solid var(--border);
+            background: var(--bg-secondary);
+            color: var(--text-muted);
+            border-radius: 999px;
+            padding: 0.05rem 0.5rem;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .plan-toggle:hover { border-color: var(--accent); color: var(--accent); }
+        .plan-toggle.active {
+            background: var(--accent-soft);
+            border-color: var(--accent-border);
+            color: var(--accent);
+        }
+
+        .nav-items { display: none; padding-left: 0.25rem; }
+        .nav-section.open .nav-items { display: block; }
 
         .nav-item {
             display: block;
-            padding: 0.4rem 0.6rem;
-            margin: 0.1rem 0;
-            font-size: 0.85rem;
+            padding: 0.35rem 0.6rem;
+            margin: 0.05rem 0;
+            font-size: 0.84rem;
             color: var(--text-secondary);
             text-decoration: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.15s, color 0.15s;
-        }
-
-        .nav-item:hover {
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
-        }
-
-        .nav-item.active {
-            background: var(--accent);
-            color: white;
-        }
-
-        .nav-item.completed::before {
-            content: "✓ ";
-            color: var(--success);
-        }
-
-        .nav-item.active.completed::before {
-            color: white;
-        }
-
-        .track-badge {
-            display: inline-block;
-            font-size: 0.65rem;
-            padding: 0.1rem 0.4rem;
-            border-radius: 3px;
-            margin-left: 0.3rem;
-            font-weight: 500;
-        }
-
-        .track-badge.enterprise { background: #dbeafe; color: #1e40af; }
-        .track-badge.developer { background: #dcfce7; color: #166534; }
-        .track-badge.academic { background: #fef3c7; color: #92400e; }
-        .track-badge.creative { background: #fce7f3; color: #9d174d; }
-        .track-badge.operations { background: #e0e7ff; color: #3730a3; }
-        .track-badge.education { background: #fef9c3; color: #854d0e; }
-        .track-badge.leadership { background: #f0fdf4; color: #14532d; }
-
-        /* Main content */
-        .main {
-            padding: 2rem 3rem;
-            max-width: 100%;
-            width: 100%;
-        }
-        
-        .content {
-            max-width: 800px;
-        }
-
-        .breadcrumb {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        .breadcrumb a {
-            color: var(--text-secondary);
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            color: var(--accent);
-        }
-
-        .content {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-        }
-
-        .content h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .content h2 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
-
-        .content h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .content p {
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .content ul, .content ol {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            color: var(--text-secondary);
-        }
-
-        .content li {
-            margin-bottom: 0.4rem;
-        }
-
-        .content code {
-            background: var(--bg-tertiary);
-            padding: 0.15rem 0.4rem;
-            border-radius: 3px;
-            font-size: 0.9em;
-            font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
-        }
-
-        .content pre {
-            background: #1e1e1e;
-            color: #d4d4d4;
-            padding: 1rem;
             border-radius: 6px;
-            overflow-x: auto;
-            margin-bottom: 1rem;
-            max-width: 100%;
-        }
-
-        .content pre code {
-            background: none;
-            padding: 0;
-            color: inherit;
-        }
-
-        .content blockquote {
-            border-left: 3px solid var(--accent);
-            padding-left: 1rem;
-            margin: 1rem 0;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-
-        .content table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-        
-        /* Wrapper for horizontal scrolling on mobile */
-        @media (max-width: 768px) {
-            .content table {
-                display: block;
-                overflow-x: auto;
-            }
-        }
-
-        .content th, .content td {
-            border: 1px solid var(--border);
-            padding: 0.6rem 0.8rem;
-            text-align: left;
-        }
-
-        .content th {
-            background: var(--bg-tertiary);
-            font-weight: 600;
-        }
-
-        /* Enhanced diagrams */
-        .diagram-enhanced {
-            margin: 1.5rem 0;
-        }
-
-        .diagram-svg {
-            display: flex;
-            justify-content: center;
-            padding: 1rem;
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-        }
-
-        .diagram-svg svg {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .diagram-ascii {
-            margin-top: 0.5rem;
-            font-size: 0.8rem;
-        }
-
-        .diagram-ascii summary {
             cursor: pointer;
-            color: var(--text-muted);
-            user-select: none;
         }
-
-        .diagram-ascii summary:hover {
-            color: var(--accent);
-        }
-
-        .diagram-ascii pre {
-            margin-top: 0.5rem;
-            font-size: 0.75rem;
-        }
-
-        /* Interactive elements */
-        .exercise {
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-            border-radius: 6px;
-            padding: 1rem;
-            margin: 1rem 0;
-        }
-
-        .exercise-title {
-            font-weight: 600;
-            color: #1e40af;
-            margin-bottom: 0.5rem;
-        }
-
-        .quiz {
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1rem;
-            margin: 1rem 0;
-        }
-
-        .quiz-question {
-            font-weight: 500;
-            margin-bottom: 0.75rem;
-        }
-
-        .quiz-option {
-            display: block;
-            padding: 0.5rem 0.75rem;
-            margin: 0.3rem 0;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            cursor: pointer;
-            transition: border-color 0.15s;
-        }
-
-        .quiz-option:hover {
-            border-color: var(--accent);
-        }
-
-        .quiz-option.selected {
-            border-color: var(--accent);
-            background: #eff6ff;
-        }
-
-        .quiz-option.correct {
-            border-color: var(--success);
-            background: #dcfce7;
-        }
-
-        .quiz-option.incorrect {
-            border-color: #dc2626;
-            background: #fef2f2;
-        }
-
-        .quiz-feedback {
-            margin-top: 0.75rem;
-            padding: 0.75rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            display: none;
-        }
-
-        .quiz-feedback.show {
-            display: block;
-        }
-
-        .quiz-feedback.correct {
-            background: #dcfce7;
-            color: #166534;
-        }
-
-        .quiz-feedback.incorrect {
-            background: #fef2f2;
-            color: #991b1b;
-        }
-
-        .check-btn {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-        }
-
-        .check-btn:hover {
-            background: var(--accent-hover);
-        }
-
-        /* Navigation buttons */
-        .nav-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .nav-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1rem;
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: background 0.15s, border-color 0.15s;
-        }
-
-        .nav-btn:hover {
-            background: var(--bg-secondary);
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .nav-btn.primary {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-
-        .nav-btn.primary:hover {
-            background: var(--accent-hover);
-        }
+        .nav-item:hover { background: var(--bg-tertiary); color: var(--text-primary); }
+        .nav-item.active { background: var(--accent); color: white; }
+        .nav-item.completed::before { content: "✓ "; color: var(--success); font-weight: 600; }
+        .nav-item.active.completed::before { color: white; }
 
         .progress-bar {
-            margin-top: 1.5rem;
+            margin-top: auto;
             padding-top: 1rem;
             border-top: 1px solid var(--border);
         }
-
         .progress-label {
-            font-size: 0.75rem;
+            font-size: 0.74rem;
             color: var(--text-muted);
             margin-bottom: 0.4rem;
+            display: flex;
+            justify-content: space-between;
         }
-
         .progress-track {
             height: 6px;
             background: var(--bg-tertiary);
             border-radius: 3px;
             overflow: hidden;
         }
-
         .progress-fill {
             height: 100%;
             background: var(--success);
             border-radius: 3px;
             transition: width 0.3s;
         }
+        .progress-hint { font-size: 0.68rem; color: var(--text-muted); margin-top: 0.4rem; }
 
-        /* Responsive */
+        /* ---------- Mobile top bar ---------- */
+        .topbar {
+            display: none;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 0.6rem 1rem;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .menu-btn {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            border-radius: 6px;
+            padding: 0.3rem 0.6rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .topbar-title { font-size: 0.95rem; font-weight: 600; }
+
+        /* ---------- Main ---------- */
+        .main { padding: 2rem 3rem; width: 100%; min-width: 0; }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            max-width: 800px;
+        }
+        .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+        .reading-time { white-space: nowrap; }
+
+        .content {
+            max-width: 800px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 2.25rem;
+            overflow-wrap: break-word;
+            box-shadow: var(--shadow);
+        }
+
+        .content h1 {
+            font-size: 1.75rem;
+            font-weight: 650;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .content h2 {
+            font-size: 1.3rem;
+            font-weight: 650;
+            margin-top: 2.25rem;
+            margin-bottom: 0.75rem;
+        }
+        .content h3 {
+            font-size: 1.08rem;
+            font-weight: 650;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .content h4 { font-size: 1rem; margin-top: 1.25rem; margin-bottom: 0.4rem; }
+        .content p { margin-bottom: 1rem; color: var(--text-secondary); }
+        .content ul, .content ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+        .content li { margin-bottom: 0.4rem; }
+        .content hr { border: none; border-top: 1px solid var(--border); margin: 1.75rem 0; }
+
+        .content code {
+            background: var(--bg-tertiary);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.88em;
+            font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+        }
+
+        .content pre {
+            background: var(--code-bg);
+            color: var(--code-fg);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+            max-width: 100%;
+            line-height: 1.45;
+        }
+        .content pre code { background: none; padding: 0; color: inherit; font-size: 0.82rem; }
+
+        .content blockquote {
+            border-left: 3px solid var(--accent);
+            padding: 0.5rem 1rem;
+            margin: 1rem 0;
+            color: var(--text-secondary);
+            background: var(--bg-tertiary);
+            border-radius: 0 8px 8px 0;
+        }
+        .content blockquote p:last-child { margin-bottom: 0; }
+
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+            font-size: 0.88rem;
+            display: block;
+            overflow-x: auto;
+        }
+        .content th, .content td {
+            border: 1px solid var(--border);
+            padding: 0.55rem 0.75rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        .content th { background: var(--bg-tertiary); font-weight: 600; }
+
+        /* ---------- Diagrams ---------- */
+        .diagram-enhanced { margin: 1.5rem 0; }
+        .diagram-svg {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+        .diagram-svg svg { max-width: 100%; height: auto; }
+        .diagram-ascii { margin-top: 0.5rem; font-size: 0.8rem; }
+        .diagram-ascii summary { cursor: pointer; color: var(--text-muted); user-select: none; }
+        .diagram-ascii summary:hover { color: var(--accent); }
+        .diagram-ascii pre { margin-top: 0.5rem; font-size: 0.72rem; }
+
+        /* ---------- Interactive: exercises ---------- */
+        .exercise {
+            background: var(--accent-soft);
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 1.25rem 0;
+        }
+        .exercise-title {
+            font-weight: 650;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .exercise > div p:last-child { margin-bottom: 0; }
+
+        /* ---------- Interactive: quizzes ---------- */
+        .quiz {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 1.25rem 0;
+        }
+        .quiz-label {
+            font-size: 0.75rem;
+            font-weight: 650;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+        .quiz-question { font-weight: 550; margin-bottom: 0.75rem; }
+        .quiz-option {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            margin: 0.3rem 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.92rem;
+            transition: border-color 0.15s;
+        }
+        .quiz-option:hover { border-color: var(--accent); }
+        .quiz-option.selected { border-color: var(--accent); background: var(--accent-soft); }
+        .quiz-option.correct { border-color: var(--success); background: var(--success-soft); }
+        .quiz-option.incorrect { border-color: var(--danger); background: var(--danger-soft); }
+
+        .quiz-feedback {
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            display: none;
+        }
+        .quiz-feedback.show { display: block; }
+        .quiz-feedback.correct { background: var(--success-soft); color: var(--success); }
+        .quiz-feedback.incorrect { background: var(--danger-soft); color: var(--danger); }
+
+        .check-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.45rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 0.6rem;
+        }
+        .check-btn:hover { background: var(--accent-hover); }
+        .check-btn:disabled { opacity: 0.55; cursor: default; }
+
+        /* ---------- Page nav buttons ---------- */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            max-width: 800px;
+        }
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+        .nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .nav-btn.primary { background: var(--accent); color: white; border-color: var(--accent); }
+        .nav-btn.primary:hover { background: var(--accent-hover); color: white; }
+
+        .site-footer {
+            max-width: 800px;
+            margin-top: 1.5rem;
+            font-size: 0.74rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* ---------- Responsive ---------- */
         @media (max-width: 768px) {
-            body {
-                font-size: 17px;
-            }
-            
-            .layout {
-                grid-template-columns: 1fr;
-            }
+            .layout { grid-template-columns: 1fr; }
+            .topbar { display: flex; }
             .sidebar {
-                position: relative;
-                height: auto;
-                border-right: none;
-                border-bottom: 1px solid var(--border);
+                position: fixed;
+                z-index: 100;
+                width: min(320px, 85vw);
+                height: 100vh;
+                transform: translateX(-100%);
+                transition: transform 0.2s ease;
+                box-shadow: 0 0 30px rgba(0,0,0,0.25);
             }
-            .main {
-                padding: 1rem;
+            .sidebar.open { transform: translateX(0); }
+            .sidebar-backdrop {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.35);
+                z-index: 90;
             }
-            
-            .content {
-                padding: 1.5rem;
-                border-radius: 6px;
-            }
-            
-            .content h1 {
-                font-size: 1.6rem;
-            }
-            
-            .content h2 {
-                font-size: 1.2rem;
-            }
-            
-            .content h3 {
-                font-size: 1.05rem;
-            }
-            
-            .content pre {
-                padding: 0.75rem;
-                font-size: 0.85rem;
-            }
-            
-            .content table {
-                font-size: 0.85rem;
-            }
-            
-            .nav-buttons {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            
-            .nav-btn {
-                width: 100%;
-                justify-content: center;
-            }
+            .sidebar-backdrop.show { display: block; }
+            .main { padding: 1rem; }
+            .content { padding: 1.25rem; border-radius: 8px; }
+            .content h1 { font-size: 1.45rem; }
+            .content h2 { font-size: 1.18rem; }
+            .nav-buttons { flex-direction: column; }
+            .nav-btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
+    <div class="topbar">
+        <button class="menu-btn" id="menu-btn" aria-label="Open navigation">☰</button>
+        <span class="topbar-title">Working With AI</span>
+    </div>
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
     <div class="layout">
-        <nav class="sidebar">
-            <h1>Working With AI</h1>
-            <p class="subtitle">A Practical Course</p>
+        <nav class="sidebar" id="sidebar" aria-label="Course navigation">
+            <div class="sidebar-header">
+                <div>
+                    <h1>Working With AI</h1>
+                    <p class="subtitle">A Practical Course</p>
+                </div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">☾</button>
+            </div>
+            <input type="search" class="search-box" id="search-box"
+                   placeholder="Search the course…" autocomplete="off" aria-label="Search the course">
             <div id="nav-container"></div>
             <div class="progress-bar">
-                <div class="progress-label">Progress: <span id="progress-text">0%</span></div>
+                <div class="progress-label">
+                    <span>My progress</span>
+                    <span id="progress-text">0%</span>
+                </div>
                 <div class="progress-track">
                     <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
                 </div>
+                <div class="progress-hint" id="progress-hint"></div>
             </div>
         </nav>
         <main class="main">
-            <div class="breadcrumb" id="breadcrumb"></div>
-            <div class="content" id="content">
-                <p>Loading...</p>
+            <div class="breadcrumb">
+                <span id="breadcrumb"></span>
+                <span class="reading-time" id="reading-time"></span>
             </div>
+            <div class="content" id="content"><p>Loading…</p></div>
             <div class="nav-buttons" id="nav-buttons"></div>
+            <div class="site-footer">Working With AI: A Practical Course · written with AI, verified by humans · last major revision June 2026</div>
         </main>
     </div>
 
     <script>
-        // Course structure
+        // ---------- Course structure ----------
         const courseStructure = {
             sections: [
                 {
-                    id: "welcome",
-                    title: "Welcome",
-                    file: "welcome.md"
+                    id: "welcome", title: "Welcome", kind: "general", file: "welcome.md"
                 },
                 {
-                    id: "core",
-                    title: "Core Modules",
+                    id: "core", title: "Core Modules", kind: "general",
                     items: [
-                        { id: "core-1", title: "1. Structured Thinking", file: "core/01-structured-thinking.md" },
-                        { id: "core-2", title: "2. Precision Without Formalism", file: "core/02-precision.md" },
-                        { id: "core-3", title: "3. Understanding AI Systems", file: "core/03-understanding-ai.md" },
-                        { id: "core-4", title: "4. Verification & Quality", file: "core/04-verification.md" },
-                        { id: "core-5", title: "5. Iteration & Refinement", file: "core/05-iteration.md" },
-                        { id: "core-6", title: "6. The Agentification Shockwave", file: "core/06-agentification.md" }
+                        { id: "core-1", title: "1. How AI Actually Works", file: "core/01-how-ai-works.md" },
+                        { id: "core-2", title: "2. Structured Thinking", file: "core/02-structured-thinking.md" },
+                        { id: "core-3", title: "3. Precision Without Formalism", file: "core/03-precision.md" },
+                        { id: "core-4", title: "4. Understanding AI Systems", file: "core/04-understanding-ai.md" },
+                        { id: "core-5", title: "5. Verification & Quality", file: "core/05-verification.md" },
+                        { id: "core-6", title: "6. Iteration & Refinement", file: "core/06-iteration.md" },
+                        { id: "core-7", title: "7. The Agentification Shockwave", file: "core/07-agentification.md" }
                     ]
                 },
                 {
-                    id: "tracks",
-                    title: "Specialised Tracks",
+                    id: "tracks", title: "Specialised Tracks", kind: "general",
                     items: [
                         { id: "track-intro", title: "Choosing Your Track", file: "tracks/intro.md" }
                     ]
                 },
                 {
-                    id: "enterprise",
-                    title: "Enterprise Track",
-                    track: "enterprise",
+                    id: "enterprise", title: "Enterprise Track", kind: "track",
                     items: [
-                        { id: "ent-1", title: "E1. Trust Architecture", file: "tracks/enterprise/01-trust-architecture.md", track: "enterprise" },
-                        { id: "ent-2", title: "E2. Approved Channels", file: "tracks/enterprise/02-approved-channels.md", track: "enterprise" },
-                        { id: "ent-3", title: "E3. Governance Patterns", file: "tracks/enterprise/03-governance.md", track: "enterprise" },
-                        { id: "ent-4", title: "E4. Monitoring & Compliance", file: "tracks/enterprise/04-monitoring-compliance.md", track: "enterprise" }
+                        { id: "ent-1", title: "E1. Trust Architecture", file: "tracks/enterprise/01-trust-architecture.md" },
+                        { id: "ent-2", title: "E2. Approved Channels", file: "tracks/enterprise/02-approved-channels.md" },
+                        { id: "ent-3", title: "E3. Governance Patterns", file: "tracks/enterprise/03-governance.md" },
+                        { id: "ent-4", title: "E4. Monitoring & Compliance", file: "tracks/enterprise/04-monitoring-compliance.md" }
                     ]
                 },
                 {
-                    id: "developer",
-                    title: "Developer Track",
-                    track: "developer",
+                    id: "developer", title: "Developer Track", kind: "track",
                     items: [
-                        { id: "dev-1", title: "D1. Affordances & Interfaces", file: "tracks/developer/01-affordances.md", track: "developer" },
-                        { id: "dev-2", title: "D2. Architecture Patterns", file: "tracks/developer/02-architecture.md", track: "developer" },
-                        { id: "dev-3", title: "D3. MCP & Tool Design", file: "tracks/developer/03-mcp-tools.md", track: "developer" },
-                        { id: "dev-4", title: "D4. Testing AI Systems", file: "tracks/developer/04-testing-ai-systems.md", track: "developer" }
+                        { id: "dev-1", title: "D1. Affordances & Interfaces", file: "tracks/developer/01-affordances.md" },
+                        { id: "dev-2", title: "D2. Architecture Patterns", file: "tracks/developer/02-architecture.md" },
+                        { id: "dev-3", title: "D3. MCP & Tool Design", file: "tracks/developer/03-mcp-tools.md" },
+                        { id: "dev-4", title: "D4. Testing AI Systems", file: "tracks/developer/04-testing-ai-systems.md" }
                     ]
                 },
                 {
-                    id: "academic",
-                    title: "Academic Track",
-                    track: "academic",
+                    id: "academic", title: "Academic Track", kind: "track",
                     items: [
-                        { id: "acad-1", title: "A1. Literature Workflows", file: "tracks/academic/01-literature.md", track: "academic" },
-                        { id: "acad-2", title: "A2. Modular Academic Writing", file: "tracks/academic/02-modular-writing.md", track: "academic" },
-                        { id: "acad-3", title: "A3. AI Peer Review", file: "tracks/academic/03-peer-review.md", track: "academic" },
-                        { id: "acad-4", title: "A4. Reproducibility & Documentation", file: "tracks/academic/04-reproducibility.md", track: "academic" }
+                        { id: "acad-1", title: "A1. Literature Workflows", file: "tracks/academic/01-literature.md" },
+                        { id: "acad-2", title: "A2. Modular Academic Writing", file: "tracks/academic/02-modular-writing.md" },
+                        { id: "acad-3", title: "A3. AI Peer Review", file: "tracks/academic/03-peer-review.md" },
+                        { id: "acad-4", title: "A4. Reproducibility & Documentation", file: "tracks/academic/04-reproducibility.md" }
                     ]
                 },
                 {
-                    id: "creative",
-                    title: "Creative Track",
-                    track: "creative",
+                    id: "creative", title: "Creative Track", kind: "track",
                     items: [
-                        { id: "cre-1", title: "C1. Voice & Style", file: "tracks/creative/01-voice-style.md", track: "creative" },
-                        { id: "cre-2", title: "C2. Creative Iteration", file: "tracks/creative/02-creative-iteration.md", track: "creative" },
-                        { id: "cre-3", title: "C3. Visual Collaboration", file: "tracks/creative/03-visual-collaboration.md", track: "creative" },
-                        { id: "cre-4", title: "C4. Attribution & Originality", file: "tracks/creative/04-attribution-originality.md", track: "creative" }
+                        { id: "cre-1", title: "C1. Voice & Style", file: "tracks/creative/01-voice-style.md" },
+                        { id: "cre-2", title: "C2. Creative Iteration", file: "tracks/creative/02-creative-iteration.md" },
+                        { id: "cre-3", title: "C3. Visual Collaboration", file: "tracks/creative/03-visual-collaboration.md" },
+                        { id: "cre-4", title: "C4. Attribution & Originality", file: "tracks/creative/04-attribution-originality.md" }
                     ]
                 },
                 {
-                    id: "operations",
-                    title: "Operations Track",
-                    track: "operations",
+                    id: "operations", title: "Operations Track", kind: "track",
                     items: [
-                        { id: "ops-1", title: "O1. Document Workflows", file: "tracks/operations/01-document-workflows.md", track: "operations" },
-                        { id: "ops-2", title: "O2. Data Wrangling", file: "tracks/operations/02-data-wrangling.md", track: "operations" },
-                        { id: "ops-3", title: "O3. Process Documentation", file: "tracks/operations/03-process-documentation.md", track: "operations" },
-                        { id: "ops-4", title: "O4. Communication & Meetings", file: "tracks/operations/04-communication-meetings.md", track: "operations" }
+                        { id: "ops-1", title: "O1. Document Workflows", file: "tracks/operations/01-document-workflows.md" },
+                        { id: "ops-2", title: "O2. Data Wrangling", file: "tracks/operations/02-data-wrangling.md" },
+                        { id: "ops-3", title: "O3. Process Documentation", file: "tracks/operations/03-process-documentation.md" },
+                        { id: "ops-4", title: "O4. Communication & Meetings", file: "tracks/operations/04-communication-meetings.md" }
                     ]
                 },
                 {
-                    id: "education",
-                    title: "Education Track",
-                    track: "education",
+                    id: "education", title: "Education Track", kind: "track",
                     items: [
-                        { id: "edu-1", title: "Ed1. AI-Resistant Assessment", file: "tracks/education/01-assessment.md", track: "education" },
-                        { id: "edu-2", title: "Ed2. AI as Learning Partner", file: "tracks/education/02-learning-partner.md", track: "education" },
-                        { id: "edu-3", title: "Ed3. Personalisation & Differentiation", file: "tracks/education/03-personalisation.md", track: "education" },
-                        { id: "edu-4", title: "Ed4. Teaching AI Literacy", file: "tracks/education/04-teaching-ai-literacy.md", track: "education" }
+                        { id: "edu-1", title: "Ed1. AI-Resistant Assessment", file: "tracks/education/01-assessment.md" },
+                        { id: "edu-2", title: "Ed2. AI as Learning Partner", file: "tracks/education/02-learning-partner.md" },
+                        { id: "edu-3", title: "Ed3. Personalisation & Differentiation", file: "tracks/education/03-personalisation.md" },
+                        { id: "edu-4", title: "Ed4. Teaching AI Literacy", file: "tracks/education/04-teaching-ai-literacy.md" }
                     ]
                 },
                 {
-                    id: "leadership",
-                    title: "Leadership Track",
-                    track: "leadership",
+                    id: "leadership", title: "Leadership Track", kind: "track",
                     items: [
-                        { id: "lead-1", title: "L1. Strategic Assessment", file: "tracks/leadership/01-strategic-assessment.md", track: "leadership" },
-                        { id: "lead-2", title: "L2. Building AI-Ready Teams", file: "tracks/leadership/02-ai-ready-teams.md", track: "leadership" },
-                        { id: "lead-3", title: "L3. Risk & Reputation", file: "tracks/leadership/03-risk-reputation.md", track: "leadership" },
-                        { id: "lead-4", title: "L4. Vendor & Build Decisions", file: "tracks/leadership/04-vendor-build.md", track: "leadership" }
+                        { id: "lead-1", title: "L1. Strategic Assessment", file: "tracks/leadership/01-strategic-assessment.md" },
+                        { id: "lead-2", title: "L2. Building AI-Ready Teams", file: "tracks/leadership/02-ai-ready-teams.md" },
+                        { id: "lead-3", title: "L3. Risk & Reputation", file: "tracks/leadership/03-risk-reputation.md" },
+                        { id: "lead-4", title: "L4. Vendor & Build Decisions", file: "tracks/leadership/04-vendor-build.md" }
                     ]
                 },
                 {
-                    id: "reference",
-                    title: "Reference",
+                    id: "reference", title: "Reference", kind: "general",
                     items: [
                         { id: "resources", title: "Resources & Further Reading", file: "resources.md" },
                         { id: "case-studies", title: "Case Studies", file: "case-studies.md" }
                     ]
                 },
                 {
-                    id: "conclusion",
-                    title: "Conclusion",
-                    file: "conclusion.md"
+                    id: "conclusion", title: "Conclusion", kind: "general", file: "conclusion.md"
                 }
             ]
         };
 
-        // State
-        let currentPage = "welcome";
-        let completedPages = new Set(JSON.parse(localStorage.getItem('wwai-completed') || '[]'));
+        // ---------- State ----------
+        const store = {
+            get(key, fallback) {
+                try { return JSON.parse(localStorage.getItem(key)) ?? fallback; }
+                catch { return fallback; }
+            },
+            set(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+        };
 
-        // Get flat list of all pages
+        let currentPage = "welcome";
+        let completedPages = new Set(store.get('wwai-completed', []));
+        let myTracks = new Set(store.get('wwai-mytracks', []));
+        let openSections = new Set(store.get('wwai-open', ['core']));
+        const quizFeedback = new Map();   // quiz id -> feedback text
+        let searchIndex = null;           // [{id, title, section, text}]
+        let searchIndexLoading = false;
+
+        // ---------- Helpers ----------
         function getAllPages() {
             const pages = [];
             courseStructure.sections.forEach(section => {
-                if (section.file) {
-                    pages.push({ id: section.id, title: section.title, file: section.file });
-                }
-                if (section.items) {
-                    section.items.forEach(item => {
-                        pages.push({ ...item, sectionTitle: section.title });
-                    });
-                }
+                if (section.file) pages.push({ id: section.id, title: section.title, file: section.file, section });
+                (section.items || []).forEach(item =>
+                    pages.push({ ...item, sectionTitle: section.title, section }));
             });
             return pages;
         }
 
-        // Render navigation
-        function renderNav() {
-            const container = document.getElementById('nav-container');
-            let html = '';
-
-            courseStructure.sections.forEach(section => {
-                html += `<div class="nav-section">`;
-                html += `<div class="nav-section-title">${section.title}</div>`;
-
-                if (section.file) {
-                    const isActive = currentPage === section.id;
-                    const isCompleted = completedPages.has(section.id);
-                    html += `<a class="nav-item ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}"
-                                data-page="${section.id}">${section.title}</a>`;
-                }
-
-                if (section.items) {
-                    section.items.forEach(item => {
-                        const isActive = currentPage === item.id;
-                        const isCompleted = completedPages.has(item.id);
-                        const trackBadge = item.track ? `<span class="track-badge ${item.track}">${item.track}</span>` : '';
-                        html += `<a class="nav-item ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}"
-                                    data-page="${item.id}">${item.title}${trackBadge}</a>`;
-                    });
-                }
-
-                html += `</div>`;
-            });
-
-            container.innerHTML = html;
-
-            // Add click handlers
-            container.querySelectorAll('.nav-item').forEach(item => {
-                item.addEventListener('click', () => {
-                    navigateTo(item.dataset.page);
-                });
-            });
-
-            updateProgress();
+        function planPages() {
+            // Pages that count towards progress: general pages + selected tracks.
+            // If no tracks are selected yet, only general pages count.
+            return getAllPages().filter(p =>
+                p.section.kind === 'general' || myTracks.has(p.section.id));
         }
 
-        // Update progress
-        function updateProgress() {
-            const allPages = getAllPages();
-            const total = allPages.length;
-            const completed = completedPages.size;
-            const percent = Math.round((completed / total) * 100);
-
-            document.getElementById('progress-text').textContent = `${percent}% (${completed}/${total})`;
-            document.getElementById('progress-fill').style.width = `${percent}%`;
-        }
-
-        // Load page content
-        async function loadPage(pageId) {
-            const allPages = getAllPages();
-            const page = allPages.find(p => p.id === pageId);
-
-            if (!page) {
-                document.getElementById('content').innerHTML = '<p>Page not found.</p>';
-                return;
-            }
-
-            // Update breadcrumb
-            const breadcrumb = document.getElementById('breadcrumb');
-            if (page.sectionTitle) {
-                breadcrumb.innerHTML = `<a href="#" data-page="welcome">Home</a> / ${page.sectionTitle} / ${page.title}`;
-            } else {
-                breadcrumb.innerHTML = `<a href="#" data-page="welcome">Home</a> / ${page.title}`;
-            }
-
-            // Attach breadcrumb click handlers
-            breadcrumb.querySelectorAll('a[data-page]').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    navigateTo(link.dataset.page);
-                });
-            });
-
-            // Load markdown
-            try {
-                const response = await fetch(page.file);
-                if (!response.ok) throw new Error('File not found');
-                const markdown = await response.text();
-                const html = marked.parse(markdown);
-                document.getElementById('content').innerHTML = html;
-
-                // Process interactive elements
-                processInteractiveElements();
-            } catch (e) {
-                document.getElementById('content').innerHTML = `
-                    <h1>${page.title}</h1>
-                    <p><em>Content coming soon...</em></p>
-                    <p>This module is under development. The file <code>${page.file}</code> will contain the full content.</p>
-                `;
-            }
-
-            // Render nav buttons
-            renderNavButtons(pageId);
-        }
-
-        // Diagram mappings: ASCII diagram identifier → SVG path
-        // Add entries here as diagrams are created
-        const diagramMap = {
-            'PROMPT': 'assets/diagrams/four-components.svg',
-            'APPROVED CHANNEL': 'assets/diagrams/approved-channels.svg',
-            'LITERATURE WORKFLOW': 'assets/diagrams/literature-workflow.svg',
-            'MCP': 'assets/diagrams/mcp-diagram.svg',
-            'AGENTIFICATION SHOCKWAVE': 'assets/diagrams/agentification-shockwave.svg',
-            // 'ADVERSARIAL AI PEER REVIEW': Reverted to ASCII — SVG didn't capture paper-centric flow
-        };
-
-        // Process interactive elements (quizzes, exercises, diagrams)
-        function processInteractiveElements() {
-            // Find quiz blocks (marked with special syntax in markdown)
-            document.querySelectorAll('pre code').forEach(block => {
-                const text = block.textContent;
-                if (text.startsWith('QUIZ:')) {
-                    const quizHtml = parseQuiz(text);
-                    block.parentElement.outerHTML = quizHtml;
-                } else if (text.startsWith('EXERCISE:')) {
-                    const exerciseHtml = parseExercise(text);
-                    block.parentElement.outerHTML = exerciseHtml;
-                }
-            });
-
-            // Enhance ASCII diagrams with SVG versions if available
-            enhanceDiagrams();
-
-            // Attach quiz handlers
-            document.querySelectorAll('.quiz').forEach(attachQuizHandlers);
-        }
-
-        // Progressive enhancement: replace ASCII diagrams with SVG if available
-        async function enhanceDiagrams() {
-            const codeBlocks = document.querySelectorAll('pre code');
-
-            for (const block of codeBlocks) {
-                const text = block.textContent;
-
-                // Check if this looks like an ASCII diagram (contains box-drawing chars)
-                const isAsciiDiagram = /[┌┐└┘│─┬┴├┤┼▶▼]/.test(text);
-                if (!isAsciiDiagram) continue;
-
-                // Try to match against known diagrams
-                for (const [identifier, svgPath] of Object.entries(diagramMap)) {
-                    if (text.includes(identifier)) {
-                        try {
-                            const response = await fetch(svgPath);
-                            if (response.ok) {
-                                const svgContent = await response.text();
-                                const wrapper = document.createElement('figure');
-                                wrapper.className = 'diagram-enhanced';
-                                wrapper.innerHTML = `
-                                    <div class="diagram-svg">${svgContent}</div>
-                                    <details class="diagram-ascii">
-                                        <summary>View text version</summary>
-                                        <pre><code>${escapeHtml(text)}</code></pre>
-                                    </details>
-                                `;
-                                block.parentElement.replaceWith(wrapper);
-                            }
-                        } catch (e) {
-                            // SVG not available, keep ASCII version
-                            console.log(`Diagram not found: ${svgPath}`);
-                        }
-                        break;
-                    }
-                }
-            }
-        }
-
-        // Helper to escape HTML in ASCII diagrams
         function escapeHtml(text) {
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
         }
 
-        // Parse quiz from markdown
-        function parseQuiz(text) {
-            const lines = text.split('\n').slice(1); // Remove QUIZ: line
-            const question = lines[0];
-            const options = [];
-            let correctIndex = 0;
-            let feedback = '';
+        // ---------- Theme ----------
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            document.getElementById('theme-toggle').textContent = theme === 'dark' ? '☀' : '☾';
+            store.set('wwai-theme', theme);
+        }
+        function initTheme() {
+            const saved = store.get('wwai-theme', null);
+            const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            applyTheme(saved || preferred);
+            document.getElementById('theme-toggle').addEventListener('click', () => {
+                const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                applyTheme(next);
+            });
+        }
 
-            lines.slice(1).forEach((line, i) => {
-                if (line.startsWith('* ')) {
-                    options.push(line.slice(2));
+        // ---------- Navigation rendering ----------
+        function renderNav() {
+            const container = document.getElementById('nav-container');
+            let html = '';
+
+            courseStructure.sections.forEach(section => {
+                const isOpen = openSections.has(section.id) ||
+                    (section.items || []).some(i => i.id === currentPage);
+
+                // Single-page sections (Welcome, Conclusion) render as plain items.
+                if (section.file && !section.items) {
+                    const cls = ['nav-item'];
+                    if (currentPage === section.id) cls.push('active');
+                    if (completedPages.has(section.id)) cls.push('completed');
+                    html += `<div class="nav-section open">
+                        <a class="${cls.join(' ')}" data-page="${section.id}">${section.title}</a>
+                    </div>`;
+                    return;
+                }
+
+                const done = (section.items || []).filter(i => completedPages.has(i.id)).length;
+                const total = (section.items || []).length;
+                const isTrack = section.kind === 'track';
+                const inPlan = myTracks.has(section.id);
+
+                html += `<div class="nav-section ${isOpen ? 'open' : ''}" data-section="${section.id}">`;
+                html += `<button class="nav-section-header" data-toggle="${section.id}" aria-expanded="${isOpen}">
+                    <span><span class="chevron">▶</span> ${section.title}</span>
+                    <span class="section-meta">
+                        ${isTrack ? `<span class="plan-toggle ${inPlan ? 'active' : ''}" data-plan="${section.id}"
+                            title="${inPlan ? 'Remove from my plan' : 'Add to my plan'}">${inPlan ? '✓ my plan' : '+ plan'}</span>` : ''}
+                        <span class="section-count ${done === total && total > 0 ? 'done' : ''}">${done}/${total}</span>
+                    </span>
+                </button>`;
+                html += `<div class="nav-items">`;
+                (section.items || []).forEach(item => {
+                    const cls = ['nav-item'];
+                    if (currentPage === item.id) cls.push('active');
+                    if (completedPages.has(item.id)) cls.push('completed');
+                    html += `<a class="${cls.join(' ')}" data-page="${item.id}">${item.title}</a>`;
+                });
+                html += `</div></div>`;
+            });
+
+            container.innerHTML = html;
+
+            container.querySelectorAll('[data-page]').forEach(el =>
+                el.addEventListener('click', () => navigateTo(el.dataset.page)));
+
+            container.querySelectorAll('[data-toggle]').forEach(el =>
+                el.addEventListener('click', (e) => {
+                    if (e.target.closest('[data-plan]')) return; // plan toggle handled below
+                    const id = el.dataset.toggle;
+                    openSections.has(id) ? openSections.delete(id) : openSections.add(id);
+                    store.set('wwai-open', [...openSections]);
+                    renderNav();
+                }));
+
+            container.querySelectorAll('[data-plan]').forEach(el =>
+                el.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const id = el.dataset.plan;
+                    if (myTracks.has(id)) { myTracks.delete(id); }
+                    else { myTracks.add(id); openSections.add(id); store.set('wwai-open', [...openSections]); }
+                    store.set('wwai-mytracks', [...myTracks]);
+                    renderNav();
+                }));
+
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const plan = planPages();
+            const completed = plan.filter(p => completedPages.has(p.id)).length;
+            const percent = plan.length ? Math.round((completed / plan.length) * 100) : 0;
+            document.getElementById('progress-text').textContent = `${percent}% (${completed}/${plan.length})`;
+            document.getElementById('progress-fill').style.width = `${percent}%`;
+            document.getElementById('progress-hint').textContent = myTracks.size
+                ? `Core + ${myTracks.size} track${myTracks.size > 1 ? 's' : ''} — use “+ plan” to change`
+                : 'Counting the core — add tracks to your plan with “+ plan”';
+        }
+
+        // ---------- Page loading ----------
+        async function loadPage(pageId) {
+            const allPages = getAllPages();
+            const page = allPages.find(p => p.id === pageId);
+            const contentEl = document.getElementById('content');
+
+            if (!page) {
+                contentEl.innerHTML = '<h1>Page not found</h1><p>Use the sidebar to find your way back.</p>';
+                document.getElementById('reading-time').textContent = '';
+                renderNavButtons(null);
+                return;
+            }
+
+            const breadcrumb = document.getElementById('breadcrumb');
+            breadcrumb.innerHTML = page.sectionTitle
+                ? `<a href="#welcome">Home</a> / ${page.sectionTitle} / ${page.title}`
+                : `<a href="#welcome">Home</a> / ${page.title}`;
+
+            try {
+                const response = await fetch(page.file);
+                if (!response.ok) throw new Error('File not found');
+                const markdown = await response.text();
+
+                const words = markdown.split(/\s+/).length;
+                const mins = Math.max(1, Math.round(words / 200));
+                document.getElementById('reading-time').textContent = `~${mins} min read`;
+
+                contentEl.innerHTML = marked.parse(markdown);
+                processInteractiveElements();
+            } catch (e) {
+                document.getElementById('reading-time').textContent = '';
+                contentEl.innerHTML = `
+                    <h1>${page.title}</h1>
+                    <p><em>This page could not be loaded.</em></p>
+                    <p>Expected file: <code>${page.file}</code>. If you opened <code>index.html</code> directly
+                    from disk, your browser may block loading content — serve the folder instead, e.g.
+                    <code>python3 -m http.server</code> in this directory, then open
+                    <code>http://localhost:8000</code>.</p>`;
+            }
+
+            renderNavButtons(pageId);
+        }
+
+        // ---------- Interactive elements ----------
+        const diagramMap = {
+            'APPROVED CHANNEL': 'assets/diagrams/approved-channels.svg',
+            'LITERATURE WORKFLOW': 'assets/diagrams/literature-workflow.svg',
+            'MCP': 'assets/diagrams/mcp-diagram.svg'
+        };
+
+        function processInteractiveElements() {
+            document.querySelectorAll('#content pre code').forEach(block => {
+                const text = block.textContent;
+                if (text.startsWith('QUIZ:')) {
+                    block.parentElement.outerHTML = parseQuiz(text);
+                } else if (text.startsWith('EXERCISE:')) {
+                    block.parentElement.outerHTML = parseExercise(text);
+                }
+            });
+            enhanceDiagrams();
+            document.querySelectorAll('.quiz').forEach(attachQuizHandlers);
+        }
+
+        async function enhanceDiagrams() {
+            for (const block of document.querySelectorAll('#content pre code')) {
+                const text = block.textContent;
+                if (!/[┌┐└┘│─┬┴├┤┼▶▼╭╮╰╯]/.test(text)) continue;
+                for (const [identifier, svgPath] of Object.entries(diagramMap)) {
+                    if (!text.includes(identifier)) continue;
+                    try {
+                        const response = await fetch(svgPath);
+                        if (response.ok) {
+                            const svgContent = await response.text();
+                            const wrapper = document.createElement('figure');
+                            wrapper.className = 'diagram-enhanced';
+                            wrapper.innerHTML = `
+                                <div class="diagram-svg">${svgContent}</div>
+                                <details class="diagram-ascii">
+                                    <summary>View text version</summary>
+                                    <pre><code>${escapeHtml(text)}</code></pre>
+                                </details>`;
+                            block.parentElement.replaceWith(wrapper);
+                        }
+                    } catch (e) { /* keep ASCII */ }
+                    break;
+                }
+            }
+        }
+
+        function parseQuiz(text) {
+            const lines = text.split('\n').slice(1);
+            const questionLines = [];
+            const options = [];
+            const feedbackLines = [];
+            let correctIndex = 0;
+            let inFeedback = false;
+
+            lines.forEach(line => {
+                if (line.startsWith('FEEDBACK:')) {
+                    inFeedback = true;
+                    feedbackLines.push(line.slice(9).trim());
+                } else if (inFeedback) {
+                    feedbackLines.push(line.trim());
                 } else if (line.startsWith('*! ')) {
                     correctIndex = options.length;
                     options.push(line.slice(3));
-                } else if (line.startsWith('FEEDBACK:')) {
-                    feedback = line.slice(9).trim();
+                } else if (line.startsWith('* ')) {
+                    options.push(line.slice(2));
+                } else if (options.length === 0 && line.trim()) {
+                    questionLines.push(line.trim());
                 }
             });
 
             const id = 'quiz-' + Math.random().toString(36).slice(2, 9);
-            let html = `<div class="quiz" data-correct="${correctIndex}" data-feedback="${feedback}" id="${id}">`;
-            html += `<div class="quiz-question">${question}</div>`;
-            options.forEach((opt, i) => {
-                html += `<label class="quiz-option" data-index="${i}">${opt}</label>`;
-            });
-            html += `<button class="check-btn">Check Answer</button>`;
-            html += `<div class="quiz-feedback"></div>`;
-            html += `</div>`;
+            quizFeedback.set(id, feedbackLines.join(' ').trim());
 
+            let html = `<div class="quiz" data-correct="${correctIndex}" id="${id}">`;
+            html += `<div class="quiz-label">Quick check</div>`;
+            html += `<div class="quiz-question">${marked.parseInline(questionLines.join(' '))}</div>`;
+            options.forEach((opt, i) => {
+                html += `<label class="quiz-option" data-index="${i}">${marked.parseInline(opt)}</label>`;
+            });
+            html += `<button class="check-btn">Check answer</button>`;
+            html += `<div class="quiz-feedback"></div></div>`;
             return html;
         }
 
-        // Parse exercise from markdown
         function parseExercise(text) {
-            const lines = text.split('\n').slice(1);
-            const content = lines.join('\n');
-
+            const content = text.split('\n').slice(1).join('\n');
             return `<div class="exercise">
                 <div class="exercise-title">Exercise</div>
                 <div>${marked.parse(content)}</div>
             </div>`;
         }
 
-        // Attach quiz handlers
         function attachQuizHandlers(quiz) {
             const options = quiz.querySelectorAll('.quiz-option');
             const checkBtn = quiz.querySelector('.check-btn');
-            const feedback = quiz.querySelector('.quiz-feedback');
+            const feedbackEl = quiz.querySelector('.quiz-feedback');
             const correctIndex = parseInt(quiz.dataset.correct);
+            const feedback = quizFeedback.get(quiz.id) || '';
             let selected = null;
 
-            options.forEach(opt => {
-                opt.addEventListener('click', () => {
-                    options.forEach(o => o.classList.remove('selected'));
-                    opt.classList.add('selected');
-                    selected = parseInt(opt.dataset.index);
-                });
-            });
+            options.forEach(opt => opt.addEventListener('click', () => {
+                if (checkBtn.disabled) return;
+                options.forEach(o => o.classList.remove('selected'));
+                opt.classList.add('selected');
+                selected = parseInt(opt.dataset.index);
+            }));
 
             checkBtn.addEventListener('click', () => {
                 if (selected === null) return;
-
                 options.forEach(opt => {
                     const idx = parseInt(opt.dataset.index);
                     opt.classList.remove('selected');
-                    if (idx === correctIndex) {
-                        opt.classList.add('correct');
-                    } else if (idx === selected) {
-                        opt.classList.add('incorrect');
-                    }
+                    if (idx === correctIndex) opt.classList.add('correct');
+                    else if (idx === selected) opt.classList.add('incorrect');
                 });
-
-                feedback.classList.add('show');
+                feedbackEl.classList.add('show');
                 if (selected === correctIndex) {
-                    feedback.classList.add('correct');
-                    feedback.classList.remove('incorrect');
-                    feedback.textContent = quiz.dataset.feedback || 'Correct!';
+                    feedbackEl.classList.add('correct');
+                    feedbackEl.textContent = feedback || 'Correct!';
                 } else {
-                    feedback.classList.add('incorrect');
-                    feedback.classList.remove('correct');
-                    feedback.textContent = quiz.dataset.feedback
-                        ? 'Not quite — ' + quiz.dataset.feedback
+                    feedbackEl.classList.add('incorrect');
+                    feedbackEl.textContent = feedback ? 'Not quite — ' + feedback
                         : 'Not quite. Try reviewing the material above.';
                 }
-
                 checkBtn.disabled = true;
             });
         }
 
-        // Render navigation buttons
+        // ---------- Prev/next buttons ----------
         function renderNavButtons(pageId) {
-            const allPages = getAllPages();
-            const currentIndex = allPages.findIndex(p => p.id === pageId);
             const container = document.getElementById('nav-buttons');
-
+            if (!pageId) { container.innerHTML = ''; return; }
+            const allPages = getAllPages();
+            const i = allPages.findIndex(p => p.id === pageId);
             let html = '';
 
-            if (currentIndex > 0) {
-                const prev = allPages[currentIndex - 1];
-                html += `<a class="nav-btn" data-page="${prev.id}">← ${prev.title}</a>`;
-            } else {
-                html += `<span></span>`;
-            }
+            if (i > 0) html += `<a class="nav-btn" data-page="${allPages[i-1].id}">← ${allPages[i-1].title}</a>`;
+            else html += `<span></span>`;
 
-            if (currentIndex < allPages.length - 1) {
-                const next = allPages[currentIndex + 1];
-                html += `<a class="nav-btn primary" data-page="${next.id}" data-complete="${pageId}">
-                    Mark Complete & Continue →
-                </a>`;
+            if (i < allPages.length - 1) {
+                html += `<a class="nav-btn primary" data-page="${allPages[i+1].id}" data-complete="${pageId}">
+                    Mark complete & continue →</a>`;
             } else {
-                html += `<a class="nav-btn" data-complete="${pageId}">Mark Complete</a>`;
+                html += `<a class="nav-btn primary" data-complete="${pageId}">Mark complete</a>`;
             }
-
             container.innerHTML = html;
 
-            container.querySelectorAll('.nav-btn').forEach(btn => {
+            container.querySelectorAll('.nav-btn').forEach(btn =>
                 btn.addEventListener('click', () => {
-                    if (btn.dataset.complete) {
-                        markComplete(btn.dataset.complete);
-                    }
-                    if (btn.dataset.page) {
-                        navigateTo(btn.dataset.page);
-                    }
-                });
-            });
+                    if (btn.dataset.complete) markComplete(btn.dataset.complete);
+                    if (btn.dataset.page) navigateTo(btn.dataset.page);
+                }));
         }
 
-        // Mark page complete
         function markComplete(pageId) {
             completedPages.add(pageId);
-            localStorage.setItem('wwai-completed', JSON.stringify([...completedPages]));
+            store.set('wwai-completed', [...completedPages]);
             renderNav();
         }
 
-        // Navigate to page
+        // ---------- Search ----------
+        async function buildSearchIndex() {
+            if (searchIndex || searchIndexLoading) return;
+            searchIndexLoading = true;
+            const pages = getAllPages();
+            const results = await Promise.all(pages.map(async p => {
+                try {
+                    const r = await fetch(p.file);
+                    if (!r.ok) return null;
+                    const md = await r.text();
+                    return { id: p.id, title: p.title, section: p.sectionTitle || '',
+                             text: md.replace(/[#*`>|~\-]/g, ' ').replace(/\s+/g, ' ') };
+                } catch { return null; }
+            }));
+            searchIndex = results.filter(Boolean);
+            searchIndexLoading = false;
+        }
+
+        function runSearch(query) {
+            const container = document.getElementById('nav-container');
+            if (!query) { renderNav(); return; }
+            if (!searchIndex) {
+                container.innerHTML = '<div class="search-status">Indexing course…</div>';
+                buildSearchIndex().then(() => runSearch(document.getElementById('search-box').value.trim()));
+                return;
+            }
+            const q = query.toLowerCase();
+            const hits = [];
+            for (const page of searchIndex) {
+                const inTitle = page.title.toLowerCase().includes(q);
+                const pos = page.text.toLowerCase().indexOf(q);
+                if (!inTitle && pos === -1) continue;
+                let snippet = '';
+                if (pos !== -1) {
+                    const start = Math.max(0, pos - 45);
+                    snippet = (start > 0 ? '…' : '') +
+                        page.text.slice(start, pos + q.length + 60).trim() + '…';
+                }
+                hits.push({ page, snippet, rank: inTitle ? 0 : 1 });
+            }
+            hits.sort((a, b) => a.rank - b.rank);
+
+            if (!hits.length) {
+                container.innerHTML = `<div class="search-status">No matches for “${escapeHtml(query)}”.</div>`;
+                return;
+            }
+            const re = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'ig');
+            container.innerHTML = '<div class="search-results">' + hits.slice(0, 20).map(h => `
+                <a class="search-result" data-page="${h.page.id}">
+                    <span class="sr-title">${escapeHtml(h.page.title)}</span><br>
+                    <span class="sr-snippet">${escapeHtml(h.snippet || h.page.section).replace(re, m => `<mark>${m}</mark>`)}</span>
+                </a>`).join('') + '</div>';
+            container.querySelectorAll('[data-page]').forEach(el =>
+                el.addEventListener('click', () => {
+                    document.getElementById('search-box').value = '';
+                    navigateTo(el.dataset.page);
+                }));
+        }
+
+        // ---------- Routing ----------
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('sidebar-backdrop').classList.remove('show');
+        }
+
         function navigateTo(pageId) {
             currentPage = pageId;
-            window.location.hash = pageId;
+            if (window.location.hash !== '#' + pageId) {
+                history.pushState(null, '', '#' + pageId);
+            }
             loadPage(pageId);
             renderNav();
-            
-            // On mobile, scroll to main content after clicking sidebar item
-            const isMobile = window.matchMedia('(max-width: 768px)').matches;
-            if (isMobile) {
-                // Small delay to ensure content is loaded
-                setTimeout(() => {
-                    const mainElement = document.querySelector('.main');
-                    if (mainElement) {
-                        mainElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }, 100);
-            } else {
-                window.scrollTo(0, 0);
-            }
+            closeSidebar();
+            window.scrollTo(0, 0);
         }
 
-        // Initialize
-        function init() {
-            // Check for hash
-            if (window.location.hash) {
-                currentPage = window.location.hash.slice(1);
-            }
-
-            renderNav();
+        function handleHash() {
+            currentPage = window.location.hash.slice(1) || 'welcome';
             loadPage(currentPage);
+            renderNav();
+        }
 
-            // Handle hash changes
-            window.addEventListener('hashchange', () => {
-                currentPage = window.location.hash.slice(1) || 'welcome';
-                loadPage(currentPage);
-                renderNav();
+        // ---------- Init ----------
+        function init() {
+            initTheme();
+
+            document.getElementById('menu-btn').addEventListener('click', () => {
+                document.getElementById('sidebar').classList.add('open');
+                document.getElementById('sidebar-backdrop').classList.add('show');
             });
+            document.getElementById('sidebar-backdrop').addEventListener('click', closeSidebar);
+
+            const searchBox = document.getElementById('search-box');
+            let debounce;
+            searchBox.addEventListener('focus', () => buildSearchIndex());
+            searchBox.addEventListener('input', () => {
+                clearTimeout(debounce);
+                debounce = setTimeout(() => runSearch(searchBox.value.trim()), 150);
+            });
+
+            window.addEventListener('hashchange', handleHash);
+            handleHash();
         }
 
         init();

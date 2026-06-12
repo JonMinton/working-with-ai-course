@@ -1,8 +1,8 @@
-# Module 5: Iteration & Refinement
+# Module 6: Iteration & Refinement
 
 ## The Feedback Loop
 
-You've learned to specify clearly (Module 1) and verify rigorously (Module 4). But what happens in between — when the output isn't quite right?
+You've learned to specify clearly (Module 2) and verify rigorously (Module 5). But what happens in between — when the output isn't quite right?
 
 This is the **iteration loop**:
 
@@ -149,7 +149,7 @@ This isn't a hard rule, but it's a useful signal. Continued refinement after thr
 
 Long conversations accumulate problems:
 
-**Context window limits:** Old messages may be truncated or summarised, losing important details.
+**Context window limits:** Old messages may be truncated or summarised, losing important details. Many modern tools "compact" long conversations automatically — useful, but compaction is itself an AI-generated summary, with the usual risk of dropping the detail that mattered.
 
 **Contradictory instructions:** Your feedback from turn 3 might conflict with your feedback from turn 15.
 
@@ -193,7 +193,7 @@ Being overly polite wastes tokens and can obscure feedback:
 **Efficient:**
 > "Good structure. Change the button colour from blue to green (#16a34a)."
 
-You can be direct without being rude. AI doesn't have feelings to hurt.
+You can be direct without being rude. AI doesn't have feelings to hurt — and recall sycophancy from Module 1: hedged, apologetic feedback gives the model room to please you instead of fixing the problem. Directness is kindness to your future self.
 
 ### The Kitchen Sink
 
@@ -222,7 +222,7 @@ Verify each step before building on it.
 Iteration can become infinite if you don't have clear stopping criteria.
 
 **You're done when:**
-- Output meets your acceptance criteria (from Module 1)
+- Output meets your acceptance criteria (from Module 2)
 - Further changes would be polish, not substance
 - You'd accept this from a human colleague
 
@@ -259,4 +259,4 @@ Plan your iteration:
 
 ---
 
-Next: **Module 6: The Agentification Shockwave** →
+Next: **Module 7: The Agentification Shockwave** →

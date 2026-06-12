@@ -1,4 +1,4 @@
-# Module 4: Verification & Quality
+# Module 5: Verification & Quality
 
 ## The Verification Imperative
 
@@ -8,7 +8,7 @@ AI-generated outputs can be:
 - **Obviously wrong** — easy to catch
 - **Subtly wrong** — the dangerous case
 
-The second and fourth categories are where problems hide. AI is very good at producing confident, well-structured outputs that contain errors.
+The second and fourth categories are where problems hide. Module 1 explained why: the model's entire job is producing *plausible* text, so its errors arrive wearing the same fluent confidence as its correct answers. Verification exists because plausibility is exactly the wrong signal to trust.
 
 **Your job is not to trust. Your job is to verify.**
 
@@ -116,19 +116,20 @@ List at least 3 problems with this code that verification should catch.
 
 ## The Visual Reasoning Gap
 
-AI has particular limitations with visual outputs:
+Visual output deserves its own verification habits.
 
-**AI struggles with:**
-- Spatial relationships ("Is A above B?")
-- Visual debugging ("Why does this CSS render wrong?")
-- Proportions and aesthetics ("Does this look balanced?")
-- Complex visualisations (dense charts, overlapping elements)
+Modern models can view images, and agentic tools can screenshot their own rendered output and catch gross errors — overlapping elements, missing sections, broken layouts. That has genuinely improved. But a gap remains:
+
+**AI remains unreliable at:**
+- Fine spatial judgement ("is this *slightly* misaligned?")
+- Proportion and aesthetics ("does this look balanced?")
+- Dense visualisations (crowded charts, small text, overlapping labels)
+- Knowing what *you* will consider "right"
 
 **Implications for verification:**
-- AI cannot reliably verify its own visual outputs
-- You must look at rendered results
-- Screenshots are your friend
-- "It should look right" is a human judgment call
+- If the tool can render and screenshot its own output, ask it to — that catches the gross errors cheaply
+- You must still look at the final rendered result yourself
+- "It should look right" is, in the end, a human judgment call
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -197,13 +198,13 @@ Use one AI to check another:
 
 ```
 QUIZ:
-You've generated a research summary using Claude. Which approach provides the best verification?
+You've generated a research summary using one AI model. Which approach provides the best verification?
 
-* Ask Claude to verify its own work
-* Ask GPT-4 to critique it
-*! Ask GPT-4 to critique it, then verify any specific claims yourself
+* Ask the same model to verify its own work
+* Ask a different model family to critique it
+*! Ask a different model family to critique it, then verify any specific claims yourself
 * Assume it's correct if it looks well-written
-FEEDBACK:Cross-model review catches more issues than self-review, but human verification of specific claims is still essential for anything important.
+FEEDBACK:Cross-model review catches more issues than self-review (though different models can share blind spots), and human verification of specific claims is still essential for anything important.
 ```
 
 ## Verification Checklists
@@ -218,6 +219,10 @@ FEEDBACK:Cross-model review catches more issues than self-review, but human veri
 
 **For factual content:**
 - [ ] Are all citations real? (check at least a sample)
+- [ ] Are statistics plausible?
+- [ ] Is information current?
+- [ ] Are quotes accurate?
+- [ ] Are there claims that would be surprising if true?
 
 **For data handling (before you paste or upload):**
 - [ ] What is the data classification? (Public / Internal / Confidential / Restricted)
@@ -226,10 +231,6 @@ FEEDBACK:Cross-model review catches more issues than self-review, but human veri
 - [ ] Is the minimum necessary data included?
 - [ ] Do we have an audit trail for this use?
 - [ ] Would we be comfortable if this appeared in an incident review?
-- [ ] Are statistics plausible?
-- [ ] Is information current?
-- [ ] Are quotes accurate?
-- [ ] Are there claims that would be surprising if true?
 
 **For visual outputs:**
 - [ ] Have you actually looked at the rendered result?
@@ -278,11 +279,4 @@ Use lightweight evaluation to catch drift:
 
 ---
 
-Congratulations! You've completed the core modules.
-
-Now choose your specialised track:
-- **Enterprise Track** → Trust architecture, approved channels, governance
-- **Developer Track** → Affordances, architecture, MCP tools
-- **Academic Track** → Literature workflows, modular writing, AI peer review
-- **Creative Track** → Voice & style, creative iteration, visual collaboration
-- **Operations Track** → Document workflows, data wrangling, process documentation
+Next: **Module 6: Iteration & Refinement** →

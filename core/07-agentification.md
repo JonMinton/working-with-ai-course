@@ -1,4 +1,4 @@
-# Module 6: The Agentification Shockwave
+# Module 7: The Agentification Shockwave
 
 ## What is Agentification?
 
@@ -72,37 +72,29 @@ If a project naturally breaks into discrete tasks that can be done separately, A
 
 ## The Five Rings of Agentification
 
-These dimensions create expanding "rings" of fields, ordered by how soon (and how forcefully) agentification will hit each one.
+These dimensions create expanding "rings" of fields, ordered by how soon (and how forcefully) agentification hits each one.
 
 ```
-                              ╭─────────────────╮
-                              │   RING 4        │
-                              │  (Distant)      │
-                              │  2035+          │
-                    ╭─────────┴─────────────────┴────────╮
-                    │   RING 3                           │
-                    │  (Moderately Adjacent)             │
-                    │  2026-2030                         │
-          ╭─────────┴──────────────────────────────────┬─┴────╮
-          │   RING 2                                   │       │
-          │  (Near-Adjacent)                           │       │
-          │  2025-2027                                 │       │
-    ╭─────┴─────────────────────────────────────────┬──┴─┬─╮   │
-    │   RING 1                                      │    │ │   │
-    │  (Immediately Adjacent)                       │    │ │   │
-    │  2024-2025                                    │    │ │   │
-  ┌─┴──────────────────────────────────────────────┼────┤─┼─┐ │
-  │  RING 0 — SOFTWARE DEVELOPMENT              │    │ │ │ │
-  │  (Already Deeply Agentified)                  │ D1 │ │ │ │
-  │  2017-2024                                    │    │ │ │ │
-  │  • Code generation                            │    │ │ │ │
-  │  • Testing & debugging                        │    │ │ │ │
-  │  • Documentation                              │  2026-2030 │
-  │  • Infrastructure (DevOps/Infra-as-Code)      │  │ │ │
-  └──────────────────────────────────────────────┴────┘─┘─┴─┘
+╭──────────────────────────────── RING 4 · Distant ─────────────────────────────────╮
+│               medicine · skilled trades · therapy · performing arts               │
+│   ╭────────────────────── RING 3 · Moderately adjacent ───────────────────────╮   │
+│   │          consulting · journalism · education · HR · architecture          │   │
+│   │   ╭───────────────────── RING 2 · Near-adjacent ──────────────────────╮   │   │
+│   │   │  law · accounting · academic research · UX · marketing analytics  │   │   │
+│   │   │   ╭────────────── RING 1 · Immediately adjacent ──────────────╮   │   │   │
+│   │   │   │ data science · DevOps · quant finance · technical writing │   │   │   │
+│   │   │   │       ╭────── RING 0 · SOFTWARE DEVELOPMENT ──────╮       │   │   │   │
+│   │   │   │       │ the epicentre — already deeply agentified │       │   │   │   │
+│   │   │   │       ╰───────────────────────────────────────────╯       │   │   │   │
+│   │   │   ╰───────────────────────────────────────────────────────────╯   │   │   │
+│   │   ╰───────────────────────────────────────────────────────────────────╯   │   │
+│   ╰───────────────────────────────────────────────────────────────────────────╯   │
+╰───────────────────────────────────────────────────────────────────────────────────╯
 ```
 
-### Ring 0: Software Development (Already Deeply Agentified, 2017–2024)
+**A note on timelines.** Earlier versions of frameworks like this attached confident year ranges to each ring. The inner rings have largely played out as predicted — software development and data work agentified first and fastest. The outer rings are forecasts, and forecasts about AI have a short shelf life in both directions. Treat the rings as an *ordering* (what gets hit sooner vs. later, and why) rather than a calendar.
+
+### Ring 0: Software Development (Already Deeply Agentified)
 
 Software development sits at the centre because it maxes out all six dimensions:
 
@@ -113,7 +105,7 @@ Software development sits at the centre because it maxes out all six dimensions:
 - **Explicit specification:** Yes (requirements, test cases)
 - **Modular decomposition:** Yes (tests, functions, modules)
 
-By now (2025), this shift is visible: the AI-assisted developer who can verify AI output and iterate effectively is more valuable than the developer who can't; junior developers doing mechanical coding without verification are less valuable.
+The shift is now thoroughly visible: the AI-assisted developer who can verify AI output and iterate effectively is more valuable than the developer who can't; mechanical coding without verification commands less and less of a premium.
 
 **What's been agentified:**
 - Code generation (starting from specs)
@@ -131,9 +123,9 @@ By now (2025), this shift is visible: the AI-assisted developer who can verify A
 
 ---
 
-### Ring 1: Immediately Adjacent (2024–2025)
+### Ring 1: Immediately Adjacent (Well Advanced)
 
-These fields are experiencing agentification *right now*. They share most of Ring 0's characteristics.
+These fields share most of Ring 0's characteristics, and agentification here is no longer a forecast — it's the working reality for many practitioners.
 
 #### Data Science & Analytics
 
@@ -190,9 +182,9 @@ All six dimensions score high:
 
 ---
 
-### Ring 2: Near-Adjacent (2025–2027)
+### Ring 2: Near-Adjacent (Accelerating Now)
 
-These fields are structured enough that agentification is accelerating *now*, but they face specific challenges from lower scores on one or two dimensions.
+These fields are structured enough that agentification is well underway, but they face specific challenges from lower scores on one or two dimensions.
 
 #### Legal Research & Contract Drafting
 
@@ -246,7 +238,7 @@ These fields are structured enough that agentification is accelerating *now*, bu
 
 ---
 
-### Ring 3: Moderately Adjacent (2026–2030)
+### Ring 3: Moderately Adjacent (Gathering Pace)
 
 These fields will experience significant agentification over the coming years, but they face more substantial barriers. Typically, one or two dimensions score *much lower*.
 
@@ -292,9 +284,9 @@ These fields will experience significant agentification over the coming years, b
 
 ---
 
-### Ring 4: Distant (2035+)
+### Ring 4: Distant (The Long Tail)
 
-These fields will experience agentification *slowly*, if at all, in the near term. They score *very* low on multiple dimensions — often including "digital environment" or "text as primary medium."
+These fields will experience agentification *slowly*, if at all, in the near term. They score *very* low on multiple dimensions — often including "digital environment" or "text as primary medium." AI assists at the edges (documentation, scheduling, decision support) while the core of the work stays human.
 
 #### Medicine & Clinical Work
 
@@ -316,7 +308,7 @@ These fields will experience agentification *slowly*, if at all, in the near ter
 
 #### Skilled Trades (Plumbing, Electrical, HVAC)
 
-**Challenge:** Physical, spatial, dealing with hidden state (you can't see inside the walls). Feedback loops require troubleshooting on-site. As Geoff Hinton noted: "The future of AI in plumbing is not that plumbers disappear — it's that plumbing gets harder because you need to handle novel situations."
+**Challenge:** Physical, spatial, dealing with hidden state (you can't see inside the walls). Feedback loops require troubleshooting on-site. Geoffrey Hinton has famously suggested plumbing is among the work *least* exposed to AI — precisely because it's embodied, varied, and full of novel physical situations.
 
 **What AI can do:** Design of systems, troubleshooting guides, code compliance, documentation.
 
@@ -346,10 +338,10 @@ These fields will experience agentification *slowly*, if at all, in the near ter
 
 This isn't about jobs disappearing — it's about which *skills* become valuable within fields.
 
-In software development in 2025:
-- Writing basic CRUD endpoints is less valuable than it was in 2015
+In software development today:
+- Writing basic CRUD endpoints is far less valuable than it was a decade ago
 - Knowing how to specify clearly and verify rigorously is *more* valuable
-- The number of developers may be larger (lower barrier to entry), but the skill distribution shifts
+- The number of people who can build software is larger (lower barrier to entry), but the skill distribution shifts
 
 The same will happen in other fields. A legal researcher who can't verify AI-generated case summaries will be less valuable. A legal researcher who understands how to use AI to accelerate research whilst catching errors will be more valuable.
 
@@ -362,18 +354,15 @@ For example:
 - **Medicine:** Triage protocols (structured decision trees) will agentify before diagnosis (requires judgment).
 - **Journalism:** Earnings analysis (data-driven) will agentify before investigative reporting (requires access and judgment).
 
-### Exponential, Not Linear, People Affected
+### The Rings Get More Crowded As They Widen
 
-Ring 1 has maybe 5–10 million knowledge workers globally.
-Ring 2 has maybe 50 million.
-Ring 3 has maybe 200 million.
-Ring 4 has maybe 500 million.
+Software development employs tens of millions of people worldwide. Each successive ring — data and technical work, then the regulated professions, then education, consulting and administration, then care, trades, and the physical economy — contains far more workers than the one inside it.
 
-As agentification spreads, the number of people affected *increases exponentially*. The disruption gets larger, not smaller, as you move outward. This is why thinking about agentification *now* is important for nearly everyone.
+So as agentification spreads outward, the number of people affected *grows*, not shrinks. The disruption gets larger as you move away from the epicentre. This is why thinking about agentification *now* is important for nearly everyone — including people whose fields feel far from software.
 
 ### The "Capable Temp" Becomes More Useful As Work Is More Structured
 
-Remember the "capable temp" mental model from Module 3? An AI agent is like a very capable temp who arrives with no memory, works from the briefing you give, and leaves at the end of the day.
+Remember the "capable temp" mental model from Module 4? An AI agent is like a very capable temp who arrives with no memory, works from the briefing you give, and leaves at the end of the day.
 
 That metaphor works well in Ring 0 and Ring 1, where work is highly structured and verifiable. It works less well in Ring 4, where work requires relationship, presence, and embodied judgment. A temp can help with infrastructure; a temp cannot substitute for a therapist.
 
@@ -383,13 +372,15 @@ That metaphor works well in Ring 0 and Ring 1, where work is highly structured a
 
 The structure of this course — specification, understanding, verification, iteration, and now understanding the broader context — is calibrated to what becomes valuable *across all rings* as agentification spreads.
 
-**Specification** (Module 1): The more fields agentify, the more that knowing *what you want* precisely becomes the bottleneck. You can't delegate effectively to AI (or to people) if you can't specify.
+**Understanding the machine** (Module 1): Knowing *why* AI fabricates, flatters, and varies — not just that it does — lets you predict where it will fail in your field before it does.
 
-**Understanding** (Module 3): The "capable temp" mental model is universally useful. Whether you're in software development (Ring 0) or management consulting (Ring 3), you need to understand what the AI system actually *is* and what it can't do.
+**Specification** (Module 2): The more fields agentify, the more that knowing *what you want* precisely becomes the bottleneck. You can't delegate effectively to AI (or to people) if you can't specify.
 
-**Verification** (Module 4): This becomes *more* important, not less, as you move outward through the rings. Ring 0 has tests; Ring 4 has human judgment. But in *every* ring, you need to be able to check whether the AI's output is actually right for your context.
+**Understanding the system** (Module 4): The "capable temp" mental model is universally useful. Whether you're in software development (Ring 0) or management consulting (Ring 3), you need to understand what the AI system actually *is* and what it can't do.
 
-**Iteration** (Module 5): The feedback loop is the same everywhere. Give clear feedback, know when to refine vs. restart, manage context degradation. These are universal skills.
+**Verification** (Module 5): This becomes *more* important, not less, as you move outward through the rings. Ring 0 has tests; Ring 4 has human judgment. But in *every* ring, you need to be able to check whether the AI's output is actually right for your context.
+
+**Iteration** (Module 6): The feedback loop is the same everywhere. Give clear feedback, know when to refine vs. restart, manage context degradation. These are universal skills.
 
 **Understanding adjacency** (this module): Knowing when agentification will hit your field, which skills will become valuable, and which will become less valuable, is information you need to make decisions about what to learn and what to automate.
 
@@ -397,14 +388,17 @@ The structure of this course — specification, understanding, verification, ite
 
 ## Specialisation Tracks
 
-This is the last core module. From here, you choose a specialised track based on your field:
+This is the last core module. From here, you choose one or more specialised tracks based on your field:
 
-- **Developer Track:** Deep work with code-oriented AI agents, instruction files, agentic coding workflows
-- **Data/Analytics Track:** Working with data agents, model validation, handling uncertainty at scale
-- **Writing Track:** AI-assisted composition, research synthesis, maintaining voice and clarity
-- **Domain-Specific Tracks:** Emerging (legal, finance, research, product, design)
+- **Enterprise Track:** Trust architecture, approved channels, governance, monitoring
+- **Developer Track:** Affordances, architecture, MCP tool design, testing AI systems
+- **Academic Track:** Literature workflows, modular writing, AI peer review, reproducibility
+- **Creative Track:** Voice and style, creative iteration, visual collaboration, attribution
+- **Operations Track:** Document workflows, data wrangling, process documentation, communication
+- **Education Track:** AI-resistant assessment, AI as learning partner, personalisation, AI literacy
+- **Leadership Track:** Strategic assessment, AI-ready teams, risk and reputation, vendor decisions
 
-These tracks take what you've learned about specification, understanding, verification, and iteration — and show you how they apply *specifically* in your field and at your level of seniority.
+These tracks take what you've learned about how AI works, specification, verification, and iteration — and show you how they apply *specifically* in your field.
 
 ---
 
@@ -428,10 +422,10 @@ A hospital is exploring AI for clinical decision support. What's the realistic t
 
 * Immediate — doctors will be replaced by AI doctors
 * 2-3 years — AI will do most clinical work
-*! 2026-2035+ — AI will improve decision support and reduce documentation burden, but clinical judgment remains central
+*! Gradual — AI will keep improving decision support and reducing documentation burden, but clinical judgment remains central
 * Never — AI can't help with medicine
 
-FEEDBACK: Medicine is in Ring 4 — distant from software development. AI will improve support (literature access, decision trees, documentation) but won't replace clinical judgment. The verification requirement is *higher*, not lower — a human has to interpret AI's suggestions for this specific patient.
+FEEDBACK: Medicine is in Ring 4 — distant from software development. AI improves support (literature access, decision trees, documentation) but doesn't replace clinical judgment. The verification requirement is *higher*, not lower — a human has to interpret AI's suggestions for this specific patient.
 ```
 
 ---

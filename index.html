@@ -1066,13 +1066,14 @@
             loadPage(pageId);
             renderNav();
             closeSidebar();
-            window.scrollTo(0, 0);
+            window.scrollTo({ top: 0, behavior: 'instant' });
         }
 
         function handleHash() {
             currentPage = window.location.hash.slice(1) || 'welcome';
             loadPage(currentPage);
             renderNav();
+            window.scrollTo({ top: 0, behavior: 'instant' });
         }
 
         // ---------- Init ----------

@@ -8,6 +8,7 @@ Congratulations — you've completed the course.
 
 You now have a framework for effective AI collaboration:
 
+- **How AI actually works** — Next-token prediction, weights vs. context, structural hallucination, sycophancy, and the jagged frontier; predicting failure modes instead of being surprised by them
 - **Structured thinking** — Linearising your intent, externalising context, setting clear scope boundaries
 - **Precision without formalism** — Expressing unambiguous requirements in prose, examples, and tests
 - **Understanding AI systems** — Distinguishing agent, prompt, tools, and persistence; knowing where problems come from

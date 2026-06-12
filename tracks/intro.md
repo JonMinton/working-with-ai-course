@@ -134,12 +134,13 @@ Common combinations:
 ## Track Prerequisites
 
 All tracks assume you've completed the core modules:
-1. Structured Thinking for AI Collaboration
-2. Precision Without Formalism
-3. Understanding AI Systems
-4. Verification & Quality
-5. Iteration & Refinement
-6. The Agentification Shockwave
+1. How AI Actually Works
+2. Structured Thinking
+3. Precision Without Formalism
+4. Understanding AI Systems
+5. Verification & Quality
+6. Iteration & Refinement
+7. The Agentification Shockwave
 
 If you skipped any, consider returning to them — the tracks build on these foundations.
 

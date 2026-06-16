@@ -124,15 +124,9 @@ Useful for sensitive projects (M&A, investigations, audits).
 
 ### Pattern 5: Audit and Review Cycles
 
-Regular assessment of AI deployments:
+Regular assessment of AI deployments: continuous automated logging and alerting, periodic sampled review of AI actions, and scheduled policy and access audits. The pattern is simple — *nothing runs unexamined indefinitely*.
 
-| Frequency | Review |
-|-----------|--------|
-| Continuous | Automated logging and alerting |
-| Weekly | Sample review of AI actions |
-| Monthly | Usage patterns, error rates |
-| Quarterly | Policy review, access audit |
-| Annually | Full governance assessment |
+The operational schedule (what to check at each cadence, who owns it, and what thresholds trigger action) is defined in **E4. Monitoring, Compliance & Continuous Evaluation** under Evaluation Cadences; we won't duplicate it here.
 
 ## The Compliance Conversation
 

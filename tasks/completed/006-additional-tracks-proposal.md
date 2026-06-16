@@ -1,5 +1,7 @@
 # Proposal: Additional Tracks
 
+> **Outcome (June 2026):** Implemented. All four priority tracks now exist in `/tracks/` — creative, operations, education, and leadership — alongside the original enterprise, developer, and academic tracks, with module structures closely following this proposal. The Healthcare track (lower priority) was not built; the suggestion to treat it as a modified Academic track with healthcare examples remains open as a human decision.
+
 ## Current Tracks
 
 - **Enterprise** — Governance, approved channels, trust architecture

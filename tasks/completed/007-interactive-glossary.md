@@ -1,5 +1,7 @@
 # Task: Interactive Glossary
 
+> **Outcome (June 2026):** Implemented. Definitions live in a central `glossary.json` (16 terms covering the core concepts listed below plus weights, system prompt, agent, sycophancy, jagged frontier, RAG, fine-tuning, temperature, and LLM). The app auto-links the **first occurrence** of each term per page to a hover/tap tooltip — no markup is required in the content, so authoring stays clean and the feature degrades gracefully to plain text without JavaScript. Matching skips code, links, and headings; tooltips are keyboard-accessible (focusable, `aria-describedby`, Escape to dismiss) and tap-to-toggle on touch. Verified in Chrome (light + dark, hover/tap/keyboard). See `applyGlossary()` in `index.html`.
+
 ## Type
 feature
 

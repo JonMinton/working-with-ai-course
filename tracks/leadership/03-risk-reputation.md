@@ -99,6 +99,8 @@ You're deploying AI to screen job applications. What human review process makes 
 - Process: create "clean" versions of data for AI (remove PII/secrets before sending)
 - Incident response: know how to revoke access and assess exposure
 
+(If your organisation needs to build these controls out properly, the Enterprise track covers them in depth: **E2. Approved Channels** for channel-level data handling and **E4. Monitoring, Compliance & Continuous Evaluation** for redaction patterns and compliance auditing. As a leader, your job is to ensure someone owns this — not to design it yourself.)
+
 ### Model/Vendor Failure
 
 **What it is:** The AI service or vendor fails — downtime, quality degradation, vendor shutdown.

@@ -446,6 +446,56 @@
         .check-btn:hover { background: var(--accent-hover); }
         .check-btn:disabled { opacity: 0.55; cursor: default; }
 
+        /* ---------- Glossary tooltips ---------- */
+        .glossary-term {
+            position: relative;
+            border-bottom: 1px dotted var(--accent);
+            cursor: help;
+            color: inherit;
+        }
+        .glossary-term:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+        .glossary-tip {
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%) translateY(4px);
+            width: max-content;
+            max-width: min(320px, 78vw);
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+            padding: 0.7rem 0.85rem;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            font-weight: 400;
+            text-align: left;
+            white-space: normal;
+            z-index: 50;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+            pointer-events: none;
+        }
+        .glossary-tip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: var(--border);
+        }
+        .glossary-tip strong { color: var(--text-primary); display: block; margin-bottom: 0.2rem; }
+        .glossary-term:hover .glossary-tip,
+        .glossary-term:focus-within .glossary-tip,
+        .glossary-term.open .glossary-tip {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
         /* ---------- Page nav buttons ---------- */
         .nav-buttons {
             display: flex;
@@ -851,6 +901,105 @@
             });
             enhanceDiagrams();
             document.querySelectorAll('.quiz').forEach(attachQuizHandlers);
+            applyGlossary(document.getElementById('content'));
+        }
+
+        // ---------- Glossary ----------
+        const glossary = { entries: [] };
+        let glossaryTipSeq = 0;
+
+        async function loadGlossary() {
+            try {
+                const res = await fetch('glossary.json');
+                if (!res.ok) return;
+                const data = await res.json();
+                const entries = (data.terms || []).map(t => ({
+                    ...t, surfaces: [t.term, ...(t.aliases || [])]
+                }));
+                // Longest surface form first, so "context window" wins over "context".
+                entries.sort((a, b) =>
+                    Math.max(...b.surfaces.map(s => s.length)) -
+                    Math.max(...a.surfaces.map(s => s.length)));
+                glossary.entries = entries;
+            } catch (e) { /* glossary is progressive enhancement only */ }
+        }
+
+        function escapeRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+        // Link the first occurrence of each glossary term within `root` to a tooltip.
+        function applyGlossary(root) {
+            if (!root || !glossary.entries.length) return;
+            for (const entry of glossary.entries) {
+                const alt = entry.surfaces.map(escapeRegex).join('|');
+                const re = new RegExp('(?<![\\w-])(' + alt + ')(?![\\w-])', 'i');
+                const node = findFirstTextMatch(root, re);
+                if (node) wrapMatch(node, re, entry);
+            }
+        }
+
+        function findFirstTextMatch(root, re) {
+            const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+                acceptNode(n) {
+                    if (!n.nodeValue || !re.test(n.nodeValue)) return NodeFilter.FILTER_REJECT;
+                    for (let p = n.parentElement; p && p !== root; p = p.parentElement) {
+                        const tag = p.tagName;
+                        if (tag === 'PRE' || tag === 'CODE' || tag === 'A' || tag === 'BUTTON' ||
+                            /^H[1-6]$/.test(tag) || p.classList.contains('glossary-term')) {
+                            return NodeFilter.FILTER_REJECT;
+                        }
+                    }
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            });
+            return walker.nextNode();
+        }
+
+        function wrapMatch(textNode, re, entry) {
+            const m = re.exec(textNode.nodeValue);
+            if (!m) return;
+            const matchNode = textNode.splitText(m.index);
+            matchNode.splitText(m[0].length);
+
+            const tipId = 'gloss-tip-' + (++glossaryTipSeq);
+            const term = document.createElement('span');
+            term.className = 'glossary-term';
+            term.tabIndex = 0;
+            term.setAttribute('role', 'button');
+            term.setAttribute('aria-describedby', tipId);
+            term.textContent = m[0];
+
+            const tip = document.createElement('span');
+            tip.className = 'glossary-tip';
+            tip.id = tipId;
+            tip.setAttribute('role', 'tooltip');
+            const label = document.createElement('strong');
+            label.textContent = entry.term;
+            tip.appendChild(label);
+            tip.appendChild(document.createTextNode(entry.definition));
+            term.appendChild(tip);
+
+            matchNode.parentNode.replaceChild(term, matchNode);
+        }
+
+        // Tap to toggle on touch devices; Escape or outside-click to dismiss.
+        function initGlossaryInteraction() {
+            document.addEventListener('click', (e) => {
+                const term = e.target.closest('.glossary-term');
+                document.querySelectorAll('.glossary-term.open').forEach(t => {
+                    if (t !== term) t.classList.remove('open');
+                });
+                if (term) term.classList.toggle('open');
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.glossary-term.open').forEach(t => t.classList.remove('open'));
+                } else if ((e.key === 'Enter' || e.key === ' ') &&
+                           document.activeElement &&
+                           document.activeElement.classList.contains('glossary-term')) {
+                    e.preventDefault();
+                    document.activeElement.classList.toggle('open');
+                }
+            });
         }
 
         async function enhanceDiagrams() {
@@ -1077,8 +1226,10 @@
         }
 
         // ---------- Init ----------
-        function init() {
+        async function init() {
             initTheme();
+            initGlossaryInteraction();
+            await loadGlossary();
 
             document.getElementById('menu-btn').addEventListener('click', () => {
                 document.getElementById('sidebar').classList.add('open');

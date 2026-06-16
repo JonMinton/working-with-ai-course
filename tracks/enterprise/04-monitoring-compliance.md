@@ -320,7 +320,7 @@ KEPT: Issue type, recency indicator
 
 ### Risk Tiers and Handling Rules
 
-Define how each tier of data can be handled:
+Define how each tier of data can be handled. These tiers deliberately mirror the Tiered Access pattern in **E3. Governance Patterns**: E3's tiers govern what an AI *deployment* may access and do; the table below governs how the *data itself* must be handled — approval, logging, and retention.
 
 | Tier | Data Type | AI Access | Approval Required | Audit Logging | Retention |
 |------|-----------|-----------|-------------------|---------------|-----------|

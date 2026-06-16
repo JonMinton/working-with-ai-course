@@ -74,6 +74,8 @@ Use a simple classification model and route data accordingly:
 - Summarise instead of quoting directly
 - Only include the minimum necessary for the task
 
+This is the quick personal checklist. For the organisational version — worked redaction examples, a decision tree for "can we send this to AI?", and per-tier handling rules — see **E4. Monitoring, Compliance & Continuous Evaluation**.
+
 ## Why This Matters
 
 **Scenario:** An employee pastes confidential contract terms into a personal ChatGPT session to "help summarise."

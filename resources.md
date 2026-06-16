@@ -114,7 +114,7 @@ This guide curates high-quality, well-established resources for each learning tr
 
 ### Training & Courses
 
-[Microsoft 365 Copilot Training Path](https://learn.microsoft.com/en-us/training/paths/get-started-with-microsoft-copilot/) — Official Microsoft learning path covering Copilot integration across Word, Excel, PowerPoint, and Teams for productivity gains.
+[Microsoft 365 Copilot Training Path](https://learn.microsoft.com/en-us/training/paths/get-started-with-microsoft-365-copilot/) — Official Microsoft learning path covering Copilot integration across Word, Excel, PowerPoint, and Teams for productivity gains.
 
 [Google Workspace AI Training](https://support.google.com/a/users/answer/14506784) — Google's guidance on Duet AI and integrated AI features within Workspace applications for modern teams.
 
@@ -140,7 +140,7 @@ This guide curates high-quality, well-established resources for each learning tr
 
 ### Professional Guidance
 
-[TEQSA Assessment Reform Guidance](https://www.teqsa.gov.au/sites/default/files/2025-09/enacting-assessment-reform-in-a-time-of-artificial-intelligence.pdf) — Australian regulator guidance on redesigning assessment practices in light of AI capabilities and student preparation.
+[TEQSA Assessment Reform Guidance](https://www.teqsa.gov.au/guides-resources/resources/corporate-publications/enacting-assessment-reform-time-artificial-intelligence) — Australian regulator guidance on redesigning assessment practices in light of AI capabilities and student preparation.
 
 ### Tools & Platforms
 

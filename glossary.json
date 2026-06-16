@@ -1,0 +1,101 @@
+{
+  "_comment": "Central glossary for the course. Each entry: id, term (display), aliases (extra surface forms to match, case-insensitive), definition (British English, one or two sentences). The app links the FIRST occurrence of each term on a page to a hover/tap tooltip. Keep definitions concise and evergreen.",
+  "terms": [
+    {
+      "id": "hallucination",
+      "term": "hallucination",
+      "aliases": ["hallucinations", "hallucinate", "hallucinates", "hallucinated"],
+      "definition": "When an AI generates plausible-sounding but false or unsupported information, stated with the same confidence as fact. It is a structural feature of how language models predict text, not an occasional bug. See Core Module 1."
+    },
+    {
+      "id": "context-window",
+      "term": "context window",
+      "aliases": ["context windows"],
+      "definition": "The working memory of a model — the amount of text (your prompt, the conversation, and any documents) it can consider at once, measured in tokens. Anything outside it is invisible to the model."
+    },
+    {
+      "id": "prompt",
+      "term": "prompt",
+      "aliases": ["prompts"],
+      "definition": "The input and instructions you give an AI. The clarity and structure of the prompt strongly shape the quality of the response."
+    },
+    {
+      "id": "system-prompt",
+      "term": "system prompt",
+      "aliases": ["system prompts"],
+      "definition": "A persistent instruction that defines an AI's role, scope, and behaviour for a whole session — the equivalent of a job description, set before the user's own messages."
+    },
+    {
+      "id": "mcp",
+      "term": "MCP",
+      "aliases": ["Model Context Protocol"],
+      "definition": "Model Context Protocol — an open standard for connecting AI agents to external tools and data sources through a common interface, so the same tool works across different applications."
+    },
+    {
+      "id": "non-deterministic",
+      "term": "non-deterministic",
+      "aliases": ["non-determinism", "nondeterministic", "non-deterministically"],
+      "definition": "Producing different outputs from the same input. Language models sample from a probability distribution, so identical prompts can yield varied (though usually similar) responses."
+    },
+    {
+      "id": "few-shot",
+      "term": "few-shot",
+      "aliases": ["few shot", "few-shot prompting"],
+      "definition": "Including a handful of worked examples in a prompt to show the AI the pattern you want, rather than describing it in the abstract. Contrast with zero-shot (no examples)."
+    },
+    {
+      "id": "token",
+      "term": "token",
+      "aliases": ["tokens", "tokenisation", "tokenization", "tokenise", "tokenize"],
+      "definition": "The unit a model reads and writes — roughly a word fragment of a few characters. Models see text as sequences of tokens, which is why they can stumble on spelling, counting letters, or arithmetic."
+    },
+    {
+      "id": "weights",
+      "term": "weights",
+      "aliases": ["model weights"],
+      "definition": "The fixed numerical parameters learned during training that encode what a model \"knows\". They don't change as you chat — only the context does. See Core Module 1 on weights versus context."
+    },
+    {
+      "id": "agent",
+      "term": "agent",
+      "aliases": ["agents", "agentic"],
+      "definition": "An AI system that can take actions, not just produce text: model plus tools plus a loop, where it decides a step, acts, observes the result, and repeats towards a goal. See Core Module 4."
+    },
+    {
+      "id": "sycophancy",
+      "term": "sycophancy",
+      "aliases": ["sycophantic"],
+      "definition": "An AI's tendency to agree with you and tell you what you seem to want to hear, rather than what is accurate — a reason to invite disagreement and verify independently."
+    },
+    {
+      "id": "jagged-frontier",
+      "term": "jagged frontier",
+      "aliases": ["jagged technological frontier"],
+      "definition": "The uneven boundary of AI capability: it performs brilliantly on some tasks and fails on others of seemingly similar difficulty, with no obvious line between the two. See Core Module 1."
+    },
+    {
+      "id": "rag",
+      "term": "RAG",
+      "aliases": ["retrieval-augmented generation", "retrieval augmented generation"],
+      "definition": "Retrieval-augmented generation — fetching relevant documents and placing them in the context window so the model answers from supplied sources rather than from memory alone."
+    },
+    {
+      "id": "fine-tuning",
+      "term": "fine-tuning",
+      "aliases": ["fine tuning", "fine-tune", "fine-tuned"],
+      "definition": "Further training a base model on additional examples to adapt its behaviour or style. Unlike prompting or context, this changes the model's weights."
+    },
+    {
+      "id": "temperature",
+      "term": "temperature",
+      "aliases": [],
+      "definition": "A setting that controls randomness in a model's output: lower values make responses more focused and predictable, higher values more varied and creative."
+    },
+    {
+      "id": "llm",
+      "term": "large language model",
+      "aliases": ["large language models", "LLM", "LLMs"],
+      "definition": "A model trained on vast amounts of text to predict the next token, which in aggregate produces fluent language, reasoning, and knowledge recall. The technology behind tools like Claude and ChatGPT."
+    }
+  ]
+}

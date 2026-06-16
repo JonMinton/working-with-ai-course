@@ -21,12 +21,18 @@ The biggest content gap was that the course taught *working with* AI without eve
 ### App (`index.html`) rewrite
 Collapsible nav, per-track "my plan" progress, dark mode, lazy full-text search, robust quiz parser (feedback lives in JS — quotes and multi-line feedback are now safe), reading time, mobile drawer. localStorage key `wwai-completed` kept compatible with the old app.
 
+## Follow-up pass (June 2026)
+A second pass cleared most of the gaps below:
+- **Link check done.** All `resources.md` links verified. Fixed two that had moved: the Microsoft 365 Copilot training path (`get-started-with-microsoft-365-copilot`) and the TEQSA assessment-reform guidance (now the landing page, not the raw PDF). Remaining 403s on spot-checks (ABA, BCG, McKinsey, Midjourney, Consensus, NIH, AAC&U) are bot-blocking, not dead links — they resolve fine in a real browser.
+- **Stale SVG deleted.** `four-components.svg` removed (it was no longer referenced by `index.html`). The Mermaid idea in CLAUDE.md remains open.
+- **Track redundancy reworked into cross-references.** E2/E3/E4 no longer duplicate the data-classification table and audit cadences — each now points to the single canonical location (E2 for the channel/classification table, E4 for redaction patterns and evaluation cadences). L3 (Leadership) now defers the operational data-handling detail to the Enterprise track instead of re-teaching it.
+- **Interactive glossary shipped** (`tasks/.../007`). Central `glossary.json` + auto-linking of the first occurrence of each term per page to an accessible hover/tap tooltip. No content markup needed; degrades to plain text without JS. See `applyGlossary()` in `index.html`.
+- **Additional-tracks proposal closed** (`tasks/.../006`). All four priority tracks now exist; Healthcare deliberately left as an open product decision.
+
 ## Known gaps / next-phase candidates
-- `resources.md` links were left as-is; a link-checking pass (do they still resolve in 2026?) would be worthwhile.
-- SVG diagrams: `four-components.svg` is stale (shows old PROMPT/AGENT labels) and is no longer swapped in; either regenerate to match Model/Context/Tools/Memory or delete. The Mermaid idea in CLAUDE.md remains open.
-- Tracks were *fixed*, not rewritten — a deeper editorial pass per track (especially redundancy between E2/E4 and E3/L3) is the next level of polish.
+- A deeper *editorial* (not just structural) pass per track remains worthwhile — the redundancy fixes above were targeted, not a full rewrite.
 - Supabase backend (auth, feedback) still planned, not started.
-- The `tasks/pending/` folder still holds proposals (interactive glossary, additional tracks) untouched by this revision.
+- Glossary term list (16 entries) could grow; definitions are evergreen but worth a periodic accuracy review.
 
 ## Verification protocol used (worth repeating)
 1. Three parallel review agents (one per track cluster) reporting factual/format/quality issues with line numbers.
